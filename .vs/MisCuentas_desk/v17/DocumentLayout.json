@@ -1,0 +1,94 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\m1439\\Desktop\\CICLO_DAM\\WorkSpace\\MisCuentas_desk\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{679CAC73-8F6D-4B4F-BF3B-23EE5B0CC43B}|MisCuentas_desk.csproj|c:\\users\\m1439\\desktop\\ciclo_dam\\workspace\\miscuentas_desk\\inicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{679CAC73-8F6D-4B4F-BF3B-23EE5B0CC43B}|MisCuentas_desk.csproj|solutionrelative:inicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{679CAC73-8F6D-4B4F-BF3B-23EE5B0CC43B}|MisCuentas_desk.csproj|c:\\users\\m1439\\desktop\\ciclo_dam\\workspace\\miscuentas_desk\\formmiscuentas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{679CAC73-8F6D-4B4F-BF3B-23EE5B0CC43B}|MisCuentas_desk.csproj|solutionrelative:formmiscuentas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{679CAC73-8F6D-4B4F-BF3B-23EE5B0CC43B}|MisCuentas_desk.csproj|c:\\users\\m1439\\desktop\\ciclo_dam\\workspace\\miscuentas_desk\\formmiscuentas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{679CAC73-8F6D-4B4F-BF3B-23EE5B0CC43B}|MisCuentas_desk.csproj|solutionrelative:formmiscuentas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{679CAC73-8F6D-4B4F-BF3B-23EE5B0CC43B}|MisCuentas_desk.csproj|c:\\users\\m1439\\desktop\\ciclo_dam\\workspace\\miscuentas_desk\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{679CAC73-8F6D-4B4F-BF3B-23EE5B0CC43B}|MisCuentas_desk.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\m1439\\Desktop\\CICLO_DAM\\WorkSpace\\MisCuentas_desk\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\m1439\\Desktop\\CICLO_DAM\\WorkSpace\\MisCuentas_desk\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAATAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-20T19:26:53.185Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "FormMisCuentas.cs",
+              "DocumentMoniker": "C:\\Users\\m1439\\Desktop\\CICLO_DAM\\WorkSpace\\MisCuentas_desk\\FormMisCuentas.cs",
+              "RelativeDocumentMoniker": "FormMisCuentas.cs",
+              "ToolTip": "C:\\Users\\m1439\\Desktop\\CICLO_DAM\\WorkSpace\\MisCuentas_desk\\FormMisCuentas.cs",
+              "RelativeToolTip": "FormMisCuentas.cs",
+              "ViewState": "AQIAACYAAAAAAAAAAAAIwEQAAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-20T19:18:22.95Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "FormMisCuentas.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\m1439\\Desktop\\CICLO_DAM\\WorkSpace\\MisCuentas_desk\\FormMisCuentas.cs",
+              "RelativeDocumentMoniker": "FormMisCuentas.cs",
+              "ToolTip": "C:\\Users\\m1439\\Desktop\\CICLO_DAM\\WorkSpace\\MisCuentas_desk\\FormMisCuentas.cs [Dise\u00F1o]",
+              "RelativeToolTip": "FormMisCuentas.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-20T19:11:38.694Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Inicio.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\m1439\\Desktop\\CICLO_DAM\\WorkSpace\\MisCuentas_desk\\Inicio.cs",
+              "RelativeDocumentMoniker": "Inicio.cs",
+              "ToolTip": "C:\\Users\\m1439\\Desktop\\CICLO_DAM\\WorkSpace\\MisCuentas_desk\\Inicio.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Inicio.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-20T18:48:44.5Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
