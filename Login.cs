@@ -24,7 +24,8 @@ namespace MisCuentas_desk
             {
                 panelContenedorLogin.Left += 10;
                 panelRegistrar.BringToFront();
-                if(panelContenedorLogin.Left == 710)
+                panelRegistrar.Show();
+                if(panelContenedorLogin.Left == 720)
                 {
                     timer1.Stop();
                     controlTimer = true;
@@ -34,7 +35,8 @@ namespace MisCuentas_desk
             {
                 panelContenedorLogin.Left -= 10;
                 panelEntrar.BringToFront();
-                if(panelContenedorLogin.Left == 180)
+                panelEntrar.Show();
+                if(panelContenedorLogin.Left == 240)
                 {
                     timer1.Stop ();
                     controlTimer = false;

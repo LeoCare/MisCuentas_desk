@@ -64,25 +64,25 @@
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.DarkGray;
+            this.panel3.BackColor = System.Drawing.SystemColors.ControlLight;
             this.panel3.Location = new System.Drawing.Point(0, 280);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(10, 40);
+            this.panel3.Size = new System.Drawing.Size(14, 40);
             this.panel3.TabIndex = 6;
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.DarkGray;
+            this.panel2.BackColor = System.Drawing.SystemColors.ControlLight;
             this.panel2.Location = new System.Drawing.Point(0, 368);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(10, 40);
+            this.panel2.Size = new System.Drawing.Size(14, 40);
             this.panel2.TabIndex = 4;
             // 
             // btnCopiar
             // 
             this.btnCopiar.BackColor = System.Drawing.Color.MediumTurquoise;
             this.btnCopiar.FlatAppearance.BorderSize = 0;
-            this.btnCopiar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
+            this.btnCopiar.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ControlLight;
             this.btnCopiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCopiar.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCopiar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
@@ -97,17 +97,17 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.DarkGray;
+            this.panel1.BackColor = System.Drawing.SystemColors.ControlLight;
             this.panel1.Location = new System.Drawing.Point(0, 190);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(10, 40);
+            this.panel1.Size = new System.Drawing.Size(14, 40);
             this.panel1.TabIndex = 2;
             // 
             // btnComandos
             // 
             this.btnComandos.BackColor = System.Drawing.Color.MediumTurquoise;
             this.btnComandos.FlatAppearance.BorderSize = 0;
-            this.btnComandos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
+            this.btnComandos.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ControlLight;
             this.btnComandos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnComandos.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnComandos.ForeColor = System.Drawing.SystemColors.ControlLightLight;
@@ -124,7 +124,7 @@
             // 
             this.btnLogin.BackColor = System.Drawing.Color.MediumTurquoise;
             this.btnLogin.FlatAppearance.BorderSize = 0;
-            this.btnLogin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
+            this.btnLogin.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ControlLight;
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogin.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogin.ForeColor = System.Drawing.SystemColors.ControlLightLight;
@@ -153,18 +153,18 @@
             // 
             // panelHora
             // 
-            this.panelHora.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.panelHora.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelHora.Location = new System.Drawing.Point(200, 678);
+            this.panelHora.BackColor = System.Drawing.Color.DarkGray;
+            this.panelHora.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelHora.Location = new System.Drawing.Point(200, 0);
             this.panelHora.Name = "panelHora";
-            this.panelHora.Size = new System.Drawing.Size(1297, 79);
+            this.panelHora.Size = new System.Drawing.Size(1297, 58);
             this.panelHora.TabIndex = 0;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(247, 54);
+            this.pictureBox1.Location = new System.Drawing.Point(247, 64);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(822, 571);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;

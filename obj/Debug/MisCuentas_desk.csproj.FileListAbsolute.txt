@@ -3,7 +3,6 @@ C:\Users\m1439\Desktop\CICLO_DAM\WorkSpace\MisCuentas_desk\bin\Debug\MisCuentas_
 C:\Users\m1439\Desktop\CICLO_DAM\WorkSpace\MisCuentas_desk\bin\Debug\MisCuentas_desk.pdb
 C:\Users\m1439\Desktop\CICLO_DAM\WorkSpace\MisCuentas_desk\obj\Debug\MisCuentas_desk.csproj.AssemblyReference.cache
 C:\Users\m1439\Desktop\CICLO_DAM\WorkSpace\MisCuentas_desk\obj\Debug\MisCuentas_desk.FormMisCuentas.resources
-C:\Users\m1439\Desktop\CICLO_DAM\WorkSpace\MisCuentas_desk\obj\Debug\MisCuentas_desk.Inicio.resources
 C:\Users\m1439\Desktop\CICLO_DAM\WorkSpace\MisCuentas_desk\obj\Debug\MisCuentas_desk.Properties.Resources.resources
 C:\Users\m1439\Desktop\CICLO_DAM\WorkSpace\MisCuentas_desk\obj\Debug\MisCuentas_desk.csproj.GenerateResource.cache
 C:\Users\m1439\Desktop\CICLO_DAM\WorkSpace\MisCuentas_desk\obj\Debug\MisCuentas_desk.csproj.CoreCompileInputs.cache
@@ -20,3 +19,4 @@ C:\Users\leon1\Documents\Repo_Github\MisCuentas_desk\obj\Debug\MisCuentas_desk.c
 C:\Users\leon1\Documents\Repo_Github\MisCuentas_desk\obj\Debug\MisCuentas_desk.exe
 C:\Users\leon1\Documents\Repo_Github\MisCuentas_desk\obj\Debug\MisCuentas_desk.pdb
 C:\Users\leon1\Documents\Repo_Github\MisCuentas_desk\obj\Debug\MisCuentas_desk.Login.resources
+C:\Users\m1439\Desktop\CICLO_DAM\WorkSpace\MisCuentas_desk\obj\Debug\MisCuentas_desk.Login.resources
