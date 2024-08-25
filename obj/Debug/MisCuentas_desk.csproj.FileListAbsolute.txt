@@ -20,3 +20,7 @@ C:\Users\leon1\Documents\Repo_Github\MisCuentas_desk\obj\Debug\MisCuentas_desk.e
 C:\Users\leon1\Documents\Repo_Github\MisCuentas_desk\obj\Debug\MisCuentas_desk.pdb
 C:\Users\leon1\Documents\Repo_Github\MisCuentas_desk\obj\Debug\MisCuentas_desk.Login.resources
 C:\Users\m1439\Desktop\CICLO_DAM\WorkSpace\MisCuentas_desk\obj\Debug\MisCuentas_desk.Login.resources
+C:\Users\leon1\Documents\Repo_Github\MisCuentas_desk\obj\Debug\MisCuentas_desk.Views.Inicio.resources
+C:\Users\leon1\Documents\Repo_Github\MisCuentas_desk\obj\Debug\MisCuentas_desk.Views.MisDatos.resources
+C:\Users\leon1\Documents\Repo_Github\MisCuentas_desk\obj\Debug\MisCuentas_desk.Views.Informes.resources
+C:\Users\leon1\Documents\Repo_Github\MisCuentas_desk\obj\Debug\MisCuentas_desk.Views.Avanzado.resources

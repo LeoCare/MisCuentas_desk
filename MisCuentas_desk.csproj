@@ -46,24 +46,54 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FormMisCuentas.cs">
+    <Compile Include="Views\Avanzado.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormMisCuentas.Designer.cs">
+    <Compile Include="Views\Avanzado.Designer.cs">
+      <DependentUpon>Avanzado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FormMisCuentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FormMisCuentas.Designer.cs">
       <DependentUpon>FormMisCuentas.cs</DependentUpon>
     </Compile>
-    <Compile Include="Login.cs">
+    <Compile Include="Views\Informes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Login.Designer.cs">
+    <Compile Include="Views\Informes.Designer.cs">
+      <DependentUpon>Informes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FormMisCuentas.resx">
+    <Compile Include="Views\Inicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Inicio.Designer.cs">
+      <DependentUpon>Inicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MisDatos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\MisDatos.Designer.cs">
+      <DependentUpon>MisDatos.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Views\Avanzado.resx">
+      <DependentUpon>Avanzado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FormMisCuentas.resx">
       <DependentUpon>FormMisCuentas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Login.resx">
+    <EmbeddedResource Include="Views\Informes.resx">
+      <DependentUpon>Informes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -75,6 +105,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Views\Inicio.resx">
+      <DependentUpon>Inicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\MisDatos.resx">
+      <DependentUpon>MisDatos.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -89,7 +125,12 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="logo.ico" />
+    <Content Include="Resources\logo.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Configurations\" />
+    <Folder Include="Entities\" />
+    <Folder Include="Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

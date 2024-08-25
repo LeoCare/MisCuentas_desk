@@ -38,13 +38,13 @@
             this.lblRegistroBtn = new System.Windows.Forms.Label();
             this.lblRegistro = new System.Windows.Forms.Label();
             this.panelContenedorLogin = new System.Windows.Forms.Panel();
-            this.panelRegistrar = new System.Windows.Forms.Panel();
             this.panelEntrar = new System.Windows.Forms.Panel();
             this.lblTituloEntrar = new System.Windows.Forms.Label();
             this.tbxPass = new System.Windows.Forms.TextBox();
             this.tbxUsuario = new System.Windows.Forms.TextBox();
             this.lblPass = new System.Windows.Forms.Label();
             this.lblUsuario = new System.Windows.Forms.Label();
+            this.panelRegistrar = new System.Windows.Forms.Panel();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.lblCorreo = new System.Windows.Forms.Label();
             this.lblRegistro2 = new System.Windows.Forms.Label();
@@ -54,8 +54,8 @@
             this.lblNombre = new System.Windows.Forms.Label();
             this.panelInicoPrincipal.SuspendLayout();
             this.panelContenedorLogin.SuspendLayout();
-            this.panelRegistrar.SuspendLayout();
             this.panelEntrar.SuspendLayout();
+            this.panelRegistrar.SuspendLayout();
             this.SuspendLayout();
             // 
             // timer1
@@ -72,10 +72,10 @@
             this.panelInicoPrincipal.Controls.Add(this.btnRegistro);
             this.panelInicoPrincipal.Controls.Add(this.lblRegistroBtn);
             this.panelInicoPrincipal.Controls.Add(this.lblRegistro);
-            this.panelInicoPrincipal.Location = new System.Drawing.Point(186, 110);
+            this.panelInicoPrincipal.Location = new System.Drawing.Point(312, 199);
             this.panelInicoPrincipal.MaximumSize = new System.Drawing.Size(752, 304);
             this.panelInicoPrincipal.Name = "panelInicoPrincipal";
-            this.panelInicoPrincipal.Size = new System.Drawing.Size(705, 304);
+            this.panelInicoPrincipal.Size = new System.Drawing.Size(752, 304);
             this.panelInicoPrincipal.TabIndex = 2;
             // 
             // btnLogin
@@ -87,7 +87,7 @@
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogin.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogin.ForeColor = System.Drawing.Color.White;
-            this.btnLogin.Location = new System.Drawing.Point(58, 194);
+            this.btnLogin.Location = new System.Drawing.Point(79, 180);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(218, 42);
             this.btnLogin.TabIndex = 5;
@@ -100,7 +100,7 @@
             this.lblLoginBtn.AutoSize = true;
             this.lblLoginBtn.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLoginBtn.ForeColor = System.Drawing.Color.White;
-            this.lblLoginBtn.Location = new System.Drawing.Point(54, 120);
+            this.lblLoginBtn.Location = new System.Drawing.Point(43, 113);
             this.lblLoginBtn.Name = "lblLoginBtn";
             this.lblLoginBtn.Size = new System.Drawing.Size(285, 23);
             this.lblLoginBtn.TabIndex = 4;
@@ -111,7 +111,7 @@
             this.lblLogin.AutoSize = true;
             this.lblLogin.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLogin.ForeColor = System.Drawing.Color.White;
-            this.lblLogin.Location = new System.Drawing.Point(90, 85);
+            this.lblLogin.Location = new System.Drawing.Point(90, 51);
             this.lblLogin.Name = "lblLogin";
             this.lblLogin.Size = new System.Drawing.Size(186, 23);
             this.lblLogin.TabIndex = 3;
@@ -126,7 +126,7 @@
             this.btnRegistro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegistro.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegistro.ForeColor = System.Drawing.Color.White;
-            this.btnRegistro.Location = new System.Drawing.Point(442, 187);
+            this.btnRegistro.Location = new System.Drawing.Point(460, 180);
             this.btnRegistro.Name = "btnRegistro";
             this.btnRegistro.Size = new System.Drawing.Size(218, 42);
             this.btnRegistro.TabIndex = 2;
@@ -140,7 +140,7 @@
             this.lblRegistroBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblRegistroBtn.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRegistroBtn.ForeColor = System.Drawing.Color.White;
-            this.lblRegistroBtn.Location = new System.Drawing.Point(425, 120);
+            this.lblRegistroBtn.Location = new System.Drawing.Point(409, 113);
             this.lblRegistroBtn.Name = "lblRegistroBtn";
             this.lblRegistroBtn.Size = new System.Drawing.Size(321, 23);
             this.lblRegistroBtn.TabIndex = 1;
@@ -152,7 +152,7 @@
             this.lblRegistro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblRegistro.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRegistro.ForeColor = System.Drawing.Color.White;
-            this.lblRegistro.Location = new System.Drawing.Point(458, 85);
+            this.lblRegistro.Location = new System.Drawing.Point(440, 51);
             this.lblRegistro.Name = "lblRegistro";
             this.lblRegistro.Size = new System.Drawing.Size(247, 23);
             this.lblRegistro.TabIndex = 0;
@@ -163,25 +163,10 @@
             this.panelContenedorLogin.BackColor = System.Drawing.Color.White;
             this.panelContenedorLogin.Controls.Add(this.panelEntrar);
             this.panelContenedorLogin.Controls.Add(this.panelRegistrar);
-            this.panelContenedorLogin.Location = new System.Drawing.Point(180, 100);
+            this.panelContenedorLogin.Location = new System.Drawing.Point(310, 189);
             this.panelContenedorLogin.Name = "panelContenedorLogin";
             this.panelContenedorLogin.Size = new System.Drawing.Size(361, 325);
             this.panelContenedorLogin.TabIndex = 8;
-            // 
-            // panelRegistrar
-            // 
-            this.panelRegistrar.BackColor = System.Drawing.Color.White;
-            this.panelRegistrar.Controls.Add(this.textBox3);
-            this.panelRegistrar.Controls.Add(this.lblCorreo);
-            this.panelRegistrar.Controls.Add(this.lblRegistro2);
-            this.panelRegistrar.Controls.Add(this.textBox1);
-            this.panelRegistrar.Controls.Add(this.textBox2);
-            this.panelRegistrar.Controls.Add(this.lblPass2);
-            this.panelRegistrar.Controls.Add(this.lblNombre);
-            this.panelRegistrar.Location = new System.Drawing.Point(9, 6);
-            this.panelRegistrar.Name = "panelRegistrar";
-            this.panelRegistrar.Size = new System.Drawing.Size(342, 316);
-            this.panelRegistrar.TabIndex = 9;
             // 
             // panelEntrar
             // 
@@ -193,14 +178,14 @@
             this.panelEntrar.Controls.Add(this.lblUsuario);
             this.panelEntrar.Location = new System.Drawing.Point(18, 6);
             this.panelEntrar.Name = "panelEntrar";
-            this.panelEntrar.Size = new System.Drawing.Size(316, 316);
+            this.panelEntrar.Size = new System.Drawing.Size(333, 316);
             this.panelEntrar.TabIndex = 12;
             // 
             // lblTituloEntrar
             // 
             this.lblTituloEntrar.AutoSize = true;
             this.lblTituloEntrar.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTituloEntrar.Location = new System.Drawing.Point(129, 30);
+            this.lblTituloEntrar.Location = new System.Drawing.Point(82, 18);
             this.lblTituloEntrar.Name = "lblTituloEntrar";
             this.lblTituloEntrar.Size = new System.Drawing.Size(105, 36);
             this.lblTituloEntrar.TabIndex = 4;
@@ -242,6 +227,21 @@
             this.lblUsuario.Size = new System.Drawing.Size(92, 22);
             this.lblUsuario.TabIndex = 0;
             this.lblUsuario.Text = "USUARIO";
+            // 
+            // panelRegistrar
+            // 
+            this.panelRegistrar.BackColor = System.Drawing.Color.White;
+            this.panelRegistrar.Controls.Add(this.textBox3);
+            this.panelRegistrar.Controls.Add(this.lblCorreo);
+            this.panelRegistrar.Controls.Add(this.lblRegistro2);
+            this.panelRegistrar.Controls.Add(this.textBox1);
+            this.panelRegistrar.Controls.Add(this.textBox2);
+            this.panelRegistrar.Controls.Add(this.lblPass2);
+            this.panelRegistrar.Controls.Add(this.lblNombre);
+            this.panelRegistrar.Location = new System.Drawing.Point(9, 6);
+            this.panelRegistrar.Name = "panelRegistrar";
+            this.panelRegistrar.Size = new System.Drawing.Size(342, 316);
+            this.panelRegistrar.TabIndex = 9;
             // 
             // textBox3
             // 
@@ -310,20 +310,19 @@
             // 
             // Login
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ClientSize = new System.Drawing.Size(962, 506);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.BackColor = System.Drawing.Color.DarkGray;
+            this.ClientSize = new System.Drawing.Size(1347, 749);
             this.Controls.Add(this.panelContenedorLogin);
             this.Controls.Add(this.panelInicoPrincipal);
             this.Name = "Login";
             this.panelInicoPrincipal.ResumeLayout(false);
             this.panelInicoPrincipal.PerformLayout();
             this.panelContenedorLogin.ResumeLayout(false);
-            this.panelRegistrar.ResumeLayout(false);
-            this.panelRegistrar.PerformLayout();
             this.panelEntrar.ResumeLayout(false);
             this.panelEntrar.PerformLayout();
+            this.panelRegistrar.ResumeLayout(false);
+            this.panelRegistrar.PerformLayout();
             this.ResumeLayout(false);
 
         }
