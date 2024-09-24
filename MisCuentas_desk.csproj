@@ -130,7 +130,7 @@
   <ItemGroup>
     <Folder Include="Configurations\" />
     <Folder Include="Entities\" />
-    <Folder Include="Services\" />
+    <Folder Include="Services\Usuarios\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
