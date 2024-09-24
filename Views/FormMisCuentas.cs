@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MisCuentas_desk.Configurations;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,12 +14,29 @@ namespace MisCuentas_desk
 {
     public partial class FormMisCuentas : Form
     {
+        private MisCuentasConnect conn = new MisCuentasConnect(); 
+
         public FormMisCuentas()
         {
             InitializeComponent();
             AbrirFormEnPanel(new Views.Inicio());
+            conn.Conecta();
+            ConexionEstablecida();
+
         }
 
+        private void ConexionEstablecida()
+        {
+            if (conn.PruebaConexion()) {
+                pbxConectaOK.Visible = true;
+                pbxConectaNOK.Visible = false;
+            }
+            else
+            {
+                pbxConectaOK.Visible = false;
+                pbxConectaNOK.Visible = true;
+            }
+        }
 
         private Form formActivo = null;
         private void AbrirFormEnPanel(Form formhija)
