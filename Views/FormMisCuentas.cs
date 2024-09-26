@@ -1,4 +1,8 @@
 ﻿using MisCuentas_desk.Configurations;
+using MisCuentas_desk.Entities;
+using MisCuentas_desk.Services.Usuarios;
+using MisCuentas_desk.Views;
+using NLog.Filters;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,16 +18,22 @@ namespace MisCuentas_desk
 {
     public partial class FormMisCuentas : Form
     {
-        private MisCuentasConnect conn = new MisCuentasConnect(); 
+        private MisCuentasConnect conn = new MisCuentasConnect();
+        private UsuarioServices usuarioService;
+        private Navigation nav;
+        private Usuario usuario;
 
         public FormMisCuentas()
         {
             InitializeComponent();
-            AbrirFormEnPanel(new Views.Inicio());
-            conn.Conecta();
+            this.nav = new Navigation(this);
+            nav.AbrirFormEnPanel(new Inicio());
+            string cadenaConexion = conn.Conexion();
+            this.usuarioService = new UsuarioServices(cadenaConexion);
             ConexionEstablecida();
-
+            
         }
+
 
         private void ConexionEstablecida()
         {
@@ -38,25 +48,10 @@ namespace MisCuentas_desk
             }
         }
 
-        private Form formActivo = null;
-        private void AbrirFormEnPanel(Form formhija)
-        {
-            if (formActivo != null) formActivo.Close();
-            formActivo = formhija;
-            formhija.TopLevel = false;
-            formhija.FormBorderStyle = FormBorderStyle.None;
-            formhija.Dock = DockStyle.Fill;
-            panelContenedor.Controls.Add(formhija);
-            panelContenedor.Tag = formhija;
-            formhija.BringToFront();
-            formhija.Show();
-
-        }
-
        
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            AbrirFormEnPanel(new Views.MisDatos());
+            nav.AbrirFormEnPanel(new MisDatos());
         }
 
         private void btnInicio_Click(object sender, EventArgs e)
@@ -66,7 +61,7 @@ namespace MisCuentas_desk
 
         private void pbxHome_Click(object sender, EventArgs e)
         {
-            AbrirFormEnPanel(new Views.Inicio());
+            nav.AbrirFormEnPanel(new Inicio());
         }
 
         private void timerHora_Tick(object sender, EventArgs e)
@@ -76,17 +71,27 @@ namespace MisCuentas_desk
 
         private void pbxLogin_Click(object sender, EventArgs e)
         {
-            AbrirFormEnPanel(new Login());
+            nav.AbrirFormEnPanel(new Login(this));
+        }
+
+        private void pbxUsuarioLoginNOK_Click(object sender, EventArgs e)
+        {
+            nav.AbrirFormEnPanel(new Login(this));
+        }
+
+        private void pbxUsuarioLoginOK_Click(object sender, EventArgs e)
+        {
+            //cerrar sesion
         }
 
         private void btnInformes_Click(object sender, EventArgs e)
         {
-            AbrirFormEnPanel(new Views.Informes());
+            nav.AbrirFormEnPanel(new Informes());
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            AbrirFormEnPanel(new Views.Avanzado());
+            nav.AbrirFormEnPanel(new Avanzado());
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -115,6 +120,13 @@ namespace MisCuentas_desk
         {
             pbxUsuarioLoginOK.BackColor = Color.DarkGray;
             pbxUsuarioLoginNOK.BackColor = Color.DarkGray;
+        }
+
+        // Método público para mostrar un mensaje en el Label
+        public void MostrarMensaje(string mensaje)
+        {
+            lblInformacion.Visible = true;
+            lblInformacion.Text = mensaje;
         }
     }
 }

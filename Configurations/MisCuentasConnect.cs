@@ -20,9 +20,9 @@ namespace MisCuentas_desk.Configurations
 
 
         #region CONTRUCTOR
-        public void Conecta()
+        public String Conexion()
         {
-            this._strConn = "Server=192.168.7.3;Port=3306;Database=DBMisCuentas;Uid=leo;Pwd=111nonamaEM";
+             return this._strConn = "Server=192.168.7.3;Port=3306;Database=DBMisCuentas;Uid=leo;Pwd=111nonamaEM";
 
         }
         #endregion

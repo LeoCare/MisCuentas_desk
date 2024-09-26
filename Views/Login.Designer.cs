@@ -39,17 +39,19 @@
             this.lblRegistro = new System.Windows.Forms.Label();
             this.panelContenedorLogin = new System.Windows.Forms.Panel();
             this.panelEntrar = new System.Windows.Forms.Panel();
+            this.btnEntrar = new System.Windows.Forms.Button();
             this.lblTituloEntrar = new System.Windows.Forms.Label();
             this.tbxPass = new System.Windows.Forms.TextBox();
             this.tbxUsuario = new System.Windows.Forms.TextBox();
             this.lblPass = new System.Windows.Forms.Label();
-            this.lblUsuario = new System.Windows.Forms.Label();
+            this.lblLoginCorreo = new System.Windows.Forms.Label();
             this.panelRegistrar = new System.Windows.Forms.Panel();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.btnRegistrarse = new System.Windows.Forms.Button();
+            this.tbxCorreoRegistro = new System.Windows.Forms.TextBox();
             this.lblCorreo = new System.Windows.Forms.Label();
             this.lblRegistro2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.tbxPassRegistro = new System.Windows.Forms.TextBox();
+            this.tbxNombreRegistro = new System.Windows.Forms.TextBox();
             this.lblPass2 = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
             this.panelInicoPrincipal.SuspendLayout();
@@ -165,21 +167,35 @@
             this.panelContenedorLogin.Controls.Add(this.panelRegistrar);
             this.panelContenedorLogin.Location = new System.Drawing.Point(310, 189);
             this.panelContenedorLogin.Name = "panelContenedorLogin";
-            this.panelContenedorLogin.Size = new System.Drawing.Size(361, 325);
+            this.panelContenedorLogin.Size = new System.Drawing.Size(361, 404);
             this.panelContenedorLogin.TabIndex = 8;
             // 
             // panelEntrar
             // 
             this.panelEntrar.BackColor = System.Drawing.Color.White;
+            this.panelEntrar.Controls.Add(this.btnEntrar);
             this.panelEntrar.Controls.Add(this.lblTituloEntrar);
             this.panelEntrar.Controls.Add(this.tbxPass);
             this.panelEntrar.Controls.Add(this.tbxUsuario);
             this.panelEntrar.Controls.Add(this.lblPass);
-            this.panelEntrar.Controls.Add(this.lblUsuario);
-            this.panelEntrar.Location = new System.Drawing.Point(18, 6);
+            this.panelEntrar.Controls.Add(this.lblLoginCorreo);
+            this.panelEntrar.Location = new System.Drawing.Point(9, 6);
             this.panelEntrar.Name = "panelEntrar";
-            this.panelEntrar.Size = new System.Drawing.Size(333, 316);
-            this.panelEntrar.TabIndex = 12;
+            this.panelEntrar.Size = new System.Drawing.Size(342, 391);
+            this.panelEntrar.TabIndex = 15;
+            // 
+            // btnEntrar
+            // 
+            this.btnEntrar.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnEntrar.Font = new System.Drawing.Font("Century Gothic", 14.25F);
+            this.btnEntrar.ForeColor = System.Drawing.Color.Black;
+            this.btnEntrar.Location = new System.Drawing.Point(30, 294);
+            this.btnEntrar.Name = "btnEntrar";
+            this.btnEntrar.Size = new System.Drawing.Size(281, 50);
+            this.btnEntrar.TabIndex = 5;
+            this.btnEntrar.Text = "ENTRAR";
+            this.btnEntrar.UseVisualStyleBackColor = false;
+            this.btnEntrar.Click += new System.EventHandler(this.btnEntrar_Click);
             // 
             // lblTituloEntrar
             // 
@@ -218,38 +234,52 @@
             this.lblPass.TabIndex = 1;
             this.lblPass.Text = "CONTRASEÑA";
             // 
-            // lblUsuario
+            // lblLoginCorreo
             // 
-            this.lblUsuario.AutoSize = true;
-            this.lblUsuario.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsuario.Location = new System.Drawing.Point(69, 99);
-            this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(92, 22);
-            this.lblUsuario.TabIndex = 0;
-            this.lblUsuario.Text = "USUARIO";
+            this.lblLoginCorreo.AutoSize = true;
+            this.lblLoginCorreo.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLoginCorreo.Location = new System.Drawing.Point(69, 99);
+            this.lblLoginCorreo.Name = "lblLoginCorreo";
+            this.lblLoginCorreo.Size = new System.Drawing.Size(93, 22);
+            this.lblLoginCorreo.TabIndex = 0;
+            this.lblLoginCorreo.Text = "CORREO";
             // 
             // panelRegistrar
             // 
             this.panelRegistrar.BackColor = System.Drawing.Color.White;
-            this.panelRegistrar.Controls.Add(this.textBox3);
+            this.panelRegistrar.Controls.Add(this.btnRegistrarse);
+            this.panelRegistrar.Controls.Add(this.tbxCorreoRegistro);
             this.panelRegistrar.Controls.Add(this.lblCorreo);
             this.panelRegistrar.Controls.Add(this.lblRegistro2);
-            this.panelRegistrar.Controls.Add(this.textBox1);
-            this.panelRegistrar.Controls.Add(this.textBox2);
+            this.panelRegistrar.Controls.Add(this.tbxPassRegistro);
+            this.panelRegistrar.Controls.Add(this.tbxNombreRegistro);
             this.panelRegistrar.Controls.Add(this.lblPass2);
             this.panelRegistrar.Controls.Add(this.lblNombre);
             this.panelRegistrar.Location = new System.Drawing.Point(9, 6);
             this.panelRegistrar.Name = "panelRegistrar";
-            this.panelRegistrar.Size = new System.Drawing.Size(342, 316);
+            this.panelRegistrar.Size = new System.Drawing.Size(342, 392);
             this.panelRegistrar.TabIndex = 9;
             // 
-            // textBox3
+            // btnRegistrarse
             // 
-            this.textBox3.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(79, 178);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(210, 31);
-            this.textBox3.TabIndex = 8;
+            this.btnRegistrarse.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnRegistrarse.Font = new System.Drawing.Font("Century Gothic", 14.25F);
+            this.btnRegistrarse.ForeColor = System.Drawing.Color.Black;
+            this.btnRegistrarse.Location = new System.Drawing.Point(40, 297);
+            this.btnRegistrarse.Name = "btnRegistrarse";
+            this.btnRegistrarse.Size = new System.Drawing.Size(281, 50);
+            this.btnRegistrarse.TabIndex = 11;
+            this.btnRegistrarse.Text = "REGISTRARSE";
+            this.btnRegistrarse.UseVisualStyleBackColor = false;
+            this.btnRegistrarse.Click += new System.EventHandler(this.btnRegistrarse_Click);
+            // 
+            // tbxCorreoRegistro
+            // 
+            this.tbxCorreoRegistro.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxCorreoRegistro.Location = new System.Drawing.Point(79, 178);
+            this.tbxCorreoRegistro.Name = "tbxCorreoRegistro";
+            this.tbxCorreoRegistro.Size = new System.Drawing.Size(210, 31);
+            this.tbxCorreoRegistro.TabIndex = 8;
             // 
             // lblCorreo
             // 
@@ -271,22 +301,22 @@
             this.lblRegistro2.TabIndex = 9;
             this.lblRegistro2.Text = "REGISTRARSE";
             // 
-            // textBox1
+            // tbxPassRegistro
             // 
-            this.textBox1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(79, 248);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(210, 31);
-            this.textBox1.TabIndex = 9;
-            this.textBox1.UseSystemPasswordChar = true;
+            this.tbxPassRegistro.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxPassRegistro.Location = new System.Drawing.Point(79, 248);
+            this.tbxPassRegistro.Name = "tbxPassRegistro";
+            this.tbxPassRegistro.Size = new System.Drawing.Size(210, 31);
+            this.tbxPassRegistro.TabIndex = 9;
+            this.tbxPassRegistro.UseSystemPasswordChar = true;
             // 
-            // textBox2
+            // tbxNombreRegistro
             // 
-            this.textBox2.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(79, 109);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(210, 31);
-            this.textBox2.TabIndex = 7;
+            this.tbxNombreRegistro.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxNombreRegistro.Location = new System.Drawing.Point(79, 109);
+            this.tbxNombreRegistro.Name = "tbxNombreRegistro";
+            this.tbxNombreRegistro.Size = new System.Drawing.Size(210, 31);
+            this.tbxNombreRegistro.TabIndex = 7;
             // 
             // lblPass2
             // 
@@ -337,20 +367,22 @@
         private System.Windows.Forms.Label lblRegistroBtn;
         private System.Windows.Forms.Label lblRegistro;
         private System.Windows.Forms.Panel panelContenedorLogin;
+        private System.Windows.Forms.Panel panelRegistrar;
+        private System.Windows.Forms.TextBox tbxCorreoRegistro;
+        private System.Windows.Forms.Label lblCorreo;
+        private System.Windows.Forms.Label lblRegistro2;
+        private System.Windows.Forms.TextBox tbxPassRegistro;
+        private System.Windows.Forms.TextBox tbxNombreRegistro;
+        private System.Windows.Forms.Label lblPass2;
+        private System.Windows.Forms.Label lblNombre;
+        private System.Windows.Forms.Button btnRegistrarse;
         private System.Windows.Forms.Panel panelEntrar;
+        private System.Windows.Forms.Button btnEntrar;
         private System.Windows.Forms.Label lblTituloEntrar;
         private System.Windows.Forms.TextBox tbxPass;
         private System.Windows.Forms.TextBox tbxUsuario;
         private System.Windows.Forms.Label lblPass;
-        private System.Windows.Forms.Label lblUsuario;
-        private System.Windows.Forms.Panel panelRegistrar;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label lblCorreo;
-        private System.Windows.Forms.Label lblRegistro2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label lblPass2;
-        private System.Windows.Forms.Label lblNombre;
+        private System.Windows.Forms.Label lblLoginCorreo;
     }
 }
 
