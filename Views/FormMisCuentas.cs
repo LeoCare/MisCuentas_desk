@@ -48,81 +48,132 @@ namespace MisCuentas_desk
             }
         }
 
-       
-        private void btnLogin_Click(object sender, EventArgs e)
+        public void InstanciaUsuario(Usuario usuario)
         {
-            nav.AbrirFormEnPanel(new MisDatos());
+            this.usuario = Usuario.ObtenerInstancia(usuario);
         }
 
-        private void btnInicio_Click(object sender, EventArgs e)
-        {
-           
-        }
 
+        /// <summary>
+        /// Metodo navegar al inicio.
+        /// Boton superior izquierdo.
+        /// </summary>
         private void pbxHome_Click(object sender, EventArgs e)
         {
             nav.AbrirFormEnPanel(new Inicio());
         }
 
+        /// <summary>
+        /// Hora actual
+        /// </summary>
         private void timerHora_Tick(object sender, EventArgs e)
         {
             lblHora.Text = DateTime.Now.ToString("HH:mm:ss");
         }
 
-        private void pbxLogin_Click(object sender, EventArgs e)
-        {
-            nav.AbrirFormEnPanel(new Login(this));
-        }
-
+        /// <summary>
+        /// Metodo para el inicio de sesion
+        /// Boton superior derecho.
+        /// </summary>
         private void pbxUsuarioLoginNOK_Click(object sender, EventArgs e)
         {
             nav.AbrirFormEnPanel(new Login(this));
         }
 
+        /// <summary>
+        /// Metodo para el cierre de sesion.
+        /// Boton superior derecho.
+        /// </summary>
         private void pbxUsuarioLoginOK_Click(object sender, EventArgs e)
         {
-            //cerrar sesion
+            RetornoLogin();
+            nav.AbrirFormEnPanel(new Login(this));
         }
 
+        /// <summary>
+        /// Metodo para el cierre de sesion o eliminacion de cuenta.
+        /// </summary>
+        public void RetornoLogin()
+        { 
+            usuario = null;
+            lblInformacion.Text = "Inicia sesion";
+            pbxUsuarioLoginNOK.Visible = true;
+            pbxUsuarioLoginOK.Visible = false;    
+        }
+
+        /// <summary>
+        /// Metodo para navegar al formulario MisDatos.
+        /// Boton panel lateral izquierdo.
+        /// </summary>
+        private void btnMisDatos_Click(object sender, EventArgs e)
+        {
+            if (usuario != null) nav.AbrirFormEnPanel(new MisDatos(usuario, this));
+        }
+
+        /// <summary>
+        /// Metodo para navegar al formulario Informes.
+        /// Boton panel lateral izquierdo.
+        /// </summary>
         private void btnInformes_Click(object sender, EventArgs e)
         {
-            nav.AbrirFormEnPanel(new Informes());
+            if (usuario != null) nav.AbrirFormEnPanel(new Informes());
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Metodo para navegar al formulario Avanzado.
+        /// Boton panel lateral izquierdo.
+        /// </summary>
+        private void btnAvanzado_Click(object sender, EventArgs e)
         {
-            nav.AbrirFormEnPanel(new Avanzado());
+            if (usuario != null) nav.AbrirFormEnPanel(new Avanzado());
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Metodo para cerrar la aplicacion.
+        /// </summary>
+        private void btnCerrar_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
-
+        
+        /// <summary>
+        /// Metodo que cambia el color al pasar con el raton por encima del boton.
+        /// </summary>
         private void MouseMove_Home(object sender, MouseEventArgs e)
         {
             pbxHome.BackColor = Color.DarkGray;
         }
 
+        /// <summary>
+        /// Metodo que cambia el color al dejar de pasar con el raton por encima del boton.
+        /// </summary>
         private void MouseLeave_Home(object sender, EventArgs e)
         {
             pbxHome.BackColor = Color.Silver;
         }
 
+        /// <summary>
+        /// Metodo que cambia el color al dejar de pasar con el raton por encima del boton.
+        /// </summary>
         private void MouseLeave_User(object sender, EventArgs e)
         {
             pbxUsuarioLoginOK.BackColor = Color.Silver;
             pbxUsuarioLoginNOK.BackColor = Color.Silver;
         }
 
+        /// <summary>
+        /// Metodo que cambia el color al pasar con el raton por encima del boton.
+        /// </summary>
         private void MouseMove_User(object sender, MouseEventArgs e)
         {
             pbxUsuarioLoginOK.BackColor = Color.DarkGray;
             pbxUsuarioLoginNOK.BackColor = Color.DarkGray;
         }
-
-        // Método público para mostrar un mensaje en el Label
+       
+        /// <summary>
+        /// Metodo que modifica el texto del panel informativo superior.
+        /// </summary>
         public void MostrarMensaje(string mensaje)
         {
             lblInformacion.Visible = true;

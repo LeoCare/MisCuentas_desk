@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMisCuentas));
             this.menuVertical = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnCerrar = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnAvanzado = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -42,6 +42,7 @@
             this.timerHora = new System.Windows.Forms.Timer(this.components);
             this.panelContenedor = new System.Windows.Forms.Panel();
             this.panelHora = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.lblInformacion = new System.Windows.Forms.Label();
             this.pbxUsuarioLoginOK = new System.Windows.Forms.PictureBox();
             this.pbxConectaOK = new System.Windows.Forms.PictureBox();
@@ -52,6 +53,7 @@
             this.menuVertical.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnInicio)).BeginInit();
             this.panelHora.SuspendLayout();
+            this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxUsuarioLoginOK)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxConectaOK)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxConectaNOK)).BeginInit();
@@ -62,7 +64,7 @@
             // menuVertical
             // 
             this.menuVertical.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.menuVertical.Controls.Add(this.button2);
+            this.menuVertical.Controls.Add(this.btnCerrar);
             this.menuVertical.Controls.Add(this.panel4);
             this.menuVertical.Controls.Add(this.btnAvanzado);
             this.menuVertical.Controls.Add(this.panel2);
@@ -76,24 +78,24 @@
             this.menuVertical.Size = new System.Drawing.Size(200, 788);
             this.menuVertical.TabIndex = 2;
             // 
-            // button2
+            // btnCerrar
             // 
-            this.button2.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.button2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(0, 738);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(200, 50);
-            this.button2.TabIndex = 10;
-            this.button2.Text = "SALIR";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnCerrar.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnCerrar.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnCerrar.FlatAppearance.BorderSize = 0;
+            this.btnCerrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCerrar.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCerrar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
+            this.btnCerrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCerrar.Location = new System.Drawing.Point(0, 738);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(200, 50);
+            this.btnCerrar.TabIndex = 10;
+            this.btnCerrar.Text = "SALIR";
+            this.btnCerrar.UseVisualStyleBackColor = false;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // panel4
             // 
@@ -119,7 +121,7 @@
             this.btnAvanzado.TabIndex = 7;
             this.btnAvanzado.Text = "Avanzado";
             this.btnAvanzado.UseVisualStyleBackColor = false;
-            this.btnAvanzado.Click += new System.EventHandler(this.button1_Click);
+            this.btnAvanzado.Click += new System.EventHandler(this.btnAvanzado_Click);
             // 
             // panel2
             // 
@@ -171,7 +173,7 @@
             this.btnMisDatos.TabIndex = 1;
             this.btnMisDatos.Text = "Mis Datos";
             this.btnMisDatos.UseVisualStyleBackColor = false;
-            this.btnMisDatos.Click += new System.EventHandler(this.btnLogin_Click);
+            this.btnMisDatos.Click += new System.EventHandler(this.btnMisDatos_Click);
             // 
             // btnInicio
             // 
@@ -184,7 +186,6 @@
             this.btnInicio.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnInicio.TabIndex = 0;
             this.btnInicio.TabStop = false;
-            this.btnInicio.Click += new System.EventHandler(this.btnInicio_Click);
             // 
             // timerHora
             // 
@@ -203,7 +204,7 @@
             // panelHora
             // 
             this.panelHora.BackColor = System.Drawing.Color.Silver;
-            this.panelHora.Controls.Add(this.lblInformacion);
+            this.panelHora.Controls.Add(this.panel3);
             this.panelHora.Controls.Add(this.pbxUsuarioLoginOK);
             this.panelHora.Controls.Add(this.pbxConectaOK);
             this.panelHora.Controls.Add(this.pbxConectaNOK);
@@ -216,16 +217,27 @@
             this.panelHora.Size = new System.Drawing.Size(1297, 49);
             this.panelHora.TabIndex = 4;
             // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.lblInformacion);
+            this.panel3.Location = new System.Drawing.Point(260, 3);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(932, 41);
+            this.panel3.TabIndex = 9;
+            // 
             // lblInformacion
             // 
             this.lblInformacion.AutoSize = true;
+            this.lblInformacion.Dock = System.Windows.Forms.DockStyle.Right;
             this.lblInformacion.Font = new System.Drawing.Font("Century Gothic", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblInformacion.ForeColor = System.Drawing.Color.DimGray;
-            this.lblInformacion.Location = new System.Drawing.Point(294, 13);
+            this.lblInformacion.Location = new System.Drawing.Point(758, 0);
             this.lblInformacion.Name = "lblInformacion";
-            this.lblInformacion.Size = new System.Drawing.Size(476, 33);
+            this.lblInformacion.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblInformacion.Size = new System.Drawing.Size(174, 33);
             this.lblInformacion.TabIndex = 8;
-            this.lblInformacion.Text = "Presiona el boton e inicia sesion -->";
+            this.lblInformacion.Text = "Inicia sesion";
+            this.lblInformacion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // pbxUsuarioLoginOK
             // 
@@ -241,6 +253,8 @@
             this.pbxUsuarioLoginOK.TabStop = false;
             this.pbxUsuarioLoginOK.Visible = false;
             this.pbxUsuarioLoginOK.Click += new System.EventHandler(this.pbxUsuarioLoginOK_Click);
+            this.pbxUsuarioLoginOK.MouseLeave += new System.EventHandler(this.MouseLeave_User);
+            this.pbxUsuarioLoginOK.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MouseMove_User);
             // 
             // pbxConectaOK
             // 
@@ -277,6 +291,8 @@
             this.pbxUsuarioLoginNOK.TabIndex = 1;
             this.pbxUsuarioLoginNOK.TabStop = false;
             this.pbxUsuarioLoginNOK.Click += new System.EventHandler(this.pbxUsuarioLoginNOK_Click);
+            this.pbxUsuarioLoginNOK.MouseLeave += new System.EventHandler(this.MouseLeave_User);
+            this.pbxUsuarioLoginNOK.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MouseMove_User);
             // 
             // lblHora
             // 
@@ -302,6 +318,8 @@
             this.pbxHome.TabIndex = 0;
             this.pbxHome.TabStop = false;
             this.pbxHome.Click += new System.EventHandler(this.pbxHome_Click);
+            this.pbxHome.MouseLeave += new System.EventHandler(this.MouseLeave_Home);
+            this.pbxHome.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MouseMove_Home);
             // 
             // FormMisCuentas
             // 
@@ -323,6 +341,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnInicio)).EndInit();
             this.panelHora.ResumeLayout(false);
             this.panelHora.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxUsuarioLoginOK)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxConectaOK)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxConectaNOK)).EndInit();
@@ -339,7 +359,7 @@
         private System.Windows.Forms.Timer timerHora;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.Panel panelHora;
         private System.Windows.Forms.PictureBox pbxConectaOK;
         private System.Windows.Forms.PictureBox pbxConectaNOK;
@@ -352,5 +372,6 @@
         public System.Windows.Forms.Button btnAvanzado;
         public System.Windows.Forms.PictureBox pbxUsuarioLoginOK;
         public System.Windows.Forms.PictureBox pbxUsuarioLoginNOK;
+        private System.Windows.Forms.Panel panel3;
     }
 }

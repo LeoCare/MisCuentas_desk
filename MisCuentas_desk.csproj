@@ -93,14 +93,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Configurations\MisCuentasConnect.cs" />
+    <Compile Include="Entities\Personal_Data.cs" />
     <Compile Include="Entities\TipoPerfil.cs" />
     <Compile Include="Entities\Usuario.cs" />
+    <Compile Include="Model\Pais.cs" />
+    <Compile Include="Services\PersonalData\IRepositoryPersonalData.cs" />
+    <Compile Include="Services\PersonalData\PersonalDataDAO.cs" />
+    <Compile Include="Services\PersonalData\PersonalDataServices.cs" />
     <Compile Include="Services\Tipos\IRepositoryTipos.cs" />
     <Compile Include="Services\Tipos\TiposDAO.cs" />
     <Compile Include="Services\Tipos\TiposServices.cs" />
     <Compile Include="Services\Usuarios\IRepositoryUsuario.cs" />
     <Compile Include="Services\Usuarios\UsuarioDAO.cs" />
     <Compile Include="Services\Usuarios\UsuarioServices.cs" />
+    <Compile Include="Utils\Validaciones.cs" />
     <Compile Include="Views\Avanzado.cs">
       <SubType>Form</SubType>
     </Compile>

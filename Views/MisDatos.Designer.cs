@@ -30,49 +30,62 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MisDatos));
             this.panelMD1inf = new System.Windows.Forms.Panel();
+            this.panelCambioPass = new System.Windows.Forms.Panel();
+            this.tbxCanbioPass2 = new System.Windows.Forms.TextBox();
+            this.lblCambioPass2 = new System.Windows.Forms.Label();
+            this.btnNoVerCambioPass = new System.Windows.Forms.PictureBox();
+            this.btnVerCambioPass = new System.Windows.Forms.PictureBox();
+            this.tbxCanbioPass = new System.Windows.Forms.TextBox();
+            this.lblCambioPass = new System.Windows.Forms.Label();
+            this.btnCambioPass = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.label17 = new System.Windows.Forms.Label();
+            this.lblMDPerfil = new System.Windows.Forms.Label();
             this.lblMD1perfil = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label16 = new System.Windows.Forms.Label();
+            this.lblMDCorreo = new System.Windows.Forms.Label();
             this.lblMD1correo = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label15 = new System.Windows.Forms.Label();
+            this.lblMDUsuario = new System.Windows.Forms.Label();
             this.lblMD1usuario = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelMD1sup = new System.Windows.Forms.Panel();
             this.lblDatosPrincipales = new System.Windows.Forms.Label();
             this.panelMD2sup = new System.Windows.Forms.Panel();
+            this.btnMDGuardar = new System.Windows.Forms.Button();
             this.lblDatosGeneral = new System.Windows.Forms.Label();
             this.panelMD2inf = new System.Windows.Forms.Panel();
             this.panel12 = new System.Windows.Forms.Panel();
-            this.label10 = new System.Windows.Forms.Label();
+            this.tbxMDTelefono = new System.Windows.Forms.TextBox();
+            this.lblMDTelefono = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.label8 = new System.Windows.Forms.Label();
+            this.cbxMDPais = new System.Windows.Forms.ComboBox();
+            this.lblMDPais = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
+            this.tbxMDDireccion = new System.Windows.Forms.TextBox();
+            this.lblMDDireccion = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
+            this.tbxMDApellidos = new System.Windows.Forms.TextBox();
+            this.lblMDApellidos = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lblMD2nombre = new System.Windows.Forms.Label();
+            this.tbxMDNombre = new System.Windows.Forms.TextBox();
+            this.lblMDNombre = new System.Windows.Forms.Label();
             this.lblMD2TTLnombre = new System.Windows.Forms.Label();
             this.panelMD3 = new System.Windows.Forms.Panel();
-            this.label14 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.pbxMDEliminarCuenta = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pbxMDCompletarDatos = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pbxMDCambioPass = new System.Windows.Forms.PictureBox();
+            this.btnCancelarCambioPass = new System.Windows.Forms.Button();
             this.panelMD1inf.SuspendLayout();
+            this.panelCambioPass.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnNoVerCambioPass)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnVerCambioPass)).BeginInit();
             this.panel5.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -81,22 +94,21 @@
             this.panelMD2sup.SuspendLayout();
             this.panelMD2inf.SuspendLayout();
             this.panel12.SuspendLayout();
-            this.panel10.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panelMD3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxMDEliminarCuenta)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxMDCompletarDatos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxMDCambioPass)).BeginInit();
             this.SuspendLayout();
             // 
             // panelMD1inf
             // 
             this.panelMD1inf.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panelMD1inf.BackColor = System.Drawing.Color.Gray;
+            this.panelMD1inf.Controls.Add(this.panelCambioPass);
             this.panelMD1inf.Controls.Add(this.panel5);
             this.panelMD1inf.Controls.Add(this.panel3);
             this.panelMD1inf.Controls.Add(this.panel2);
@@ -106,27 +118,130 @@
             this.panelMD1inf.Size = new System.Drawing.Size(420, 363);
             this.panelMD1inf.TabIndex = 0;
             // 
+            // panelCambioPass
+            // 
+            this.panelCambioPass.BackColor = System.Drawing.Color.Black;
+            this.panelCambioPass.Controls.Add(this.btnCancelarCambioPass);
+            this.panelCambioPass.Controls.Add(this.tbxCanbioPass2);
+            this.panelCambioPass.Controls.Add(this.lblCambioPass2);
+            this.panelCambioPass.Controls.Add(this.btnNoVerCambioPass);
+            this.panelCambioPass.Controls.Add(this.btnVerCambioPass);
+            this.panelCambioPass.Controls.Add(this.tbxCanbioPass);
+            this.panelCambioPass.Controls.Add(this.lblCambioPass);
+            this.panelCambioPass.Controls.Add(this.btnCambioPass);
+            this.panelCambioPass.Location = new System.Drawing.Point(0, 0);
+            this.panelCambioPass.Name = "panelCambioPass";
+            this.panelCambioPass.Size = new System.Drawing.Size(420, 363);
+            this.panelCambioPass.TabIndex = 5;
+            this.panelCambioPass.Visible = false;
+            // 
+            // tbxCanbioPass2
+            // 
+            this.tbxCanbioPass2.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxCanbioPass2.Location = new System.Drawing.Point(98, 159);
+            this.tbxCanbioPass2.Name = "tbxCanbioPass2";
+            this.tbxCanbioPass2.PasswordChar = '*';
+            this.tbxCanbioPass2.Size = new System.Drawing.Size(210, 31);
+            this.tbxCanbioPass2.TabIndex = 24;
+            // 
+            // lblCambioPass2
+            // 
+            this.lblCambioPass2.AutoSize = true;
+            this.lblCambioPass2.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCambioPass2.ForeColor = System.Drawing.Color.White;
+            this.lblCambioPass2.Location = new System.Drawing.Point(94, 132);
+            this.lblCambioPass2.Name = "lblCambioPass2";
+            this.lblCambioPass2.Size = new System.Drawing.Size(151, 22);
+            this.lblCambioPass2.TabIndex = 23;
+            this.lblCambioPass2.Text = "UNA VEZ MAS...";
+            // 
+            // btnNoVerCambioPass
+            // 
+            this.btnNoVerCambioPass.BackColor = System.Drawing.Color.White;
+            this.btnNoVerCambioPass.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnNoVerCambioPass.BackgroundImage")));
+            this.btnNoVerCambioPass.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnNoVerCambioPass.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnNoVerCambioPass.InitialImage = null;
+            this.btnNoVerCambioPass.Location = new System.Drawing.Point(321, 162);
+            this.btnNoVerCambioPass.Name = "btnNoVerCambioPass";
+            this.btnNoVerCambioPass.Size = new System.Drawing.Size(32, 26);
+            this.btnNoVerCambioPass.TabIndex = 22;
+            this.btnNoVerCambioPass.TabStop = false;
+            this.btnNoVerCambioPass.Visible = false;
+            this.btnNoVerCambioPass.Click += new System.EventHandler(this.btnVerCambioPass_Click);
+            // 
+            // btnVerCambioPass
+            // 
+            this.btnVerCambioPass.BackColor = System.Drawing.Color.White;
+            this.btnVerCambioPass.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnVerCambioPass.BackgroundImage")));
+            this.btnVerCambioPass.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnVerCambioPass.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnVerCambioPass.InitialImage = null;
+            this.btnVerCambioPass.Location = new System.Drawing.Point(321, 162);
+            this.btnVerCambioPass.Name = "btnVerCambioPass";
+            this.btnVerCambioPass.Size = new System.Drawing.Size(32, 26);
+            this.btnVerCambioPass.TabIndex = 21;
+            this.btnVerCambioPass.TabStop = false;
+            this.btnVerCambioPass.Click += new System.EventHandler(this.btnVerCambioPass_Click);
+            // 
+            // tbxCanbioPass
+            // 
+            this.tbxCanbioPass.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxCanbioPass.Location = new System.Drawing.Point(98, 78);
+            this.tbxCanbioPass.Name = "tbxCanbioPass";
+            this.tbxCanbioPass.PasswordChar = '*';
+            this.tbxCanbioPass.Size = new System.Drawing.Size(210, 31);
+            this.tbxCanbioPass.TabIndex = 20;
+            // 
+            // lblCambioPass
+            // 
+            this.lblCambioPass.AutoSize = true;
+            this.lblCambioPass.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCambioPass.ForeColor = System.Drawing.Color.White;
+            this.lblCambioPass.Location = new System.Drawing.Point(94, 51);
+            this.lblCambioPass.Name = "lblCambioPass";
+            this.lblCambioPass.Size = new System.Drawing.Size(139, 22);
+            this.lblCambioPass.TabIndex = 19;
+            this.lblCambioPass.Text = "CONTRASEÑA";
+            // 
+            // btnCambioPass
+            // 
+            this.btnCambioPass.BackColor = System.Drawing.Color.Transparent;
+            this.btnCambioPass.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnCambioPass.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gainsboro;
+            this.btnCambioPass.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
+            this.btnCambioPass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCambioPass.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCambioPass.ForeColor = System.Drawing.Color.White;
+            this.btnCambioPass.Location = new System.Drawing.Point(98, 226);
+            this.btnCambioPass.Name = "btnCambioPass";
+            this.btnCambioPass.Size = new System.Drawing.Size(210, 42);
+            this.btnCambioPass.TabIndex = 3;
+            this.btnCambioPass.Text = "Cambiar";
+            this.btnCambioPass.UseVisualStyleBackColor = false;
+            this.btnCambioPass.Click += new System.EventHandler(this.btnCambioPass_Click);
+            // 
             // panel5
             // 
             this.panel5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel5.BackColor = System.Drawing.Color.DimGray;
-            this.panel5.Controls.Add(this.label17);
+            this.panel5.Controls.Add(this.lblMDPerfil);
             this.panel5.Controls.Add(this.lblMD1perfil);
             this.panel5.Location = new System.Drawing.Point(52, 277);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(325, 53);
             this.panel5.TabIndex = 12;
             // 
-            // label17
+            // lblMDPerfil
             // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.ForeColor = System.Drawing.Color.LightGray;
-            this.label17.Location = new System.Drawing.Point(15, 26);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(38, 21);
-            this.label17.TabIndex = 6;
-            this.label17.Text = "n/d";
+            this.lblMDPerfil.AutoSize = true;
+            this.lblMDPerfil.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMDPerfil.ForeColor = System.Drawing.Color.LightGray;
+            this.lblMDPerfil.Location = new System.Drawing.Point(15, 26);
+            this.lblMDPerfil.Name = "lblMDPerfil";
+            this.lblMDPerfil.Size = new System.Drawing.Size(115, 21);
+            this.lblMDPerfil.TabIndex = 6;
+            this.lblMDPerfil.Text = "sin completar";
             // 
             // lblMD1perfil
             // 
@@ -143,23 +258,23 @@
             // 
             this.panel3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel3.BackColor = System.Drawing.Color.DimGray;
-            this.panel3.Controls.Add(this.label16);
+            this.panel3.Controls.Add(this.lblMDCorreo);
             this.panel3.Controls.Add(this.lblMD1correo);
             this.panel3.Location = new System.Drawing.Point(52, 218);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(325, 53);
             this.panel3.TabIndex = 11;
             // 
-            // label16
+            // lblMDCorreo
             // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.ForeColor = System.Drawing.Color.LightGray;
-            this.label16.Location = new System.Drawing.Point(15, 25);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(38, 21);
-            this.label16.TabIndex = 5;
-            this.label16.Text = "n/d";
+            this.lblMDCorreo.AutoSize = true;
+            this.lblMDCorreo.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMDCorreo.ForeColor = System.Drawing.Color.LightGray;
+            this.lblMDCorreo.Location = new System.Drawing.Point(15, 25);
+            this.lblMDCorreo.Name = "lblMDCorreo";
+            this.lblMDCorreo.Size = new System.Drawing.Size(115, 21);
+            this.lblMDCorreo.TabIndex = 5;
+            this.lblMDCorreo.Text = "sin completar";
             // 
             // lblMD1correo
             // 
@@ -176,23 +291,23 @@
             // 
             this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel2.BackColor = System.Drawing.Color.DimGray;
-            this.panel2.Controls.Add(this.label15);
+            this.panel2.Controls.Add(this.lblMDUsuario);
             this.panel2.Controls.Add(this.lblMD1usuario);
             this.panel2.Location = new System.Drawing.Point(52, 159);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(325, 53);
             this.panel2.TabIndex = 10;
             // 
-            // label15
+            // lblMDUsuario
             // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.Color.LightGray;
-            this.label15.Location = new System.Drawing.Point(15, 28);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(38, 21);
-            this.label15.TabIndex = 5;
-            this.label15.Text = "n/d";
+            this.lblMDUsuario.AutoSize = true;
+            this.lblMDUsuario.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMDUsuario.ForeColor = System.Drawing.Color.LightGray;
+            this.lblMDUsuario.Location = new System.Drawing.Point(15, 28);
+            this.lblMDUsuario.Name = "lblMDUsuario";
+            this.lblMDUsuario.Size = new System.Drawing.Size(115, 21);
+            this.lblMDUsuario.TabIndex = 5;
+            this.lblMDUsuario.Text = "sin completar";
             // 
             // lblMD1usuario
             // 
@@ -240,11 +355,28 @@
             // 
             this.panelMD2sup.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panelMD2sup.BackColor = System.Drawing.Color.Black;
+            this.panelMD2sup.Controls.Add(this.btnMDGuardar);
             this.panelMD2sup.Controls.Add(this.lblDatosGeneral);
             this.panelMD2sup.Location = new System.Drawing.Point(503, 108);
             this.panelMD2sup.Name = "panelMD2sup";
             this.panelMD2sup.Size = new System.Drawing.Size(724, 51);
             this.panelMD2sup.TabIndex = 4;
+            // 
+            // btnMDGuardar
+            // 
+            this.btnMDGuardar.BackColor = System.Drawing.Color.Black;
+            this.btnMDGuardar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMDGuardar.BackgroundImage")));
+            this.btnMDGuardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnMDGuardar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMDGuardar.FlatAppearance.BorderSize = 0;
+            this.btnMDGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMDGuardar.Location = new System.Drawing.Point(672, 10);
+            this.btnMDGuardar.Name = "btnMDGuardar";
+            this.btnMDGuardar.Size = new System.Drawing.Size(35, 31);
+            this.btnMDGuardar.TabIndex = 15;
+            this.btnMDGuardar.UseVisualStyleBackColor = false;
+            this.btnMDGuardar.Visible = false;
+            this.btnMDGuardar.Click += new System.EventHandler(this.btnMDGuardar_Click);
             // 
             // lblDatosGeneral
             // 
@@ -262,7 +394,6 @@
             this.panelMD2inf.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panelMD2inf.BackColor = System.Drawing.Color.Gray;
             this.panelMD2inf.Controls.Add(this.panel12);
-            this.panelMD2inf.Controls.Add(this.panel10);
             this.panelMD2inf.Controls.Add(this.panel8);
             this.panelMD2inf.Controls.Add(this.panel6);
             this.panelMD2inf.Controls.Add(this.panel4);
@@ -276,23 +407,33 @@
             // 
             this.panel12.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel12.BackColor = System.Drawing.Color.DimGray;
-            this.panel12.Controls.Add(this.label10);
+            this.panel12.Controls.Add(this.tbxMDTelefono);
+            this.panel12.Controls.Add(this.lblMDTelefono);
             this.panel12.Controls.Add(this.label13);
-            this.panel12.Location = new System.Drawing.Point(52, 264);
+            this.panel12.Location = new System.Drawing.Point(65, 270);
             this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(219, 45);
+            this.panel12.Size = new System.Drawing.Size(219, 54);
             this.panel12.TabIndex = 9;
             // 
-            // label10
+            // tbxMDTelefono
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.LightGray;
-            this.label10.Location = new System.Drawing.Point(16, 19);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(38, 21);
-            this.label10.TabIndex = 4;
-            this.label10.Text = "n/d";
+            this.tbxMDTelefono.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxMDTelefono.Location = new System.Drawing.Point(7, 22);
+            this.tbxMDTelefono.Name = "tbxMDTelefono";
+            this.tbxMDTelefono.Size = new System.Drawing.Size(182, 26);
+            this.tbxMDTelefono.TabIndex = 14;
+            this.tbxMDTelefono.Visible = false;
+            // 
+            // lblMDTelefono
+            // 
+            this.lblMDTelefono.AutoSize = true;
+            this.lblMDTelefono.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMDTelefono.ForeColor = System.Drawing.Color.LightGray;
+            this.lblMDTelefono.Location = new System.Drawing.Point(16, 19);
+            this.lblMDTelefono.Name = "lblMDTelefono";
+            this.lblMDTelefono.Size = new System.Drawing.Size(115, 21);
+            this.lblMDTelefono.TabIndex = 4;
+            this.lblMDTelefono.Text = "sin completar";
             // 
             // label13
             // 
@@ -305,60 +446,38 @@
             this.label13.TabIndex = 2;
             this.label13.Text = "Telefono";
             // 
-            // panel10
-            // 
-            this.panel10.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel10.BackColor = System.Drawing.Color.DimGray;
-            this.panel10.Controls.Add(this.label12);
-            this.panel10.Controls.Add(this.label11);
-            this.panel10.Location = new System.Drawing.Point(420, 264);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(236, 45);
-            this.panel10.TabIndex = 7;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.LightGray;
-            this.label12.Location = new System.Drawing.Point(16, 19);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(38, 21);
-            this.label12.TabIndex = 4;
-            this.label12.Text = "n/d";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(3, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(97, 19);
-            this.label11.TabIndex = 2;
-            this.label11.Text = "Suscripcion";
-            // 
             // panel8
             // 
             this.panel8.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel8.BackColor = System.Drawing.Color.DimGray;
-            this.panel8.Controls.Add(this.label8);
+            this.panel8.Controls.Add(this.cbxMDPais);
+            this.panel8.Controls.Add(this.lblMDPais);
             this.panel8.Controls.Add(this.label9);
-            this.panel8.Location = new System.Drawing.Point(52, 205);
+            this.panel8.Location = new System.Drawing.Point(65, 210);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(256, 45);
+            this.panel8.Size = new System.Drawing.Size(256, 54);
             this.panel8.TabIndex = 9;
             // 
-            // label8
+            // cbxMDPais
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.LightGray;
-            this.label8.Location = new System.Drawing.Point(16, 19);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(38, 21);
-            this.label8.TabIndex = 4;
-            this.label8.Text = "n/d";
+            this.cbxMDPais.Font = new System.Drawing.Font("Century Gothic", 11.25F);
+            this.cbxMDPais.FormattingEnabled = true;
+            this.cbxMDPais.Location = new System.Drawing.Point(7, 19);
+            this.cbxMDPais.Name = "cbxMDPais";
+            this.cbxMDPais.Size = new System.Drawing.Size(212, 28);
+            this.cbxMDPais.TabIndex = 13;
+            this.cbxMDPais.Visible = false;
+            // 
+            // lblMDPais
+            // 
+            this.lblMDPais.AutoSize = true;
+            this.lblMDPais.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMDPais.ForeColor = System.Drawing.Color.LightGray;
+            this.lblMDPais.Location = new System.Drawing.Point(16, 19);
+            this.lblMDPais.Name = "lblMDPais";
+            this.lblMDPais.Size = new System.Drawing.Size(115, 21);
+            this.lblMDPais.TabIndex = 4;
+            this.lblMDPais.Text = "sin completar";
             // 
             // label9
             // 
@@ -375,23 +494,33 @@
             // 
             this.panel6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel6.BackColor = System.Drawing.Color.DimGray;
-            this.panel6.Controls.Add(this.label4);
+            this.panel6.Controls.Add(this.tbxMDDireccion);
+            this.panel6.Controls.Add(this.lblMDDireccion);
             this.panel6.Controls.Add(this.label5);
-            this.panel6.Location = new System.Drawing.Point(52, 148);
+            this.panel6.Location = new System.Drawing.Point(65, 150);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(554, 45);
+            this.panel6.Size = new System.Drawing.Size(554, 54);
             this.panel6.TabIndex = 7;
             // 
-            // label4
+            // tbxMDDireccion
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.LightGray;
-            this.label4.Location = new System.Drawing.Point(16, 20);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(38, 21);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "n/d";
+            this.tbxMDDireccion.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxMDDireccion.Location = new System.Drawing.Point(7, 22);
+            this.tbxMDDireccion.Name = "tbxMDDireccion";
+            this.tbxMDDireccion.Size = new System.Drawing.Size(498, 26);
+            this.tbxMDDireccion.TabIndex = 12;
+            this.tbxMDDireccion.Visible = false;
+            // 
+            // lblMDDireccion
+            // 
+            this.lblMDDireccion.AutoSize = true;
+            this.lblMDDireccion.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMDDireccion.ForeColor = System.Drawing.Color.LightGray;
+            this.lblMDDireccion.Location = new System.Drawing.Point(16, 20);
+            this.lblMDDireccion.Name = "lblMDDireccion";
+            this.lblMDDireccion.Size = new System.Drawing.Size(115, 21);
+            this.lblMDDireccion.TabIndex = 4;
+            this.lblMDDireccion.Text = "sin completar";
             // 
             // label5
             // 
@@ -408,23 +537,33 @@
             // 
             this.panel4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel4.BackColor = System.Drawing.Color.DimGray;
-            this.panel4.Controls.Add(this.label2);
+            this.panel4.Controls.Add(this.tbxMDApellidos);
+            this.panel4.Controls.Add(this.lblMDApellidos);
             this.panel4.Controls.Add(this.label3);
-            this.panel4.Location = new System.Drawing.Point(52, 88);
+            this.panel4.Location = new System.Drawing.Point(65, 90);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(516, 45);
+            this.panel4.Size = new System.Drawing.Size(516, 54);
             this.panel4.TabIndex = 7;
             // 
-            // label2
+            // tbxMDApellidos
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.LightGray;
-            this.label2.Location = new System.Drawing.Point(16, 19);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(38, 21);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "n/d";
+            this.tbxMDApellidos.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxMDApellidos.Location = new System.Drawing.Point(7, 22);
+            this.tbxMDApellidos.Name = "tbxMDApellidos";
+            this.tbxMDApellidos.Size = new System.Drawing.Size(407, 26);
+            this.tbxMDApellidos.TabIndex = 11;
+            this.tbxMDApellidos.Visible = false;
+            // 
+            // lblMDApellidos
+            // 
+            this.lblMDApellidos.AutoSize = true;
+            this.lblMDApellidos.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMDApellidos.ForeColor = System.Drawing.Color.LightGray;
+            this.lblMDApellidos.Location = new System.Drawing.Point(16, 19);
+            this.lblMDApellidos.Name = "lblMDApellidos";
+            this.lblMDApellidos.Size = new System.Drawing.Size(115, 21);
+            this.lblMDApellidos.TabIndex = 4;
+            this.lblMDApellidos.Text = "sin completar";
             // 
             // label3
             // 
@@ -441,23 +580,33 @@
             // 
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel1.BackColor = System.Drawing.Color.DimGray;
-            this.panel1.Controls.Add(this.lblMD2nombre);
+            this.panel1.Controls.Add(this.tbxMDNombre);
+            this.panel1.Controls.Add(this.lblMDNombre);
             this.panel1.Controls.Add(this.lblMD2TTLnombre);
-            this.panel1.Location = new System.Drawing.Point(52, 28);
+            this.panel1.Location = new System.Drawing.Point(65, 30);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(478, 45);
+            this.panel1.Size = new System.Drawing.Size(478, 54);
             this.panel1.TabIndex = 5;
             // 
-            // lblMD2nombre
+            // tbxMDNombre
             // 
-            this.lblMD2nombre.AutoSize = true;
-            this.lblMD2nombre.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMD2nombre.ForeColor = System.Drawing.Color.LightGray;
-            this.lblMD2nombre.Location = new System.Drawing.Point(16, 19);
-            this.lblMD2nombre.Name = "lblMD2nombre";
-            this.lblMD2nombre.Size = new System.Drawing.Size(38, 21);
-            this.lblMD2nombre.TabIndex = 3;
-            this.lblMD2nombre.Text = "n/d";
+            this.tbxMDNombre.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxMDNombre.Location = new System.Drawing.Point(7, 22);
+            this.tbxMDNombre.Name = "tbxMDNombre";
+            this.tbxMDNombre.Size = new System.Drawing.Size(309, 26);
+            this.tbxMDNombre.TabIndex = 10;
+            this.tbxMDNombre.Visible = false;
+            // 
+            // lblMDNombre
+            // 
+            this.lblMDNombre.AutoSize = true;
+            this.lblMDNombre.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMDNombre.ForeColor = System.Drawing.Color.LightGray;
+            this.lblMDNombre.Location = new System.Drawing.Point(16, 19);
+            this.lblMDNombre.Name = "lblMDNombre";
+            this.lblMDNombre.Size = new System.Drawing.Size(115, 21);
+            this.lblMDNombre.TabIndex = 3;
+            this.lblMDNombre.Text = "sin completar";
             // 
             // lblMD2TTLnombre
             // 
@@ -474,39 +623,16 @@
             // 
             this.panelMD3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panelMD3.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.panelMD3.Controls.Add(this.label14);
-            this.panelMD3.Controls.Add(this.pictureBox2);
             this.panelMD3.Controls.Add(this.label6);
-            this.panelMD3.Controls.Add(this.pictureBox6);
+            this.panelMD3.Controls.Add(this.pbxMDEliminarCuenta);
             this.panelMD3.Controls.Add(this.label1);
-            this.panelMD3.Controls.Add(this.pictureBox4);
+            this.panelMD3.Controls.Add(this.pbxMDCompletarDatos);
             this.panelMD3.Controls.Add(this.label7);
-            this.panelMD3.Controls.Add(this.pictureBox3);
+            this.panelMD3.Controls.Add(this.pbxMDCambioPass);
             this.panelMD3.Location = new System.Drawing.Point(40, 562);
             this.panelMD3.Name = "panelMD3";
             this.panelMD3.Size = new System.Drawing.Size(1187, 69);
             this.panelMD3.TabIndex = 4;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.Color.Black;
-            this.label14.Location = new System.Drawing.Point(662, 50);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(140, 17);
-            this.label14.TabIndex = 11;
-            this.label14.Text = "Cambiar suscripcion";
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(703, 3);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(52, 44);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 10;
-            this.pictureBox2.TabStop = false;
             // 
             // label6
             // 
@@ -519,57 +645,80 @@
             this.label6.TabIndex = 9;
             this.label6.Text = "Eliminar cuenta";
             // 
-            // pictureBox6
+            // pbxMDEliminarCuenta
             // 
-            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(1017, 3);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(52, 44);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox6.TabIndex = 8;
-            this.pictureBox6.TabStop = false;
+            this.pbxMDEliminarCuenta.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbxMDEliminarCuenta.Image = ((System.Drawing.Image)(resources.GetObject("pbxMDEliminarCuenta.Image")));
+            this.pbxMDEliminarCuenta.Location = new System.Drawing.Point(1017, 3);
+            this.pbxMDEliminarCuenta.Name = "pbxMDEliminarCuenta";
+            this.pbxMDEliminarCuenta.Size = new System.Drawing.Size(52, 44);
+            this.pbxMDEliminarCuenta.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxMDEliminarCuenta.TabIndex = 8;
+            this.pbxMDEliminarCuenta.TabStop = false;
+            this.pbxMDEliminarCuenta.Click += new System.EventHandler(this.pbxMDEliminarCuenta_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(348, 50);
+            this.label1.Location = new System.Drawing.Point(491, 50);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(134, 17);
+            this.label1.Size = new System.Drawing.Size(186, 17);
             this.label1.TabIndex = 5;
-            this.label1.Text = "Modificar mis datos";
+            this.label1.Text = "Completar/Modificar datos";
             // 
-            // pictureBox4
+            // pbxMDCompletarDatos
             // 
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(389, 3);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(52, 44);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 4;
-            this.pictureBox4.TabStop = false;
+            this.pbxMDCompletarDatos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbxMDCompletarDatos.Image = ((System.Drawing.Image)(resources.GetObject("pbxMDCompletarDatos.Image")));
+            this.pbxMDCompletarDatos.Location = new System.Drawing.Point(560, 3);
+            this.pbxMDCompletarDatos.Name = "pbxMDCompletarDatos";
+            this.pbxMDCompletarDatos.Size = new System.Drawing.Size(52, 44);
+            this.pbxMDCompletarDatos.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxMDCompletarDatos.TabIndex = 4;
+            this.pbxMDCompletarDatos.TabStop = false;
+            this.pbxMDCompletarDatos.Click += new System.EventHandler(this.pbxMDCompletarDatos_Click);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(19, 50);
+            this.label7.Location = new System.Drawing.Point(56, 50);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(160, 17);
             this.label7.TabIndex = 3;
             this.label7.Text = "Cambio de contraseña";
             // 
-            // pictureBox3
+            // pbxMDCambioPass
             // 
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(71, 3);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(52, 44);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 0;
-            this.pictureBox3.TabStop = false;
+            this.pbxMDCambioPass.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbxMDCambioPass.Image = ((System.Drawing.Image)(resources.GetObject("pbxMDCambioPass.Image")));
+            this.pbxMDCambioPass.Location = new System.Drawing.Point(109, 3);
+            this.pbxMDCambioPass.Name = "pbxMDCambioPass";
+            this.pbxMDCambioPass.Size = new System.Drawing.Size(52, 44);
+            this.pbxMDCambioPass.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxMDCambioPass.TabIndex = 0;
+            this.pbxMDCambioPass.TabStop = false;
+            this.pbxMDCambioPass.Click += new System.EventHandler(this.pbxMDCambioPass_Click);
+            // 
+            // btnCancelarCambioPass
+            // 
+            this.btnCancelarCambioPass.BackColor = System.Drawing.Color.Transparent;
+            this.btnCancelarCambioPass.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnCancelarCambioPass.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gainsboro;
+            this.btnCancelarCambioPass.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
+            this.btnCancelarCambioPass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelarCambioPass.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelarCambioPass.ForeColor = System.Drawing.Color.White;
+            this.btnCancelarCambioPass.Location = new System.Drawing.Point(336, 336);
+            this.btnCancelarCambioPass.Name = "btnCancelarCambioPass";
+            this.btnCancelarCambioPass.Size = new System.Drawing.Size(81, 24);
+            this.btnCancelarCambioPass.TabIndex = 25;
+            this.btnCancelarCambioPass.Text = "Cancelar";
+            this.btnCancelarCambioPass.UseVisualStyleBackColor = false;
+            this.btnCancelarCambioPass.Click += new System.EventHandler(this.btnCancelarCambioPass_Click);
             // 
             // MisDatos
             // 
@@ -585,6 +734,10 @@
             this.Name = "MisDatos";
             this.Text = "MisDatos";
             this.panelMD1inf.ResumeLayout(false);
+            this.panelCambioPass.ResumeLayout(false);
+            this.panelCambioPass.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnNoVerCambioPass)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnVerCambioPass)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.panel3.ResumeLayout(false);
@@ -599,8 +752,6 @@
             this.panelMD2inf.ResumeLayout(false);
             this.panel12.ResumeLayout(false);
             this.panel12.PerformLayout();
-            this.panel10.ResumeLayout(false);
-            this.panel10.PerformLayout();
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
             this.panel6.ResumeLayout(false);
@@ -611,10 +762,9 @@
             this.panel1.PerformLayout();
             this.panelMD3.ResumeLayout(false);
             this.panelMD3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxMDEliminarCuenta)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxMDCompletarDatos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxMDCambioPass)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -633,17 +783,15 @@
         private System.Windows.Forms.Panel panelMD2inf;
         private System.Windows.Forms.Panel panelMD3;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pbxMDCambioPass;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.PictureBox pbxMDEliminarCuenta;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox pbxMDCompletarDatos;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblMD2TTLnombre;
         private System.Windows.Forms.Panel panel12;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Panel panel10;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Panel panel6;
@@ -651,18 +799,30 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label lblMD2nombre;
+        private System.Windows.Forms.Label lblMDTelefono;
+        private System.Windows.Forms.Label lblMDPais;
+        private System.Windows.Forms.Label lblMDDireccion;
+        private System.Windows.Forms.Label lblMDApellidos;
+        private System.Windows.Forms.Label lblMDNombre;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label lblMDPerfil;
+        private System.Windows.Forms.Label lblMDCorreo;
+        private System.Windows.Forms.Label lblMDUsuario;
+        private System.Windows.Forms.Button btnMDGuardar;
+        private System.Windows.Forms.TextBox tbxMDTelefono;
+        private System.Windows.Forms.TextBox tbxMDDireccion;
+        private System.Windows.Forms.TextBox tbxMDApellidos;
+        private System.Windows.Forms.TextBox tbxMDNombre;
+        private System.Windows.Forms.ComboBox cbxMDPais;
+        private System.Windows.Forms.Panel panelCambioPass;
+        private System.Windows.Forms.Button btnCambioPass;
+        private System.Windows.Forms.PictureBox btnNoVerCambioPass;
+        private System.Windows.Forms.PictureBox btnVerCambioPass;
+        private System.Windows.Forms.TextBox tbxCanbioPass;
+        private System.Windows.Forms.Label lblCambioPass;
+        private System.Windows.Forms.TextBox tbxCanbioPass2;
+        private System.Windows.Forms.Label lblCambioPass2;
+        private System.Windows.Forms.Button btnCancelarCambioPass;
     }
 }

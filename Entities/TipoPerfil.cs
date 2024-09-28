@@ -12,5 +12,17 @@ namespace MisCuentas_desk.Entities
     {
         public string Tipo { get; set; }
         public string Descripcion { get; set; }
+
+        
+        private TipoPerfil(string tipo, string descripcion)
+        {
+            Tipo = tipo;
+            Descripcion = descripcion;
+        }
+
+        public static readonly TipoPerfil Admin = new TipoPerfil("ADMIN", "Administrador");
+        public static readonly TipoPerfil Usuario = new TipoPerfil("USER", "Usuario");
+
     }
+
 }

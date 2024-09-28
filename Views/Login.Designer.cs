@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panelInicoPrincipal = new System.Windows.Forms.Panel();
             this.btnLogin = new System.Windows.Forms.Button();
@@ -39,6 +40,8 @@
             this.lblRegistro = new System.Windows.Forms.Label();
             this.panelContenedorLogin = new System.Windows.Forms.Panel();
             this.panelEntrar = new System.Windows.Forms.Panel();
+            this.btnNoVerPassLogin = new System.Windows.Forms.PictureBox();
+            this.btnVerPassLogin = new System.Windows.Forms.PictureBox();
             this.btnEntrar = new System.Windows.Forms.Button();
             this.lblTituloEntrar = new System.Windows.Forms.Label();
             this.tbxPass = new System.Windows.Forms.TextBox();
@@ -46,6 +49,8 @@
             this.lblPass = new System.Windows.Forms.Label();
             this.lblLoginCorreo = new System.Windows.Forms.Label();
             this.panelRegistrar = new System.Windows.Forms.Panel();
+            this.btnNoVerPassRegistro = new System.Windows.Forms.PictureBox();
+            this.btnVerPassRegistro = new System.Windows.Forms.PictureBox();
             this.btnRegistrarse = new System.Windows.Forms.Button();
             this.tbxCorreoRegistro = new System.Windows.Forms.TextBox();
             this.lblCorreo = new System.Windows.Forms.Label();
@@ -57,7 +62,11 @@
             this.panelInicoPrincipal.SuspendLayout();
             this.panelContenedorLogin.SuspendLayout();
             this.panelEntrar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnNoVerPassLogin)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnVerPassLogin)).BeginInit();
             this.panelRegistrar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnNoVerPassRegistro)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnVerPassRegistro)).BeginInit();
             this.SuspendLayout();
             // 
             // timer1
@@ -173,6 +182,8 @@
             // panelEntrar
             // 
             this.panelEntrar.BackColor = System.Drawing.Color.White;
+            this.panelEntrar.Controls.Add(this.btnNoVerPassLogin);
+            this.panelEntrar.Controls.Add(this.btnVerPassLogin);
             this.panelEntrar.Controls.Add(this.btnEntrar);
             this.panelEntrar.Controls.Add(this.lblTituloEntrar);
             this.panelEntrar.Controls.Add(this.tbxPass);
@@ -181,8 +192,37 @@
             this.panelEntrar.Controls.Add(this.lblLoginCorreo);
             this.panelEntrar.Location = new System.Drawing.Point(9, 6);
             this.panelEntrar.Name = "panelEntrar";
-            this.panelEntrar.Size = new System.Drawing.Size(342, 391);
+            this.panelEntrar.Size = new System.Drawing.Size(342, 392);
             this.panelEntrar.TabIndex = 15;
+            // 
+            // btnNoVerPassLogin
+            // 
+            this.btnNoVerPassLogin.BackColor = System.Drawing.Color.Transparent;
+            this.btnNoVerPassLogin.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnNoVerPassLogin.BackgroundImage")));
+            this.btnNoVerPassLogin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnNoVerPassLogin.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnNoVerPassLogin.InitialImage = null;
+            this.btnNoVerPassLogin.Location = new System.Drawing.Point(289, 216);
+            this.btnNoVerPassLogin.Name = "btnNoVerPassLogin";
+            this.btnNoVerPassLogin.Size = new System.Drawing.Size(32, 26);
+            this.btnNoVerPassLogin.TabIndex = 18;
+            this.btnNoVerPassLogin.TabStop = false;
+            this.btnNoVerPassLogin.Visible = false;
+            this.btnNoVerPassLogin.Click += new System.EventHandler(this.btnVerPassLogin_Click);
+            // 
+            // btnVerPassLogin
+            // 
+            this.btnVerPassLogin.BackColor = System.Drawing.Color.Transparent;
+            this.btnVerPassLogin.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnVerPassLogin.BackgroundImage")));
+            this.btnVerPassLogin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnVerPassLogin.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnVerPassLogin.InitialImage = null;
+            this.btnVerPassLogin.Location = new System.Drawing.Point(289, 216);
+            this.btnVerPassLogin.Name = "btnVerPassLogin";
+            this.btnVerPassLogin.Size = new System.Drawing.Size(32, 26);
+            this.btnVerPassLogin.TabIndex = 16;
+            this.btnVerPassLogin.TabStop = false;
+            this.btnVerPassLogin.Click += new System.EventHandler(this.btnVerPassLogin_Click);
             // 
             // btnEntrar
             // 
@@ -212,9 +252,9 @@
             this.tbxPass.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbxPass.Location = new System.Drawing.Point(73, 211);
             this.tbxPass.Name = "tbxPass";
+            this.tbxPass.PasswordChar = '*';
             this.tbxPass.Size = new System.Drawing.Size(210, 31);
             this.tbxPass.TabIndex = 3;
-            this.tbxPass.UseSystemPasswordChar = true;
             // 
             // tbxUsuario
             // 
@@ -247,6 +287,8 @@
             // panelRegistrar
             // 
             this.panelRegistrar.BackColor = System.Drawing.Color.White;
+            this.panelRegistrar.Controls.Add(this.btnNoVerPassRegistro);
+            this.panelRegistrar.Controls.Add(this.btnVerPassRegistro);
             this.panelRegistrar.Controls.Add(this.btnRegistrarse);
             this.panelRegistrar.Controls.Add(this.tbxCorreoRegistro);
             this.panelRegistrar.Controls.Add(this.lblCorreo);
@@ -259,6 +301,35 @@
             this.panelRegistrar.Name = "panelRegistrar";
             this.panelRegistrar.Size = new System.Drawing.Size(342, 392);
             this.panelRegistrar.TabIndex = 9;
+            // 
+            // btnNoVerPassRegistro
+            // 
+            this.btnNoVerPassRegistro.BackColor = System.Drawing.Color.Transparent;
+            this.btnNoVerPassRegistro.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnNoVerPassRegistro.BackgroundImage")));
+            this.btnNoVerPassRegistro.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnNoVerPassRegistro.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnNoVerPassRegistro.InitialImage = null;
+            this.btnNoVerPassRegistro.Location = new System.Drawing.Point(295, 253);
+            this.btnNoVerPassRegistro.Name = "btnNoVerPassRegistro";
+            this.btnNoVerPassRegistro.Size = new System.Drawing.Size(32, 26);
+            this.btnNoVerPassRegistro.TabIndex = 17;
+            this.btnNoVerPassRegistro.TabStop = false;
+            this.btnNoVerPassRegistro.Visible = false;
+            this.btnNoVerPassRegistro.Click += new System.EventHandler(this.btnVerPassRegistro_Click);
+            // 
+            // btnVerPassRegistro
+            // 
+            this.btnVerPassRegistro.BackColor = System.Drawing.Color.Transparent;
+            this.btnVerPassRegistro.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnVerPassRegistro.BackgroundImage")));
+            this.btnVerPassRegistro.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnVerPassRegistro.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnVerPassRegistro.InitialImage = null;
+            this.btnVerPassRegistro.Location = new System.Drawing.Point(295, 253);
+            this.btnVerPassRegistro.Name = "btnVerPassRegistro";
+            this.btnVerPassRegistro.Size = new System.Drawing.Size(32, 26);
+            this.btnVerPassRegistro.TabIndex = 16;
+            this.btnVerPassRegistro.TabStop = false;
+            this.btnVerPassRegistro.Click += new System.EventHandler(this.btnVerPassRegistro_Click);
             // 
             // btnRegistrarse
             // 
@@ -306,9 +377,9 @@
             this.tbxPassRegistro.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbxPassRegistro.Location = new System.Drawing.Point(79, 248);
             this.tbxPassRegistro.Name = "tbxPassRegistro";
+            this.tbxPassRegistro.PasswordChar = '*';
             this.tbxPassRegistro.Size = new System.Drawing.Size(210, 31);
             this.tbxPassRegistro.TabIndex = 9;
-            this.tbxPassRegistro.UseSystemPasswordChar = true;
             // 
             // tbxNombreRegistro
             // 
@@ -351,8 +422,12 @@
             this.panelContenedorLogin.ResumeLayout(false);
             this.panelEntrar.ResumeLayout(false);
             this.panelEntrar.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnNoVerPassLogin)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnVerPassLogin)).EndInit();
             this.panelRegistrar.ResumeLayout(false);
             this.panelRegistrar.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnNoVerPassRegistro)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnVerPassRegistro)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -383,6 +458,10 @@
         private System.Windows.Forms.TextBox tbxUsuario;
         private System.Windows.Forms.Label lblPass;
         private System.Windows.Forms.Label lblLoginCorreo;
+        private System.Windows.Forms.PictureBox btnVerPassLogin;
+        private System.Windows.Forms.PictureBox btnVerPassRegistro;
+        private System.Windows.Forms.PictureBox btnNoVerPassRegistro;
+        private System.Windows.Forms.PictureBox btnNoVerPassLogin;
     }
 }
 

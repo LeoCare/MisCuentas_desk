@@ -16,13 +16,12 @@ namespace MisCuentas_desk.Entities
         public string Contrasenna { get; set; }
         public string Perfil { get; set; }
 
-        // Propiedad de navegación para la relación con TipoPerfil
-        public TipoPerfil TipoPerfil { get; set; }
+        public Personal_Data Personal_Data { get; set; }
 
         // Constructor sin parámetros
-        public Usuario()
-        {
-        }
+        public Usuario() { }
+
+        // Constructor con parámetros
         public Usuario(string nombre, string correo, string contrasenna, string perfil ) 
         { 
             Nombre = nombre;

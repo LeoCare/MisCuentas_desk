@@ -12,7 +12,11 @@ namespace MisCuentas_desk.Services.Usuarios
         }
 
 
-
+        /// <summary>
+        /// Metodo para crear un Usuario.
+        /// </summary>
+        /// <param name="usuario">Nuevo usuario a crear</param>
+        /// <returns>true o false segun insercion exitosa o no</returns>
         public override bool Crear(Usuario usuario)
         {
             try
@@ -32,6 +36,11 @@ namespace MisCuentas_desk.Services.Usuarios
         }
 
 
+        /// <summary>
+        /// Metodo para comprobar el correo el usuario.
+        /// </summary>
+        /// <param name="correo">Correo del usuario registrado</param>
+        /// <returns>true o false segun corresponda</returns>
         public bool CorreoExiste(string correo)
         {
             try
@@ -47,6 +56,7 @@ namespace MisCuentas_desk.Services.Usuarios
                 return false;
             }
         }
+
 
         /// <summary>
         /// Metodo para obtener el usuario segun el correo
@@ -91,6 +101,29 @@ namespace MisCuentas_desk.Services.Usuarios
             }
         }
 
+
+        /// <summary>
+        /// Metodo para crear un Usuario.
+        /// </summary>
+        /// <param name="usuario">Nuevo usuario a crear</param>
+        /// <returns>true o false segun insercion exitosa o no</returns>
+        public override bool Actualizar(Usuario usuario)
+        {
+            try
+            {
+                // Hashear la contraseña antes de guardarla
+                usuario.Contrasenna = BCrypt.Net.BCrypt.HashPassword(usuario.Contrasenna);
+
+                // Llamar al método base para crear el usuario
+                base.Actualizar(usuario);
+                return true;
+
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+        }
     }
     
 }

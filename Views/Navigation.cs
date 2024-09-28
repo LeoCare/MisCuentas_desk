@@ -44,6 +44,7 @@ namespace MisCuentas_desk.Views
             {
                 case MisDatos _:
                     formMisCuentas.btnMisDatos.BackColor = Color.DarkGray;
+                    formMisCuentas.btnMisDatos.FlatStyle = FlatStyle.Flat;
                     formMisCuentas.btnInformes.BackColor = Color.MediumTurquoise;
                     formMisCuentas.btnAvanzado.BackColor = Color.MediumTurquoise;
                     break;
@@ -57,6 +58,11 @@ namespace MisCuentas_desk.Views
                     formMisCuentas.btnMisDatos.BackColor = Color.MediumTurquoise;
                     formMisCuentas.btnInformes.BackColor = Color.MediumTurquoise;
                     formMisCuentas.btnAvanzado.BackColor = Color.DarkGray;
+                    break;
+                default:
+                    formMisCuentas.btnMisDatos.BackColor = Color.MediumTurquoise;
+                    formMisCuentas.btnInformes.BackColor = Color.MediumTurquoise;
+                    formMisCuentas.btnAvanzado.BackColor = Color.MediumTurquoise;
                     break;
             }
         }
