@@ -93,10 +93,26 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Configurations\MisCuentasConnect.cs" />
+    <Compile Include="Entities\Balance.cs" />
+    <Compile Include="Entities\Gasto.cs" />
+    <Compile Include="Entities\Hoja.cs" />
+    <Compile Include="Entities\Pago.cs" />
     <Compile Include="Entities\Personal_Data.cs" />
     <Compile Include="Entities\TipoPerfil.cs" />
     <Compile Include="Entities\Usuario.cs" />
     <Compile Include="Model\Pais.cs" />
+    <Compile Include="Services\Balances\BalanceDAO.cs" />
+    <Compile Include="Services\Balances\BalanceServices.cs" />
+    <Compile Include="Services\Balances\IRepositoryBalance.cs" />
+    <Compile Include="Services\Gastos\GastoDAO.cs" />
+    <Compile Include="Services\Gastos\GastoServices.cs" />
+    <Compile Include="Services\Gastos\IRepositoryGasto.cs" />
+    <Compile Include="Services\Hojas\HojaDAO.cs" />
+    <Compile Include="Services\Hojas\HojaServices.cs" />
+    <Compile Include="Services\Hojas\IRepositoryHoja.cs" />
+    <Compile Include="Services\Pagos\IRepositoryPago.cs" />
+    <Compile Include="Services\Pagos\PagoDAO.cs" />
+    <Compile Include="Services\Pagos\PagoServices.cs" />
     <Compile Include="Services\PersonalData\IRepositoryPersonalData.cs" />
     <Compile Include="Services\PersonalData\PersonalDataDAO.cs" />
     <Compile Include="Services\PersonalData\PersonalDataServices.cs" />
@@ -106,6 +122,7 @@
     <Compile Include="Services\Usuarios\IRepositoryUsuario.cs" />
     <Compile Include="Services\Usuarios\UsuarioDAO.cs" />
     <Compile Include="Services\Usuarios\UsuarioServices.cs" />
+    <Compile Include="Utils\ErrorManager.cs" />
     <Compile Include="Utils\Validaciones.cs" />
     <Compile Include="Views\Avanzado.cs">
       <SubType>Form</SubType>

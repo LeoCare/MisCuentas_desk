@@ -24,7 +24,6 @@ namespace MisCuentas_desk.Services.Usuarios
                 // Hashear la contraseña antes de guardarla
                 usuario.Contrasenna = BCrypt.Net.BCrypt.HashPassword(usuario.Contrasenna);
 
-                // Llamar al método base para crear el usuario
                 base.Crear(usuario);
                 return true;
 
@@ -113,8 +112,7 @@ namespace MisCuentas_desk.Services.Usuarios
             {
                 // Hashear la contraseña antes de guardarla
                 usuario.Contrasenna = BCrypt.Net.BCrypt.HashPassword(usuario.Contrasenna);
-
-                // Llamar al método base para crear el usuario
+          
                 base.Actualizar(usuario);
                 return true;
 

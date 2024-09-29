@@ -116,7 +116,7 @@ namespace MisCuentas_desk
         /// </summary>
         private void btnInformes_Click(object sender, EventArgs e)
         {
-            if (usuario != null) nav.AbrirFormEnPanel(new Informes());
+            if (usuario != null) nav.AbrirFormEnPanel(new Informes(usuario, this));
         }
 
         /// <summary>
@@ -125,7 +125,7 @@ namespace MisCuentas_desk
         /// </summary>
         private void btnAvanzado_Click(object sender, EventArgs e)
         {
-            if (usuario != null) nav.AbrirFormEnPanel(new Avanzado());
+            if (usuario != null) nav.AbrirFormEnPanel(new Avanzado(usuario, this));
         }
 
         /// <summary>

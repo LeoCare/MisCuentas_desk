@@ -43,8 +43,7 @@ namespace MisCuentas_desk.Views
             switch (formHija)
             {
                 case MisDatos _:
-                    formMisCuentas.btnMisDatos.BackColor = Color.DarkGray;
-                    formMisCuentas.btnMisDatos.FlatStyle = FlatStyle.Flat;
+                    formMisCuentas.btnMisDatos.BackColor = Color.DarkGray;                   
                     formMisCuentas.btnInformes.BackColor = Color.MediumTurquoise;
                     formMisCuentas.btnAvanzado.BackColor = Color.MediumTurquoise;
                     break;

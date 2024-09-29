@@ -1,13 +1,12 @@
-﻿using MisCuentas_desk.Entities;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MisCuentas_desk.Services.Usuarios
+namespace MisCuentas_desk.Services.Gastos
 {
-    public interface IRepositoryUsuario<T>
+    public interface IRepositoryGasto<T>
     {
         bool Crear(T entidad);
         T ObtenerPorId(int id);
@@ -15,7 +14,5 @@ namespace MisCuentas_desk.Services.Usuarios
         bool Actualizar(T entidad);
         bool Eliminar(int id);
     }
-
-
 
 }

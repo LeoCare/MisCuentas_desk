@@ -19,14 +19,14 @@ namespace MisCuentas_desk.Views
     public partial class MisDatos : Form
     {
         #region ATRIBUTOS
-        private Usuario usuario;
-        private MisCuentasConnect conn = new MisCuentasConnect();
-        private UsuarioServices usuarioServices;
-        private PersonalDataServices personalDataServices;
-        private FormMisCuentas formMisCuentas;
-        private Navigation nav;
-        private bool StateModificar = false;
-        private bool StateCambioPass = false;
+        private Usuario _usuario;
+        private MisCuentasConnect _conn = new MisCuentasConnect();
+        private UsuarioServices _usuarioServices;
+        private PersonalDataServices _personalDataServices;
+        private FormMisCuentas _formMisCuentas;
+        private Navigation _nav;
+        private bool _stateModificar = false;
+        private bool _stateCambioPass = false;
         #endregion
 
 
@@ -34,13 +34,13 @@ namespace MisCuentas_desk.Views
         public MisDatos(Usuario usuario, FormMisCuentas formMisCuentas)
         {
             InitializeComponent();
-            string cadenaConexion = conn.Conexion();
-            usuarioServices = new UsuarioServices(cadenaConexion);
-            personalDataServices = new PersonalDataServices(cadenaConexion);
-            this.formMisCuentas = formMisCuentas;
-            this.nav = new Navigation(formMisCuentas);
+            string cadenaConexion = _conn.Conexion();
+            _usuarioServices = new UsuarioServices(cadenaConexion);
+            _personalDataServices = new PersonalDataServices(cadenaConexion);
+            _formMisCuentas = formMisCuentas;
+            _nav = new Navigation(formMisCuentas);
+            _usuario = usuario;
 
-            this.usuario = usuario;
             if (usuario != null)
             {
                 CargaDatosPrincipales();
@@ -55,9 +55,9 @@ namespace MisCuentas_desk.Views
         /// </summary>
         private void CargaDatosPrincipales()
         {
-            lblMDUsuario.Text = usuario.Nombre;
-            lblMDCorreo.Text = usuario.Correo;
-            lblMDPerfil.Text = usuario.Perfil;
+            lblMDUsuario.Text = _usuario.Nombre;
+            lblMDCorreo.Text = _usuario.Correo;
+            lblMDPerfil.Text = _usuario.Perfil;
         }
 
 
@@ -66,12 +66,12 @@ namespace MisCuentas_desk.Views
         /// </summary>
         private void CargarDatosGenerales()
         {
-            lblMDNombre.Text = usuario.Personal_Data.Nombre ?? "sin completar";
-            lblMDApellidos.Text = usuario.Personal_Data.Apellidos ?? "sin completar";
-            lblMDDireccion.Text = usuario.Personal_Data.Direccion ?? "sin completar";
-            lblMDPais.Text = usuario.Personal_Data.Pais ?? "sin completar";
-            if (usuario.Personal_Data.Telefono == null) lblMDTelefono.Text = "sin completar";
-            else lblMDTelefono.Text = usuario.Personal_Data.Telefono.ToString();
+            lblMDNombre.Text = _usuario.Personal_Data.Nombre ?? "sin completar";
+            lblMDApellidos.Text = _usuario.Personal_Data.Apellidos ?? "sin completar";
+            lblMDDireccion.Text = _usuario.Personal_Data.Direccion ?? "sin completar";
+            lblMDPais.Text = _usuario.Personal_Data.Pais ?? "sin completar";
+            if (_usuario.Personal_Data.Telefono == null) lblMDTelefono.Text = "sin completar";
+            else lblMDTelefono.Text = _usuario.Personal_Data.Telefono.ToString();
         }
 
 
@@ -96,11 +96,8 @@ namespace MisCuentas_desk.Views
         /// </summary>
         private void pbxMDCompletarDatos_Click(object sender, EventArgs e)
         {
-            if (StateModificar == false)
-            {
-                StateModificar = true;
-                ModoModificarDatos(true);
-            }
+            ModoModificarDatos(true);
+            ModoCambioPass(false);  
         }
 
         /// <summary>
@@ -109,7 +106,7 @@ namespace MisCuentas_desk.Views
         /// <param name="modificar"></param>
         private void ModoModificarDatos(bool modificar)
         {
-            //Ocultar:
+            //Ocultar:         
             lblMDNombre.Visible = !modificar;
             lblMDApellidos.Visible = !modificar;
             lblMDDireccion.Visible = !modificar;
@@ -124,19 +121,23 @@ namespace MisCuentas_desk.Views
             tbxMDTelefono.Visible = modificar;
             cbxMDPais.Visible = modificar;
             btnMDGuardar.Visible = modificar;
+            panelMD2inf.BackColor = modificar ? Color.Black : Color.Gray;
+            btnCancelarModificacion.Visible = modificar;
 
             //Datos:
-            if (usuario.Personal_Data != null)
+            if (_usuario.Personal_Data != null)
             {
-                tbxMDNombre.Text = usuario.Personal_Data.Nombre;
-                tbxMDApellidos.Text = usuario.Personal_Data.Apellidos;
-                tbxMDDireccion.Text = usuario.Personal_Data.Direccion;
-                cbxMDPais.Text = usuario.Personal_Data.Pais;
-                tbxMDTelefono.Text = usuario.Personal_Data.Telefono.ToString();
+                tbxMDNombre.Text = _usuario.Personal_Data.Nombre;
+                tbxMDApellidos.Text = _usuario.Personal_Data.Apellidos;
+                tbxMDDireccion.Text = _usuario.Personal_Data.Direccion;
+                cbxMDPais.Text = _usuario.Personal_Data.Pais;
+                tbxMDTelefono.Text = _usuario.Personal_Data.Telefono.ToString();
             }
 
             CargarPaises(modificar);
+            _stateModificar = modificar;
         }
+
 
         /// <summary>
         /// Metodo que instnacia, realiza un Update de los datos y actualiza el objeto.
@@ -147,20 +148,19 @@ namespace MisCuentas_desk.Views
             Personal_Data datos = InstanciaDatos();
 
             //Update
-            bool actualizado = personalDataServices.Actualizar(datos);
+            bool actualizado = _personalDataServices.Actualizar(datos);
 
             //Actualizar datos del modelo
             if (actualizado)
             {
-                usuario.Personal_Data = datos;
-                Usuario usuarioUpdate = Usuario.ObtenerInstancia(usuario);
+                _usuario.Personal_Data = datos;
+                Usuario usuarioUpdate = Usuario.ObtenerInstancia(_usuario);
                 CargarDatosGenerales();
                 //usuario = usuarioUpdate;
             }
 
             //Adaptar pantalla
             ModoModificarDatos(false);
-            StateModificar = false;
         }
 
         /// <summary>
@@ -169,7 +169,7 @@ namespace MisCuentas_desk.Views
         /// <returns>Retorna el objeto Personal_Data</returns>
         private Personal_Data InstanciaDatos()
         {
-            int id_usuario = usuario.Id_Usuario;
+            int id_usuario = _usuario.Id_Usuario;
             string nombre = String.IsNullOrEmpty(tbxMDNombre.Text) ? null : tbxMDNombre.Text;
             string apellidos = String.IsNullOrEmpty(tbxMDApellidos.Text) ? null : tbxMDApellidos.Text;
             string direccion = String.IsNullOrEmpty(tbxMDDireccion.Text) ? null : tbxMDDireccion.Text;
@@ -179,7 +179,17 @@ namespace MisCuentas_desk.Views
 
             return new Personal_Data(id_usuario, nombre, apellidos, direccion, pais, telefono);
         }
+
+        /// <summary>
+        /// Metodo para cancelar la modificacion de los datos.
+        /// </summary>
+        private void btnCancelarModificacion_Click(object sender, EventArgs e)
+        {
+            ModoModificarDatos(false);        
+        }
         #endregion
+
+
 
         #region CAMBIO CONTRASEÑA
         /// <summary>
@@ -187,8 +197,8 @@ namespace MisCuentas_desk.Views
         /// </summary>
         private void pbxMDCambioPass_Click(object sender, EventArgs e)
         {
-            panelCambioPass.Visible = true;
-           
+            ModoCambioPass(true);
+            ModoModificarDatos(false);
         }
 
 
@@ -231,18 +241,19 @@ namespace MisCuentas_desk.Views
         /// </summary>
         private void btnCancelarCambioPass_Click(object sender, EventArgs e)
         {
-            MostrarDatosPrincipales();
+            ModoCambioPass(false);
         }
 
 
         /// <summary>
         /// Metodo que vuelve a mostrar el panel de datos principales.
         /// </summary>
-        private void MostrarDatosPrincipales()
-        {
-            panelCambioPass.Visible = false;
-            tbxCanbioPass.Text = null;
-            tbxCanbioPass2.Text = null;
+        private void ModoCambioPass(bool mostrar)
+        {         
+            _stateCambioPass = mostrar;
+            panelCambioPass.Visible = mostrar;
+            tbxCanbioPass.Text = mostrar ? "" : null;
+            tbxCanbioPass2.Text = mostrar ? "" : null;
         }
 
 
@@ -273,8 +284,8 @@ namespace MisCuentas_desk.Views
         /// </summary>
         private void RegistrarNuevaPass()
         {
-            usuario.Contrasenna = tbxCanbioPass.Text;
-            CambioPassOK(usuarioServices.Actualizar(usuario));
+            _usuario.Contrasenna = tbxCanbioPass.Text;
+            CambioPassOK(_usuarioServices.Actualizar(_usuario));
         }
 
 
@@ -288,7 +299,7 @@ namespace MisCuentas_desk.Views
             else
             {
                 MessageBox.Show("Cambio de contraseña correcto!", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                MostrarDatosPrincipales();
+                ModoCambioPass(false);
             }
         }
 
@@ -305,11 +316,11 @@ namespace MisCuentas_desk.Views
 
             if (confirmarEliminacion)
             {
-                if (usuarioServices.Eliminar(usuario.Id_Usuario))
+                if (_usuarioServices.Eliminar(_usuario.Id_Usuario))
                 {
                     this.Close();
-                    formMisCuentas.RetornoLogin();
-                    nav.AbrirFormEnPanel(new Login(formMisCuentas));
+                    _formMisCuentas.RetornoLogin();
+                    _nav.AbrirFormEnPanel(new Login(_formMisCuentas));
                     MessageBox.Show("La cuenta se ha eliminado correctamente!.",
                                "EXITO!",
                                MessageBoxButtons.OK,
@@ -335,7 +346,7 @@ namespace MisCuentas_desk.Views
             if (respuesta == DialogResult.OK)
             {
                 // Si el usuario elige OK, mostrar un segundo mensaje de éxito
-                DialogResult respuesta2 = MessageBox.Show("La cuenta será eliminada. Volver a confirmar...",
+                DialogResult respuesta2 = MessageBox.Show("Esto eliminará toda informacion del usuario y es irreversible. Volver a confirmar que desea eliminar su cuenta...",
                                 "VOLVER A CONFIRMAR",
                                 MessageBoxButtons.OKCancel,
                                 MessageBoxIcon.Warning);
@@ -367,5 +378,7 @@ namespace MisCuentas_desk.Views
             }
         }
         #endregion
+
+        
     }
 }

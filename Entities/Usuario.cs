@@ -40,4 +40,6 @@ namespace MisCuentas_desk.Entities
             return instancia;
         }
     }
+
+
 }

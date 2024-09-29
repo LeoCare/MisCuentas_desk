@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MisDatos));
             this.panelMD1inf = new System.Windows.Forms.Panel();
             this.panelCambioPass = new System.Windows.Forms.Panel();
+            this.btnCancelarCambioPass = new System.Windows.Forms.Button();
             this.tbxCanbioPass2 = new System.Windows.Forms.TextBox();
             this.lblCambioPass2 = new System.Windows.Forms.Label();
             this.btnNoVerCambioPass = new System.Windows.Forms.PictureBox();
@@ -81,7 +82,7 @@
             this.pbxMDCompletarDatos = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
             this.pbxMDCambioPass = new System.Windows.Forms.PictureBox();
-            this.btnCancelarCambioPass = new System.Windows.Forms.Button();
+            this.btnCancelarModificacion = new System.Windows.Forms.Button();
             this.panelMD1inf.SuspendLayout();
             this.panelCambioPass.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnNoVerCambioPass)).BeginInit();
@@ -134,6 +135,23 @@
             this.panelCambioPass.Size = new System.Drawing.Size(420, 363);
             this.panelCambioPass.TabIndex = 5;
             this.panelCambioPass.Visible = false;
+            // 
+            // btnCancelarCambioPass
+            // 
+            this.btnCancelarCambioPass.BackColor = System.Drawing.Color.Transparent;
+            this.btnCancelarCambioPass.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnCancelarCambioPass.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gainsboro;
+            this.btnCancelarCambioPass.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
+            this.btnCancelarCambioPass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelarCambioPass.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelarCambioPass.ForeColor = System.Drawing.Color.White;
+            this.btnCancelarCambioPass.Location = new System.Drawing.Point(336, 336);
+            this.btnCancelarCambioPass.Name = "btnCancelarCambioPass";
+            this.btnCancelarCambioPass.Size = new System.Drawing.Size(81, 24);
+            this.btnCancelarCambioPass.TabIndex = 25;
+            this.btnCancelarCambioPass.Text = "Cancelar";
+            this.btnCancelarCambioPass.UseVisualStyleBackColor = false;
+            this.btnCancelarCambioPass.Click += new System.EventHandler(this.btnCancelarCambioPass_Click);
             // 
             // tbxCanbioPass2
             // 
@@ -393,6 +411,7 @@
             // 
             this.panelMD2inf.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panelMD2inf.BackColor = System.Drawing.Color.Gray;
+            this.panelMD2inf.Controls.Add(this.btnCancelarModificacion);
             this.panelMD2inf.Controls.Add(this.panel12);
             this.panelMD2inf.Controls.Add(this.panel8);
             this.panelMD2inf.Controls.Add(this.panel6);
@@ -703,22 +722,23 @@
             this.pbxMDCambioPass.TabStop = false;
             this.pbxMDCambioPass.Click += new System.EventHandler(this.pbxMDCambioPass_Click);
             // 
-            // btnCancelarCambioPass
+            // btnCancelarModificacion
             // 
-            this.btnCancelarCambioPass.BackColor = System.Drawing.Color.Transparent;
-            this.btnCancelarCambioPass.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnCancelarCambioPass.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gainsboro;
-            this.btnCancelarCambioPass.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
-            this.btnCancelarCambioPass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelarCambioPass.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelarCambioPass.ForeColor = System.Drawing.Color.White;
-            this.btnCancelarCambioPass.Location = new System.Drawing.Point(336, 336);
-            this.btnCancelarCambioPass.Name = "btnCancelarCambioPass";
-            this.btnCancelarCambioPass.Size = new System.Drawing.Size(81, 24);
-            this.btnCancelarCambioPass.TabIndex = 25;
-            this.btnCancelarCambioPass.Text = "Cancelar";
-            this.btnCancelarCambioPass.UseVisualStyleBackColor = false;
-            this.btnCancelarCambioPass.Click += new System.EventHandler(this.btnCancelarCambioPass_Click);
+            this.btnCancelarModificacion.BackColor = System.Drawing.Color.Black;
+            this.btnCancelarModificacion.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnCancelarModificacion.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gainsboro;
+            this.btnCancelarModificacion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
+            this.btnCancelarModificacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelarModificacion.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelarModificacion.ForeColor = System.Drawing.Color.White;
+            this.btnCancelarModificacion.Location = new System.Drawing.Point(640, 336);
+            this.btnCancelarModificacion.Name = "btnCancelarModificacion";
+            this.btnCancelarModificacion.Size = new System.Drawing.Size(81, 24);
+            this.btnCancelarModificacion.TabIndex = 26;
+            this.btnCancelarModificacion.Text = "Cancelar";
+            this.btnCancelarModificacion.UseVisualStyleBackColor = false;
+            this.btnCancelarModificacion.Visible = false;
+            this.btnCancelarModificacion.Click += new System.EventHandler(this.btnCancelarModificacion_Click);
             // 
             // MisDatos
             // 
@@ -824,5 +844,6 @@
         private System.Windows.Forms.TextBox tbxCanbioPass2;
         private System.Windows.Forms.Label lblCambioPass2;
         private System.Windows.Forms.Button btnCancelarCambioPass;
+        private System.Windows.Forms.Button btnCancelarModificacion;
     }
 }

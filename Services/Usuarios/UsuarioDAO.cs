@@ -1,5 +1,6 @@
 ﻿using Dapper;
 using MisCuentas_desk.Entities;
+using MisCuentas_desk.Utils;
 using MySqlConnector;
 using NLog;
 using System;
@@ -13,7 +14,8 @@ namespace MisCuentas_desk.Services.Usuarios
     class UsuarioDAO : IRepositoryUsuario<Usuario>
     {
         protected readonly string _cadenaConexion;
-        private static readonly Logger logger = LogManager.GetCurrentClassLogger();
+        private static readonly Logger _logger = LogManager.GetCurrentClassLogger();
+        private ErrorManager _errorManager = new ErrorManager();
 
         public UsuarioDAO(string cadenaConexion)
         {
@@ -42,27 +44,12 @@ namespace MisCuentas_desk.Services.Usuarios
             catch (MySqlException ex)
             {
                 // Manejo específico para errores de MySQL
-                logger.Error(ex, "Error de MySQL al crear el usuario. Código de error: {0}", ex.Number);
-
-                // Puedes manejar diferentes códigos de error de MySQL
-                switch (ex.Number)
-                {
-                    case 1062: // Código de error para entrada duplicada
-                        throw new Exception("El correo electrónico ya está registrado.", ex);
-                    case 1149: // Código de error para sintaxis incorrecta
-                        throw new Exception("Sintaxis incorrecta de sql.", ex);
-                    case 1045: // Código de error para acceso denegado
-                        throw new Exception("Acceso denegado a la base de datos.", ex);
-                    default:
-                        throw new Exception("Ocurrió un error al crear el usuario en la base de datos.", ex);
-                }
+                _logger.Error(ex, "Error de MySQL al crear el usuario. Código de error: {0}", ex.Number);
+                throw _errorManager.ManejarExcepcionMySql(ex);
             }
             catch (Exception ex)
-            {
-                // Manejo general para otras excepciones
-                logger.Error(ex, "Error general al crear el usuario.");
-
-                // Re-lanzar la excepción si es necesario
+            {                
+                _logger.Error(ex, "Error general al crear el usuario.");
                 throw;
             }
 
@@ -88,25 +75,12 @@ namespace MisCuentas_desk.Services.Usuarios
             catch (MySqlException ex)
             {
                 // Manejo específico para errores de MySQL
-                logger.Error(ex, "Error de MySQL al obtener el usuario. Código de error: {0}", ex.Number);
-
-                // Puedes manejar diferentes códigos de error de MySQL
-                switch (ex.Number)
-                {
-                    case 1149: // Código de error para sintaxis incorrecta
-                        throw new Exception("Sintaxis incorrecta de sql.", ex);
-                    case 1045: // Código de error para acceso denegado
-                        throw new Exception("Acceso denegado a la base de datos.", ex);
-                    default:
-                        throw new Exception("Ocurrió un error al obtener el usuario en la base de datos.", ex);
-                }
+                _logger.Error(ex, "Error de MySQL al obtener el usuario. Código de error: {0}", ex.Number);
+                throw _errorManager.ManejarExcepcionMySql(ex);
             }
             catch (Exception ex)
             {
-                // Manejo general para otras excepciones
-                logger.Error(ex, "Error general al obtener el usuario.");
-
-                // Re-lanzar la excepción si es necesario
+                _logger.Error(ex, "Error general al obtener el usuario.");
                 throw;
             }
         }
@@ -130,25 +104,12 @@ namespace MisCuentas_desk.Services.Usuarios
             catch (MySqlException ex)
             {
                 // Manejo específico para errores de MySQL
-                logger.Error(ex, "Error de MySQL al obtener el usuario. Código de error: {0}", ex.Number);
-
-                // Puedes manejar diferentes códigos de error de MySQL
-                switch (ex.Number)
-                {
-                    case 1149: // Código de error para sintaxis incorrecta
-                        throw new Exception("Sintaxis incorrecta de sql.", ex);
-                    case 1045: // Código de error para acceso denegado
-                        throw new Exception("Acceso denegado a la base de datos.", ex);
-                    default:
-                        throw new Exception("Ocurrió un error al obtener el usuario en la base de datos.", ex);
-                }
+                _logger.Error(ex, "Error de MySQL al obtener el usuario. Código de error: {0}", ex.Number);
+                throw _errorManager.ManejarExcepcionMySql(ex);
             }
             catch (Exception ex)
             {
-                // Manejo general para otras excepciones
-                logger.Error(ex, "Error general al obtener el usuario.");
-
-                // Re-lanzar la excepción si es necesario
+                _logger.Error(ex, "Error general al obtener el usuario.");
                 throw;
             }
         }
@@ -172,25 +133,12 @@ namespace MisCuentas_desk.Services.Usuarios
             catch (MySqlException ex)
             {
                 // Manejo específico para errores de MySQL
-                logger.Error(ex, "Error de MySQL al obtener todos los usuarios. Código de error: {0}", ex.Number);
-
-                // Puedes manejar diferentes códigos de error de MySQL
-                switch (ex.Number)
-                {
-                    case 1149: // Código de error para sintaxis incorrecta
-                        throw new Exception("Sintaxis incorrecta de sql.", ex);
-                    case 1045: // Código de error para acceso denegado
-                        throw new Exception("Acceso denegado a la base de datos.", ex);
-                    default:
-                        throw new Exception("Ocurrió un error al obtener todos los usuarios en la base de datos.", ex);
-                }
+                _logger.Error(ex, "Error de MySQL al obtener todos los usuarios. Código de error: {0}", ex.Number);
+                throw _errorManager.ManejarExcepcionMySql(ex);
             }
             catch (Exception ex)
             {
-                // Manejo general para otras excepciones
-                logger.Error(ex, "Error general al obtener todos los usuarios.");
-
-                // Re-lanzar la excepción si es necesario
+                _logger.Error(ex, "Error general al obtener todos los usuarios.");
                 throw;
             }
         }
@@ -218,25 +166,12 @@ namespace MisCuentas_desk.Services.Usuarios
             catch (MySqlException ex)
             {
                 // Manejo específico para errores de MySQL
-                logger.Error(ex, "Error de MySQL al actualizar el usuario. Código de error: {0}", ex.Number);
-
-                // Puedes manejar diferentes códigos de error de MySQL
-                switch (ex.Number)
-                {
-                    case 1149: // Código de error para sintaxis incorrecta
-                        throw new Exception("Sintaxis incorrecta de sql.", ex);
-                    case 1045: // Código de error para acceso denegado
-                        throw new Exception("Acceso denegado a la base de datos.", ex);
-                    default:
-                        throw new Exception("Ocurrió un error al actualizar el usuario en la base de datos.", ex);
-                }
+                _logger.Error(ex, "Error de MySQL al actualizar el usuario. Código de error: {0}", ex.Number);
+                throw _errorManager.ManejarExcepcionMySql(ex);
             }
             catch (Exception ex)
             {
-                // Manejo general para otras excepciones
-                logger.Error(ex, "Error general al actualizar el usuario.");
-
-                // Re-lanzar la excepción si es necesario
+                _logger.Error(ex, "Error general al actualizar el usuario.");
                 throw;
             }
         }
@@ -261,29 +196,15 @@ namespace MisCuentas_desk.Services.Usuarios
             catch (MySqlException ex)
             {
                 // Manejo específico para errores de MySQL
-                logger.Error(ex, "Error de MySQL al eliminar el usuario. Código de error: {0}", ex.Number);
-
-                // Puedes manejar diferentes códigos de error de MySQL
-                switch (ex.Number)
-                {
-                    case 1149: // Código de error para sintaxis incorrecta
-                        throw new Exception("Sintaxis incorrecta de sql.", ex);
-                    case 1045: // Código de error para acceso denegado
-                        throw new Exception("Acceso denegado a la base de datos.", ex);
-                    default:
-                        throw new Exception("Ocurrió un error al eliminar el usuario en la base de datos.", ex);
-                }
+                _logger.Error(ex, "Error de MySQL al eliminar el usuario. Código de error: {0}", ex.Number);
+                throw _errorManager.ManejarExcepcionMySql(ex);
             }
             catch (Exception ex)
             {
-                // Manejo general para otras excepciones
-                logger.Error(ex, "Error general al eliminar el usuario.");
-
-                // Re-lanzar la excepción si es necesario
+                _logger.Error(ex, "Error general al eliminar el usuario.");
                 throw;
             }
         }
-
     }
 }
 

@@ -1,5 +1,6 @@
 ﻿using Dapper;
 using MisCuentas_desk.Entities;
+using MisCuentas_desk.Utils;
 using MySqlConnector;
 using NLog;
 using System;
@@ -10,7 +11,8 @@ namespace MisCuentas_desk.Services.PersonalData
     public class PersonalDataDAO : IRepositoryPersonalData<Personal_Data>
     {
         protected readonly string _cadenaConexion;
-        private static readonly Logger logger = LogManager.GetCurrentClassLogger();
+        private static readonly Logger _logger = LogManager.GetCurrentClassLogger();
+        private ErrorManager _errorManager = new ErrorManager();
 
         public PersonalDataDAO(string cadenaConexion)
         {
@@ -38,24 +40,13 @@ namespace MisCuentas_desk.Services.PersonalData
             catch (MySqlException ex)
             {
                 // Manejo específico para errores de MySQL
-                logger.Error(ex, "Error de MySQL al crear datos. Código de error: {0}", ex.Number);
-
-                // Puedes manejar diferentes códigos de error de MySQL
-                switch (ex.Number)
-                {
-                   
-                    case 1149: // Código de error para sintaxis incorrecta
-                        throw new Exception("Sintaxis incorrecta de sql.", ex);
-                    case 1045: // Código de error para acceso denegado
-                        throw new Exception("Acceso denegado a la base de datos.", ex);
-                    default:
-                        throw new Exception("Ocurrió un error al crear datos en la base de datos.", ex);
-                }
+                _logger.Error(ex, "Error de MySQL al crear datos. Código de error: {0}", ex.Number);
+                throw _errorManager.ManejarExcepcionMySql(ex);
             }
             catch (Exception ex)
             {
                 // Manejo general para otras excepciones
-                logger.Error(ex, "Error general al crear datos.");
+                _logger.Error(ex, "Error general al crear datos.");
 
                 // Re-lanzar la excepción si es necesario
                 throw;
@@ -83,24 +74,14 @@ namespace MisCuentas_desk.Services.PersonalData
             catch (MySqlException ex)
             {
                 // Manejo específico para errores de MySQL
-                logger.Error(ex, "Error de MySQL al obtener datos personales. Código de error: {0}", ex.Number);
-
-                // Puedes manejar diferentes códigos de error de MySQL
-                switch (ex.Number)
-                {
-                    case 1149: // Código de error para sintaxis incorrecta
-                        throw new Exception("Sintaxis incorrecta de sql.", ex);
-                    case 1045: // Código de error para acceso denegado
-                        throw new Exception("Acceso denegado a la base de datos.", ex);
-                    default:
-                        throw new Exception("Ocurrió un error al obtener datos personales de la base de datos.", ex);
-                }
+                _logger.Error(ex, "Error de MySQL al obtener datos personales. Código de error: {0}", ex.Number);
+                throw _errorManager.ManejarExcepcionMySql(ex);
             }
             catch (Exception ex)
             {
-                
+
                 // Manejo general para otras excepciones
-                logger.Error(ex, "Error general al obtener datos personales.");
+                _logger.Error(ex, "Error general al obtener datos personales.");
 
                 // Re-lanzar la excepción si es necesario
                 throw;
@@ -129,24 +110,14 @@ namespace MisCuentas_desk.Services.PersonalData
             catch (MySqlException ex)
             {
                 // Manejo específico para errores de MySQL
-                logger.Error(ex, "Error de MySQL al actualizar datos personales. Código de error: {0}", ex.Number);
-
-                // Puedes manejar diferentes códigos de error de MySQL
-                switch (ex.Number)
-                {
-                    case 1149: // Código de error para sintaxis incorrecta
-                        throw new Exception("Sintaxis incorrecta de sql.", ex);
-                    case 1045: // Código de error para acceso denegado
-                        throw new Exception("Acceso denegado a la base de datos.", ex);
-                    default:
-                        throw new Exception("Ocurrió un error al actualizar datos personales de la base de datos.", ex);
-                }
+                _logger.Error(ex, "Error de MySQL al actualizar datos personales. Código de error: {0}", ex.Number);
+                throw _errorManager.ManejarExcepcionMySql(ex);
             }
             catch (Exception ex)
             {
 
                 // Manejo general para otras excepciones
-                logger.Error(ex, "Error general al actualizar datos personales.");
+                _logger.Error(ex, "Error general al actualizar datos personales.");
 
                 // Re-lanzar la excepción si es necesario
                 throw;
@@ -173,26 +144,12 @@ namespace MisCuentas_desk.Services.PersonalData
             catch (MySqlException ex)
             {
                 // Manejo específico para errores de MySQL
-                logger.Error(ex, "Error de MySQL al eliminar datos personales. Código de error: {0}", ex.Number);
-
-                // Puedes manejar diferentes códigos de error de MySQL
-                switch (ex.Number)
-                {
-                    case 1149: // Código de error para sintaxis incorrecta
-                        throw new Exception("Sintaxis incorrecta de sql.", ex);
-                    case 1045: // Código de error para acceso denegado
-                        throw new Exception("Acceso denegado a la base de datos.", ex);
-                    default:
-                        throw new Exception("Ocurrió un error al eliminar datos personales de la base de datos.", ex);
-                }
+                _logger.Error(ex, "Error de MySQL al eliminar datos personales. Código de error: {0}", ex.Number);
+                throw _errorManager.ManejarExcepcionMySql(ex);
             }
             catch (Exception ex)
-            {
-
-                // Manejo general para otras excepciones
-                logger.Error(ex, "Error general al eliminar datos personales.");
-
-                // Re-lanzar la excepción si es necesario
+            {              
+                _logger.Error(ex, "Error general al eliminar datos personales.");
                 throw;
             }
         }
