@@ -19,17 +19,17 @@ namespace MisCuentas_desk
     public partial class FormMisCuentas : Form
     {
         private MisCuentasConnect conn = new MisCuentasConnect();
-        private UsuarioServices usuarioService;
-        private Navigation nav;
-        private Usuario usuario;
+        private UsuarioServices _usuarioService;
+        private Navigation _nav;
+        private Usuario _usuario;
 
         public FormMisCuentas()
         {
             InitializeComponent();
-            this.nav = new Navigation(this);
-            nav.AbrirFormEnPanel(new Inicio());
+            _nav = new Navigation(this);
+            _nav.AbrirFormEnPanel(new Inicio());
             string cadenaConexion = conn.Conexion();
-            this.usuarioService = new UsuarioServices(cadenaConexion);
+            _usuarioService = new UsuarioServices(cadenaConexion);
             ConexionEstablecida();
             
         }
@@ -50,7 +50,7 @@ namespace MisCuentas_desk
 
         public void InstanciaUsuario(Usuario usuario)
         {
-            this.usuario = Usuario.ObtenerInstancia(usuario);
+            _usuario = Usuario.ObtenerInstancia(usuario);
         }
 
 
@@ -60,7 +60,7 @@ namespace MisCuentas_desk
         /// </summary>
         private void pbxHome_Click(object sender, EventArgs e)
         {
-            nav.AbrirFormEnPanel(new Inicio());
+            _nav.AbrirFormEnPanel(new Inicio());
         }
 
         /// <summary>
@@ -77,7 +77,7 @@ namespace MisCuentas_desk
         /// </summary>
         private void pbxUsuarioLoginNOK_Click(object sender, EventArgs e)
         {
-            nav.AbrirFormEnPanel(new Login(this));
+            _nav.AbrirFormEnPanel(new Login(this));
         }
 
         /// <summary>
@@ -87,7 +87,7 @@ namespace MisCuentas_desk
         private void pbxUsuarioLoginOK_Click(object sender, EventArgs e)
         {
             RetornoLogin();
-            nav.AbrirFormEnPanel(new Login(this));
+            _nav.AbrirFormEnPanel(new Login(this));
         }
 
         /// <summary>
@@ -95,7 +95,8 @@ namespace MisCuentas_desk
         /// </summary>
         public void RetornoLogin()
         { 
-            usuario = null;
+            _usuario = null;
+            Usuario.CerrarSesion();
             lblInformacion.Text = "Inicia sesion";
             pbxUsuarioLoginNOK.Visible = true;
             pbxUsuarioLoginOK.Visible = false;    
@@ -107,7 +108,7 @@ namespace MisCuentas_desk
         /// </summary>
         private void btnMisDatos_Click(object sender, EventArgs e)
         {
-            if (usuario != null) nav.AbrirFormEnPanel(new MisDatos(usuario, this));
+            if (_usuario != null) _nav.AbrirFormEnPanel(new MisDatos(_usuario, this));
         }
 
         /// <summary>
@@ -116,7 +117,7 @@ namespace MisCuentas_desk
         /// </summary>
         private void btnInformes_Click(object sender, EventArgs e)
         {
-            if (usuario != null) nav.AbrirFormEnPanel(new Informes(usuario, this));
+            if (_usuario != null) _nav.AbrirFormEnPanel(new Informes(_usuario, this));
         }
 
         /// <summary>
@@ -125,7 +126,7 @@ namespace MisCuentas_desk
         /// </summary>
         private void btnAvanzado_Click(object sender, EventArgs e)
         {
-            if (usuario != null) nav.AbrirFormEnPanel(new Avanzado(usuario, this));
+            if (_usuario != null) _nav.AbrirFormEnPanel(new Avanzado(_usuario, this));
         }
 
         /// <summary>

@@ -27,18 +27,19 @@ namespace MisCuentas_desk.Services.Usuarios
         /// Metodo para crear un Usuario.
         /// </summary>
         /// <param name="usuario">Nuevo usuario a crear</param>
-        /// <returns>true o false segun insercion exitosa o no</returns>
+        /// <returns>id del usuario recien creado</returns>
         /// <exception cref="Exception">Excepciones de control</exception>
-        public virtual bool Crear(Usuario usuario)
+        public virtual int Crear(Usuario usuario)
         {
             try
             {
                 using (var conexion = new MySqlConnection(_cadenaConexion))
                 {
                     var sql = @"INSERT INTO USUARIOS (nombre, correo, contrasenna, perfil)
-                            VALUES (@Nombre, @Correo, @Contrasenna, @Perfil)";
-                    conexion.Execute(sql, usuario);
-                    return true;
+                                VALUES (@Nombre, @Correo, @Contrasenna, @Perfil);
+                                SELECT LAST_INSERT_ID();";
+
+                    return conexion.QuerySingle<int>(sql, usuario); // Devuelve el ID
                 }
             }
             catch (MySqlException ex)

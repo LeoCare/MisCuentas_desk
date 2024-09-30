@@ -15,7 +15,6 @@ namespace MisCuentas_desk.Services.Gastos
         {
             try
             {
-                // Lógica adicional antes de crear el gasto (si es necesario)
                 return base.Crear(gasto);
             }
             catch (Exception ex)
@@ -25,11 +24,23 @@ namespace MisCuentas_desk.Services.Gastos
             }
         }
 
+        public override IEnumerable<Gasto> ObtenerPorIdParticipante(int idParticipante)
+        {
+            try
+            {           
+                return base.ObtenerPorIdParticipante(idParticipante);
+            }
+            catch (Exception ex)
+            {
+
+                return null;
+            }
+        }
+
         public override bool Actualizar(Gasto gasto)
         {
             try
             {
-                // Lógica adicional antes de actualizar el gasto (si es necesario)
                 return base.Actualizar(gasto);
             }
             catch (Exception ex)

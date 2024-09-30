@@ -16,21 +16,20 @@ namespace MisCuentas_desk.Services.Usuarios
         /// Metodo para crear un Usuario.
         /// </summary>
         /// <param name="usuario">Nuevo usuario a crear</param>
-        /// <returns>true o false segun insercion exitosa o no</returns>
-        public override bool Crear(Usuario usuario)
+        /// <returns>id del usuario recien creado</returns>
+        public override int Crear(Usuario usuario)
         {
             try
             {           
                 // Hashear la contraseña antes de guardarla
                 usuario.Contrasenna = BCrypt.Net.BCrypt.HashPassword(usuario.Contrasenna);
 
-                base.Crear(usuario);
-                return true;
-
+                return base.Crear(usuario);
+               
             }
             catch (Exception e)
             {
-                return false;
+                return 0;
             }
         }
 
@@ -53,6 +52,24 @@ namespace MisCuentas_desk.Services.Usuarios
             catch (Exception e)
             {
                 return false;
+            }
+        }
+
+
+        /// <summary>
+        /// Metodo para obtener el usuario por id
+        /// </summary>
+        /// <param name="id_usuario">Correo del usuario registrado</param>
+        /// <returns>Instancia de un Usuario o null</returns>
+        public Usuario ObtenerUsuarioPorId(int id_usuario)
+        {
+            try
+            {
+                return base.ObtenerPorId(id_usuario);
+            }
+            catch (Exception e)
+            {
+                return null;
             }
         }
 

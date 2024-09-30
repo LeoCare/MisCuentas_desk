@@ -15,7 +15,7 @@ namespace MisCuentas_desk.Entities
         public long Limite_Gastos { get; set; }
         public string Status { get; set; }
         public int Id_Usuario { get; set; }
-
+        public List<Participante> Participantes { get; set; }
 
         public Hoja() { }
 

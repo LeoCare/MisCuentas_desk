@@ -68,24 +68,24 @@ namespace MisCuentas_desk.Services.Gastos
             }
         }
 
-        public virtual IEnumerable<Gasto> ObtenerTodos()
+        public virtual IEnumerable<Gasto> ObtenerPorIdParticipante(int idParticipante)
         {
             try
             {
                 using (var conexion = new MySqlConnection(_cadenaConexion))
                 {
-                    var sql = @"SELECT * FROM GASTOS";
-                    return conexion.Query<Gasto>(sql);
+                    var sql = @"SELECT * FROM GASTOS WHERE id_participante = @Id_Participante";
+                    return conexion.Query<Gasto>(sql, new { Id_Participante = idParticipante });
                 }
             }
             catch (MySqlException ex)
             {
-                _logger.Error(ex, "Error al obtener todos los gastos. Código de error: {0}", ex.Number);
+                _logger.Error(ex, "Error al obtener los gastos del participante. Código de error: {0}", ex.Number);
                 throw _errorManager.ManejarExcepcionMySql(ex);
             }
             catch (Exception ex)
             {
-                _logger.Error(ex, "Error general al obtener todos los gastos.");
+                _logger.Error(ex, "Error general al obtener los gastos del participante.");
                 throw;
             }
         }

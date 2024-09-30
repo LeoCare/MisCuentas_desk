@@ -97,6 +97,7 @@
     <Compile Include="Entities\Gasto.cs" />
     <Compile Include="Entities\Hoja.cs" />
     <Compile Include="Entities\Pago.cs" />
+    <Compile Include="Entities\Participante.cs" />
     <Compile Include="Entities\Personal_Data.cs" />
     <Compile Include="Entities\TipoPerfil.cs" />
     <Compile Include="Entities\Usuario.cs" />
@@ -113,6 +114,9 @@
     <Compile Include="Services\Pagos\IRepositoryPago.cs" />
     <Compile Include="Services\Pagos\PagoDAO.cs" />
     <Compile Include="Services\Pagos\PagoServices.cs" />
+    <Compile Include="Services\Participantes\IRepositoryParticipante.cs" />
+    <Compile Include="Services\Participantes\ParticipanteDAO.cs" />
+    <Compile Include="Services\Participantes\ParticipanteServices.cs" />
     <Compile Include="Services\PersonalData\IRepositoryPersonalData.cs" />
     <Compile Include="Services\PersonalData\PersonalDataDAO.cs" />
     <Compile Include="Services\PersonalData\PersonalDataServices.cs" />

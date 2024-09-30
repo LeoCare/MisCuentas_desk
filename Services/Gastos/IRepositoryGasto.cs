@@ -10,7 +10,7 @@ namespace MisCuentas_desk.Services.Gastos
     {
         bool Crear(T entidad);
         T ObtenerPorId(int id);
-        IEnumerable<T> ObtenerTodos();
+        IEnumerable<T> ObtenerPorIdParticipante(int idParticipante);
         bool Actualizar(T entidad);
         bool Eliminar(int id);
     }

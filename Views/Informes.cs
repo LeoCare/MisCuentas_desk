@@ -4,6 +4,7 @@ using MisCuentas_desk.Services.Balances;
 using MisCuentas_desk.Services.Gastos;
 using MisCuentas_desk.Services.Hojas;
 using MisCuentas_desk.Services.Pagos;
+using MisCuentas_desk.Services.Participantes;
 using MisCuentas_desk.Services.PersonalData;
 using MisCuentas_desk.Services.Usuarios;
 using System;
@@ -28,6 +29,7 @@ namespace MisCuentas_desk.Views
         private UsuarioServices _usuarioServices; 
         private HojaServices _hojaServices;
         private PagoServices _pagoServices;
+        private ParticipanteServices _participanteServices;
         private GastoServices _gastoServices;
         private BalanceServices _balanceServices;
         private FormMisCuentas _formMisCuentas;
@@ -39,49 +41,56 @@ namespace MisCuentas_desk.Views
             _usuarioServices = new UsuarioServices(cadenaConexion);
             _hojaServices = new HojaServices(cadenaConexion);
             _pagoServices = new PagoServices(cadenaConexion);
+            _participanteServices = new ParticipanteServices(cadenaConexion);
             _gastoServices = new GastoServices(cadenaConexion);
             _balanceServices = new BalanceServices(cadenaConexion);
             _formMisCuentas = formMisCuentas;
-            _usuario = usuario;
-            _listHojas = new List<Hoja>();
+            _usuario = usuario; 
 
-            CargarHojas();
-
+            CargarTotalesHoja();
+            CargarTotalesGastos();
         }
 
-        #region CARGAR DATOS POR ID_USUARIO
-        private void CargarHojas()
+
+        #region CARGAR TOTALES
+        /// <summary>
+        /// Metodo que pinta los totales en el formulario.
+        /// </summary>
+        /// <param name="listHojas">Lista de hojas del usuario logeado</param>
+        private void CargarTotalesHoja()
         {
-
-            _listHojas = (List<Hoja>)_hojaServices.ObtenerPorIdUsuario(_usuario.Id_Usuario);
-
-            CargarTotalesHoja(_listHojas);
-            
+            lblTotalHojas.Text = _usuario.Hojas.Count.ToString();
+            lblTotalCursoHojas.Text = _usuario.Hojas.Where(hoja => hoja.Status.Equals("C")).ToList().Count.ToString();  
         }
 
-        private void CargarTotalesHoja(List<Hoja> listHojas)
+
+        /// <summary>
+        /// Metodo que pinta los total en el formulario.
+        /// </summary>
+        /// <param name="listHojas">Lista de hojas del usuario logeado</param>
+        private void CargarTotalesGastos()
         {
-            lblTotalHojas.Text = listHojas.Count.ToString();
-            lblTotalCursoHojas.Text = listHojas.Where(hoja => hoja.Status.Equals("C")).ToList().Count.ToString();  
+            //Total:
+            Double totalGastos = 0.0;
+            _usuario.Gastos.ForEach(gasto =>
+            {
+                totalGastos += gasto.Importe;
+            });
+            lblTotalGastos.Text = totalGastos.ToString();
+
+            //Total este mes:
+            Double totalGastosMes = 0.0;
+            int mesActual = DateTime.Now.Month;
+            int añoActual = DateTime.Now.Year;
+            _usuario.Gastos.ForEach(gasto =>
+            {
+                if (gasto.Fecha_Gasto.Month == mesActual && gasto.Fecha_Gasto.Year == añoActual)
+                {
+                    totalGastosMes += gasto.Importe;
+                }
+            });
+            lblTotalGastosMes.Text = totalGastosMes.ToString();
         }
-
-
-        //private void CargarPagos()
-        //{
-        //    List<Pago> listPagos = new List<Pago>();
-        //    listPagos = (List<Pago>)_pagoServices.ObtenerPorIdBalance();
-
-        //    if (listPagos.Count > 0)
-        //    {
-        //        dgInformes.DataSource = null;
-        //        dgInformes.Rows.Clear();
-        //        dgInformes.Columns.Clear();
-        //        dgInformes.DataSource = listPagos;
-        //    }
-        //}
-
-
-
         #endregion
 
 
@@ -89,12 +98,12 @@ namespace MisCuentas_desk.Views
         {
             panelInformeResultColor.BackColor = Color.OliveDrab;
 
-            if (_listHojas.Count > 0)
+            if (_usuario.Hojas.Count > 0)
             {
                 dgInformes.DataSource = null;
                 dgInformes.Rows.Clear();
                 dgInformes.Columns.Clear();
-                dgInformes.DataSource = _listHojas;
+                dgInformes.DataSource = _usuario.Hojas;
 
                 dgInformes.Columns["Id_Usuario"].Visible = false; //Inecesaria esta info
             }
@@ -103,6 +112,16 @@ namespace MisCuentas_desk.Views
         private void btnVerMisGastos_Click(object sender, EventArgs e)
         {
             panelInformeResultColor.BackColor = Color.DeepSkyBlue;
+
+            if (_usuario.Gastos.Count > 0)
+            {
+                dgInformes.DataSource = null;
+                dgInformes.Rows.Clear();
+                dgInformes.Columns.Clear();
+                dgInformes.DataSource = _usuario.Gastos;
+
+                dgInformes.Columns["Id_Participante"].Visible = false; //Inecesaria esta info
+            }
         }
 
         private void btnVerMisPagos_Click(object sender, EventArgs e)

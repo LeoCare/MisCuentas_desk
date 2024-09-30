@@ -1,11 +1,17 @@
 ﻿using MisCuentas_desk.Configurations;
 using MisCuentas_desk.Entities;
 using MisCuentas_desk.Model;
+using MisCuentas_desk.Services.Balances;
+using MisCuentas_desk.Services.Gastos;
+using MisCuentas_desk.Services.Hojas;
+using MisCuentas_desk.Services.Pagos;
+using MisCuentas_desk.Services.Participantes;
 using MisCuentas_desk.Services.PersonalData;
 using MisCuentas_desk.Services.Usuarios;
 using MisCuentas_desk.Utils;
 using MisCuentas_desk.Views;
 using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace MisCuentas_desk
@@ -13,9 +19,15 @@ namespace MisCuentas_desk
     public partial class Login : Form
     {
         #region ATRIBUTOS
+        private Usuario _usuario;
         private MisCuentasConnect conn = new MisCuentasConnect();
         private UsuarioServices usuarioServices;
         private PersonalDataServices personalDataServices;
+        private HojaServices _hojaServices;
+        private PagoServices _pagoServices;
+        private ParticipanteServices _participanteServices;
+        private GastoServices _gastoServices;
+        private BalanceServices _balanceServices;
         private FormMisCuentas formMisCuentas;
         private Navigation nav;
         private bool controlTimer = false;
@@ -28,6 +40,12 @@ namespace MisCuentas_desk
             string cadenaConexion = conn.Conexion();
             usuarioServices = new UsuarioServices(cadenaConexion);
             personalDataServices = new PersonalDataServices(cadenaConexion);
+            _hojaServices = new HojaServices(cadenaConexion);
+            _pagoServices = new PagoServices(cadenaConexion);
+            _participanteServices = new ParticipanteServices(cadenaConexion);
+            _gastoServices = new GastoServices(cadenaConexion);
+            _balanceServices = new BalanceServices(cadenaConexion);
+            _usuario = new Usuario();
             this.formMisCuentas = formMisCuentas;
             this.nav = new Navigation(formMisCuentas);
         }
@@ -97,19 +115,115 @@ namespace MisCuentas_desk
             Usuario usuario = usuarioServices.ObtenerUsuarioPorCorreo(correo, contrasenna);
             if(usuario != null)
             {
-                //Obtener Personal_Data
-                Personal_Data datos = personalDataServices.ObtenerPorId(usuario.Id_Usuario);
-
-                if (datos == null)
-                {
-                    datos = new Personal_Data(usuario.Id_Usuario, null, null, null, null, null);
-                    //Insert Personal_Data
-                    bool actualizado = personalDataServices.Crear(datos);
-                }
-                InstanciaUsuario(usuario, datos);
+                //Instanciar usuario y sus datos
+                _usuario = Usuario.ObtenerInstancia(usuario);
+                CargarInfoUsuario();
+                UsuarioLogeadoOK(_usuario);
             }
             else MessageBox.Show("Correo o contraseña incorrectos!", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
+
+
+        /// <summary>
+        /// Metodo que se encarga de cargar las Hojas, gastos, pagos y demas
+        /// </summary>
+        private void CargarInfoUsuario()
+        {
+            ObtenerDatosPersonales(_usuario.Id_Usuario);
+
+            //Cargar hojas, gastos, pagos y balances
+            List<Hoja> listHojas = ObtenerHojas(_usuario.Id_Usuario);
+            if (listHojas != null || listHojas.Count > 0)
+            {
+                ObtenerYCargarHojaPart(listHojas);
+                CargarGastos(listHojas);
+            }
+
+            UsuarioLogeadoOK(_usuario);
+        }
+
+
+        /// <summary>
+        /// Metodo que obtiene, o instancia si aun no estan creados, los datos personales.
+        /// </summary>
+        /// <param name="idUsuario">Id del usuario creado</param>    
+        private void ObtenerDatosPersonales(int idUsuario)
+        {
+            //Obtener Personal_Data
+            Personal_Data datos = personalDataServices.ObtenerPorId(idUsuario);
+
+            if (datos == null)
+            {
+                datos = new Personal_Data(idUsuario, null, null, null, null, null);
+                //Insert Personal_Data
+                bool actualizado = personalDataServices.Crear(datos);
+                if (actualizado) _usuario.Personal_Data = datos;
+            }
+            else _usuario.Personal_Data = datos;
+        }
+
+
+        /// <summary>
+        /// Metodo que carga las hojas del usuario
+        /// </summary>
+        /// <returns>Lista de hojas</returns>
+        private List<Hoja> ObtenerHojas(int id_usuario)
+        {
+
+            return (List<Hoja>)_hojaServices.ObtenerPorIdUsuario(id_usuario);
+
+        }
+
+
+        /// <summary>
+        /// Metodo que carga los participantes de cada hoja
+        /// </summary>
+        private void ObtenerYCargarHojaPart(List<Hoja> listHojas)
+        {
+            List<Participante> listParticipantes = new List<Participante>();
+
+            //Cargar participantes por Hoja:
+            listHojas.ForEach(hoja =>
+            {
+                listParticipantes = ((List<Participante>)_participanteServices.ObtenerParticipantesPorHoja(hoja.Id_Hoja));
+
+                if (listParticipantes != null && listParticipantes.Count > 0)
+                {
+                    hoja.Participantes = listParticipantes;
+                    _usuario.Hojas.Add(hoja);
+                }
+            });
+
+        }
+
+
+        /// <summary>
+        /// Metodo que carga los gastos solo donde el usuario logeado participe
+        /// </summary>
+        private void CargarGastos(List<Hoja> listHojas)
+        {
+            List<Gasto> listGastos = new List<Gasto>();
+
+            //Buscarme como participante:
+            listHojas.ForEach(hoja =>
+            {
+                hoja.Participantes.ForEach(participante =>
+                {
+                    if (participante.Id_Usuario.Equals(_usuario.Id_Usuario))
+                    {
+                        //Cargar mis gastos:
+                        listGastos = ((List<Gasto>)_gastoServices.ObtenerPorIdParticipante(participante.Id_Participante));
+
+                        if (listGastos != null && listGastos.Count > 0)
+                        {
+                            _usuario.Gastos.AddRange(listGastos);
+                        }
+                    }
+                });
+            });
+        }
+
+
 
         /// <summary>
         /// Metodo para validar la sintaxis de los datos introducidos
@@ -150,7 +264,8 @@ namespace MisCuentas_desk
         private void btnRegistrarse_Click(object sender, EventArgs e)
         {
             bool existe = false;
-            bool creado = false;
+            int idUsuario = 0;
+
             Usuario usuarioACrear = UsuarioACrear();
             if (usuarioACrear != null)
             {
@@ -159,13 +274,18 @@ namespace MisCuentas_desk
                 if (existe) MessageBox.Show("Ese correo ya esta registrado!", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 else
                 {
-                    creado = usuarioServices.Crear(usuarioACrear);
+                    idUsuario = usuarioServices.Crear(usuarioACrear);
                 }
-                if (creado)
+                if (idUsuario != 0)
                 {
-                    Usuario usu = usuarioServices.ObtenerPorCorreo(usuarioACrear.Correo);
-                    Personal_Data datos = PersonalDataACrear(usu);
-                    if(personalDataServices.Crear(datos)) InstanciaUsuario(usu, datos); 
+                    Usuario usuario = usuarioServices.ObtenerUsuarioPorId(idUsuario);
+                    if (usuario != null)
+                    {
+                        //Instanciar usuario y sus datos
+                        _usuario = Usuario.ObtenerInstancia(usuario);
+                        CargarInfoUsuario();
+                        UsuarioLogeadoOK(_usuario);
+                    }
                 }
             }
         }
@@ -239,12 +359,9 @@ namespace MisCuentas_desk
         /// Metodo para instanciar el usuario creado como Singleton
         /// </summary>
         private void InstanciaUsuario(Usuario usuario, Personal_Data datos)
-        {
-            usuario.Personal_Data = datos;
-            Usuario.ObtenerInstancia(usuario);
+        {         
             UsuarioLogeadoOK(usuario);
         }
-
 
         /// <summary>
         /// Metodo que navega a Mis datos si todo esta OK
