@@ -74,7 +74,7 @@ namespace MisCuentas_desk.Services.Pagos
             {
                 using (var conexion = new MySqlConnection(_cadenaConexion))
                 {
-                    var sql = @"SELECT * FROM PAGO WHERE id_balance = @Id_Balance";
+                    var sql = @"SELECT * FROM PAGOS WHERE id_balance = @Id_Balance";
                     return conexion.Query<Pago>(sql, new { Id_Balance = idBalance });
                 }
             }

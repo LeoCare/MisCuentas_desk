@@ -105,6 +105,7 @@ namespace MisCuentas_desk
             
         }
 
+
         /// <summary>
         /// Metodo para obtener el usuario de la BBDD.
         /// </summary>
@@ -118,7 +119,6 @@ namespace MisCuentas_desk
                 //Instanciar usuario y sus datos
                 _usuario = Usuario.ObtenerInstancia(usuario);
                 CargarInfoUsuario();
-                UsuarioLogeadoOK(_usuario);
             }
             else MessageBox.Show("Correo o contraseña incorrectos!", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
@@ -137,6 +137,8 @@ namespace MisCuentas_desk
             {
                 ObtenerYCargarHojaPart(listHojas);
                 CargarGastos(listHojas);
+                CargarBalances(listHojas);
+                CargarPagos(listHojas);
             }
 
             UsuarioLogeadoOK(_usuario);
@@ -223,6 +225,59 @@ namespace MisCuentas_desk
             });
         }
 
+
+        /// <summary>
+        /// Metodo que carga los balances del usuario
+        /// </summary>
+        private void CargarBalances(List<Hoja> listHojas)
+        {
+            List<Balance> listBalances = new List<Balance>();
+
+            //Buscarme como participante:
+            listHojas.ForEach(hoja =>
+            {
+                hoja.Participantes.ForEach(participante =>
+                {
+                   // if (participante.Id_Usuario.Equals(_usuario.Id_Usuario))
+                   // {
+                        //Cargar mis balances:
+                        listBalances = ((List<Balance>)_balanceServices.ObtenerPorIdParticipante(participante.Id_Participante));
+
+                        if (listBalances != null && listBalances.Count > 0)
+                        {
+                            participante.Balances = listBalances;
+                        }
+                   // }
+                });
+            });
+        }
+
+        /// <summary>
+        /// Metodo que carga los pagos del usuario logeado 
+        /// </summary>
+        private void CargarPagos(List<Hoja> listHojas)
+        {
+            List<Pago> misPagos = new List<Pago>();
+
+            //Buscarme como participante:
+            listHojas.ForEach(hoja =>
+            {
+                hoja.Participantes.ForEach(participante =>
+                {
+                    if (participante.Id_Usuario.Equals(_usuario.Id_Usuario))
+                    {
+                        participante.Balances.ForEach(balance =>
+                        {
+                            misPagos = (List<Pago>)_pagoServices.ObtenerPorIdBalance(balance.Id_Balance);
+                            if (misPagos != null && misPagos.Count > 0)
+                            {
+                                _usuario.Pagos.AddRange(misPagos);
+                            }
+                        }) ;
+                    }
+                });
+            });
+        }
 
 
         /// <summary>

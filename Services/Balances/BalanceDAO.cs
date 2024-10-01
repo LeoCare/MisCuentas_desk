@@ -68,6 +68,30 @@ namespace MisCuentas_desk.Services.Balances
             }
         }
 
+
+        public virtual IEnumerable<Balance> ObtenerPorIdParticipante(int idParticipante)
+        {
+            try
+            {
+                using (var conexion = new MySqlConnection(_cadenaConexion))
+                {
+                    var sql = @"SELECT * FROM BALANCES WHERE id_participante = @Id_Participante";
+                    return conexion.Query<Balance>(sql, new { Id_Participante = idParticipante });
+                }
+            }
+            catch (MySqlException ex)
+            {
+                _logger.Error(ex, "Error al obtener los balances del participante. Código de error: {0}", ex.Number);
+                throw _errorManager.ManejarExcepcionMySql(ex);
+            }
+            catch (Exception ex)
+            {
+                _logger.Error(ex, "Error general al obtener los balances del participante.");
+                throw;
+            }
+        }
+
+
         public virtual IEnumerable<Balance> ObtenerTodos()
         {
             try

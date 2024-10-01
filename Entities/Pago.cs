@@ -11,14 +11,14 @@ namespace MisCuentas_desk.Entities
         public int Id_Pago { get; set; }
         public int Id_Balance { get; set; }
         public int Id_Balance_Pagado { get; set; }
-        public long Monto { get; set; }
-        public string Fecha_Pago { get; set; }
-        public string Fecha_Confirmacion { get; set; }
+        public Double Monto { get; set; }
+        public DateTime Fecha_Pago { get; set; }
+        public DateTime Fecha_Confirmacion { get; set; }
 
 
         public Pago() { }
 
-        public Pago(int id_Pago, int id_Balance, int id_Balance_Pagado, long monto, string fecha_Pago, string fecha_Confirmacion)
+        public Pago(int id_Pago, int id_Balance, int id_Balance_Pagado, Double monto, DateTime fecha_Pago, DateTime fecha_Confirmacion)
         {
             Id_Pago = id_Pago;
             Id_Balance = id_Balance;

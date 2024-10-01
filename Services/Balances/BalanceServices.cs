@@ -24,6 +24,20 @@ namespace MisCuentas_desk.Services.Balances
             }
         }
 
+        public override IEnumerable<Balance> ObtenerPorIdParticipante(int idParticipante)
+        {
+            try
+            {
+
+                return base.ObtenerPorIdParticipante(idParticipante);
+            }
+            catch (Exception ex)
+            {
+
+                return null;
+            }
+        }
+
         public override bool Actualizar(Balance balance)
         {
             try

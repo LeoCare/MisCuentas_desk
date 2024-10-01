@@ -49,12 +49,13 @@ namespace MisCuentas_desk.Views
 
             CargarTotalesHoja();
             CargarTotalesGastos();
+            CargarTotalesPagos();
         }
 
 
         #region CARGAR TOTALES
         /// <summary>
-        /// Metodo que pinta los totales en el formulario.
+        /// Metodo que pinta los totales (Hojas) en el formulario.
         /// </summary>
         /// <param name="listHojas">Lista de hojas del usuario logeado</param>
         private void CargarTotalesHoja()
@@ -65,7 +66,7 @@ namespace MisCuentas_desk.Views
 
 
         /// <summary>
-        /// Metodo que pinta los total en el formulario.
+        /// Metodo que pinta los totales (Gastos) en el formulario.
         /// </summary>
         /// <param name="listHojas">Lista de hojas del usuario logeado</param>
         private void CargarTotalesGastos()
@@ -90,6 +91,34 @@ namespace MisCuentas_desk.Views
                 }
             });
             lblTotalGastosMes.Text = totalGastosMes.ToString();
+        }
+
+        /// <summary>
+        /// Metodo que pinta los totales (Pagos) en el formulario.
+        /// </summary>
+        /// <param name="listHojas">Lista de hojas del usuario logeado</param>
+        private void CargarTotalesPagos()
+        {
+            //Total:
+            Double totalPagos = 0.0;
+            _usuario.Pagos.ForEach(pago =>
+            {
+                totalPagos += pago.Monto;
+            });
+            lblTotalPagos.Text = totalPagos.ToString();
+
+            //Total este mes:
+            Double totalPagosMes = 0.0;
+            int mesActual = DateTime.Now.Month;
+            int añoActual = DateTime.Now.Year;
+            _usuario.Pagos.ForEach(pago =>
+            {
+                if (pago.Fecha_Pago.Month == mesActual && pago.Fecha_Pago.Year == añoActual)
+                {
+                    totalPagosMes += pago.Monto;
+                }
+            });
+            lblTotalPagosMes.Text = totalPagosMes.ToString();
         }
         #endregion
 
@@ -127,13 +156,45 @@ namespace MisCuentas_desk.Views
         private void btnVerMisPagos_Click(object sender, EventArgs e)
         {
             panelInformeResultColor.BackColor = Color.MediumVioletRed;
+
+            if (_usuario.Pagos.Count > 0)
+            {
+                dgInformes.DataSource = null;
+                dgInformes.Rows.Clear();
+                dgInformes.Columns.Clear();
+                dgInformes.DataSource = _usuario.Pagos;
+ 
+            }
         }
 
         private void btnVerMisBalances_Click(object sender, EventArgs e)
         {
             panelInformeResultColor.BackColor = Color.Goldenrod;
-        }
 
-     
+            List<Balance> misBalances = new List<Balance>();
+
+            if (_usuario.Hojas.Count > 0)
+            {
+                _usuario.Hojas.ForEach(h =>
+                {
+                    if (h.Participantes.Count > 0)
+                    {
+                        h.Participantes.ForEach(p =>
+                        {
+                            if (p.Id_Usuario.Equals(_usuario.Id_Usuario) && p.Balances.Count > 0)
+                            {                              
+                                misBalances.AddRange(p.Balances);  
+                            }
+                        });
+                    }
+                });
+            }
+
+            dgInformes.DataSource = null;
+            dgInformes.Rows.Clear();
+            dgInformes.Columns.Clear();
+            dgInformes.DataSource = misBalances;
+
+        }
     }
 }

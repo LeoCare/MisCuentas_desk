@@ -10,6 +10,7 @@ namespace MisCuentas_desk.Services.Balances
     {
         bool Crear(T entidad);
         T ObtenerPorId(int id);
+        IEnumerable<T> ObtenerPorIdParticipante(int idParticipante);
         IEnumerable<T> ObtenerTodos();
         bool Actualizar(T entidad);
         bool Eliminar(int id);

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MisCuentas_desk.Services.Balances;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,7 +14,8 @@ namespace MisCuentas_desk.Entities
         public string Correo { get; set; }
         public int Id_Usuario { get; set; }
         public int Id_Hoja { get; set; }
-        public List<Gasto> Gastos { get; set; }
+        public List<Gasto> Gastos { get; set; } = new List<Gasto>();
+        public List<Balance> Balances { get; set; } = new List<Balance>();
 
         public Participante() { }
 

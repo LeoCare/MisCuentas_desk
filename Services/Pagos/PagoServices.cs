@@ -24,6 +24,19 @@ namespace MisCuentas_desk.Services.Pagos
             }
         }
 
+        public override IEnumerable<Pago> ObtenerPorIdBalance(int idBalance)
+        {
+            try
+            {
+                return base.ObtenerPorIdBalance(idBalance);
+            }
+            catch (Exception ex)
+            {
+
+                return null;
+            }
+        }
+
         public override bool Actualizar(Pago pago)
         {
             try
