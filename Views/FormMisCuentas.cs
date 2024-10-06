@@ -18,23 +18,30 @@ namespace MisCuentas_desk
 {
     public partial class FormMisCuentas : Form
     {
+        #region ATRIBUTOS
         private MisCuentasConnect conn = new MisCuentasConnect();
         private UsuarioServices _usuarioService;
         private Navigation _nav;
         private Usuario _usuario;
+        #endregion
 
+        #region CONSTRUCTOR
         public FormMisCuentas()
         {
             InitializeComponent();
             _nav = new Navigation(this);
-            _nav.AbrirFormEnPanel(new Inicio());
+            _nav.AbrirFormEnPanel(new FormsInicio());
             string cadenaConexion = conn.Conexion();
             _usuarioService = new UsuarioServices(cadenaConexion);
             ConexionEstablecida();
             
         }
+        #endregion
 
-
+        #region METODOS
+        /// <summary>
+        /// Metodo que establece la conexion en el inico del programa.
+        /// </summary>
         private void ConexionEstablecida()
         {
             if (conn.PruebaConexion()) {
@@ -48,6 +55,11 @@ namespace MisCuentas_desk
             }
         }
 
+
+        /// <summary>
+        /// Metodo que instancia un usuario
+        /// </summary>
+        /// <param name="usuario">Usuario que se desea instanciar</param>
         public void InstanciaUsuario(Usuario usuario)
         {
             _usuario = Usuario.ObtenerInstancia(usuario);
@@ -55,12 +67,35 @@ namespace MisCuentas_desk
 
 
         /// <summary>
+        /// Metodo para el cierre de sesion o eliminacion de cuenta.
+        /// </summary>
+        public void RetornoLogin()
+        {
+            _usuario = null;
+            Usuario.CerrarSesion();
+            lblInformacion.Text = "Inicia sesion";
+            pbxUsuarioLoginNOK.Visible = true;
+            pbxUsuarioLoginOK.Visible = false;
+        }
+
+        /// <summary>
+        /// Metodo que modifica el texto del panel informativo superior.
+        /// </summary>
+        public void MostrarMensaje(string mensaje)
+        {
+            lblInformacion.Visible = true;
+            lblInformacion.Text = mensaje;
+        }
+        #endregion
+
+        #region EVENTOS
+        /// <summary>
         /// Metodo navegar al inicio.
         /// Boton superior izquierdo.
         /// </summary>
         private void pbxHome_Click(object sender, EventArgs e)
         {
-            _nav.AbrirFormEnPanel(new Inicio());
+            _nav.AbrirFormEnPanel(new FormsInicio());
         }
 
         /// <summary>
@@ -77,7 +112,7 @@ namespace MisCuentas_desk
         /// </summary>
         private void pbxUsuarioLoginNOK_Click(object sender, EventArgs e)
         {
-            _nav.AbrirFormEnPanel(new Login(this));
+            _nav.AbrirFormEnPanel(new FormsLogin(this));
         }
 
         /// <summary>
@@ -87,20 +122,10 @@ namespace MisCuentas_desk
         private void pbxUsuarioLoginOK_Click(object sender, EventArgs e)
         {
             RetornoLogin();
-            _nav.AbrirFormEnPanel(new Login(this));
+            _nav.AbrirFormEnPanel(new FormsLogin(this));
         }
 
-        /// <summary>
-        /// Metodo para el cierre de sesion o eliminacion de cuenta.
-        /// </summary>
-        public void RetornoLogin()
-        { 
-            _usuario = null;
-            Usuario.CerrarSesion();
-            lblInformacion.Text = "Inicia sesion";
-            pbxUsuarioLoginNOK.Visible = true;
-            pbxUsuarioLoginOK.Visible = false;    
-        }
+       
 
         /// <summary>
         /// Metodo para navegar al formulario MisDatos.
@@ -108,7 +133,7 @@ namespace MisCuentas_desk
         /// </summary>
         private void btnMisDatos_Click(object sender, EventArgs e)
         {
-            if (_usuario != null) _nav.AbrirFormEnPanel(new MisDatos(_usuario, this));
+            if (_usuario != null) _nav.AbrirFormEnPanel(new FormsMisDatos(_usuario, this));
         }
 
         /// <summary>
@@ -117,7 +142,7 @@ namespace MisCuentas_desk
         /// </summary>
         private void btnInformes_Click(object sender, EventArgs e)
         {
-            if (_usuario != null) _nav.AbrirFormEnPanel(new Informes(_usuario, this));
+            if (_usuario != null) _nav.AbrirFormEnPanel(new FormsInformes(_usuario, this));
         }
 
         /// <summary>
@@ -171,14 +196,7 @@ namespace MisCuentas_desk
             pbxUsuarioLoginOK.BackColor = Color.DarkGray;
             pbxUsuarioLoginNOK.BackColor = Color.DarkGray;
         }
-       
-        /// <summary>
-        /// Metodo que modifica el texto del panel informativo superior.
-        /// </summary>
-        public void MostrarMensaje(string mensaje)
-        {
-            lblInformacion.Visible = true;
-            lblInformacion.Text = mensaje;
-        }
+        #endregion
+
     }
 }

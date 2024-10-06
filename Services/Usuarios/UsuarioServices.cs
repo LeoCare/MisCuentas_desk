@@ -79,7 +79,25 @@ namespace MisCuentas_desk.Services.Usuarios
         /// </summary>
         /// <param name="correo">Correo del usuario registrado</param>
         /// <returns>Instancia de un Usuario o null</returns>
-        public Usuario ObtenerUsuarioPorCorreo(string correo, string contrasenna)
+        public override Usuario ObtenerPorCorreo(string correo)
+        {
+            try
+            {
+                return base.ObtenerPorCorreo(correo);
+            }
+            catch (Exception e)
+            {
+                return null;
+            }
+        }
+
+
+        /// <summary>
+        /// Metodo para obtener el usuario segun el correo verificando la contraseña.
+        /// </summary>
+        /// <param name="correo">Correo del usuario registrado</param>
+        /// <returns>Instancia de un Usuario o null</returns>
+        public Usuario ObtenerUsuarioVerificadoPorCorreo(string correo, string contrasenna)
         {
             try
             {

@@ -1,57 +1,34 @@
 ﻿using MisCuentas_desk.Configurations;
 using MisCuentas_desk.Entities;
-using MisCuentas_desk.Services.Balances;
-using MisCuentas_desk.Services.Gastos;
-using MisCuentas_desk.Services.Hojas;
-using MisCuentas_desk.Services.Pagos;
-using MisCuentas_desk.Services.Participantes;
-using MisCuentas_desk.Services.PersonalData;
-using MisCuentas_desk.Services.Usuarios;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MisCuentas_desk.Views
 {
-    public partial class Informes : Form
+    public partial class FormsInformes : Form
     {
-
+        #region ATRIBUTOS
         private Usuario _usuario;
-        private List<Hoja> _listHojas;
         private MisCuentasConnect _conn = new MisCuentasConnect();
-        private UsuarioServices _usuarioServices; 
-        private HojaServices _hojaServices;
-        private PagoServices _pagoServices;
-        private ParticipanteServices _participanteServices;
-        private GastoServices _gastoServices;
-        private BalanceServices _balanceServices;
-        private FormMisCuentas _formMisCuentas;
+        #endregion
 
-        public Informes(Usuario usuario, FormMisCuentas formMisCuentas)
+        #region CONSTRUCTOR
+        public FormsInformes(Usuario usuario, FormMisCuentas formMisCuentas)
         {
             InitializeComponent();
             string cadenaConexion = _conn.Conexion();
-            _usuarioServices = new UsuarioServices(cadenaConexion);
-            _hojaServices = new HojaServices(cadenaConexion);
-            _pagoServices = new PagoServices(cadenaConexion);
-            _participanteServices = new ParticipanteServices(cadenaConexion);
-            _gastoServices = new GastoServices(cadenaConexion);
-            _balanceServices = new BalanceServices(cadenaConexion);
-            _formMisCuentas = formMisCuentas;
             _usuario = usuario; 
 
             CargarTotalesHoja();
             CargarTotalesGastos();
             CargarTotalesPagos();
+            CargarTotalesBalances();
         }
-
+        #endregion
 
         #region CARGAR TOTALES
         /// <summary>
@@ -68,7 +45,6 @@ namespace MisCuentas_desk.Views
         /// <summary>
         /// Metodo que pinta los totales (Gastos) en el formulario.
         /// </summary>
-        /// <param name="listHojas">Lista de hojas del usuario logeado</param>
         private void CargarTotalesGastos()
         {
             //Total:
@@ -96,7 +72,6 @@ namespace MisCuentas_desk.Views
         /// <summary>
         /// Metodo que pinta los totales (Pagos) en el formulario.
         /// </summary>
-        /// <param name="listHojas">Lista de hojas del usuario logeado</param>
         private void CargarTotalesPagos()
         {
             //Total:
@@ -120,9 +95,54 @@ namespace MisCuentas_desk.Views
             });
             lblTotalPagosMes.Text = totalPagosMes.ToString();
         }
+
+
+        /// <summary>
+        /// Metodo que pinta los totales (Balances) en el formulario.
+        /// </summary>
+        private void CargarTotalesBalances()
+        {
+            //Total:
+            int totalBalances = 0;
+            
+            List<Balance> misBalances = new List<Balance>();
+
+            if (_usuario.Hojas.Count > 0)
+            {
+                _usuario.Hojas.ForEach(h =>
+                {
+                    if (h.Participantes.Count > 0)
+                    {
+                        h.Participantes.ForEach(p =>
+                        {
+                            if (p.Id_Usuario.Equals(_usuario.Id_Usuario) && p.Balances.Count > 0)
+                            {
+                                misBalances.AddRange(p.Balances);
+                            }
+                        });
+                    }
+                });
+            }
+            lblTotalBalances.Text = misBalances.Count.ToString();
+
+            //Total este mes:
+            Double totalBalancesMes = 0.0;
+
+            if(misBalances != null && misBalances.Count > 0)
+            {
+                misBalances.ForEach(balance =>
+                {
+                    if(balance.Tipo.Equals("A")) totalBalancesMes += Double.Parse(balance.Monto.ToString());
+                });
+                lblTotalBalancesFavor.Text = totalBalancesMes.ToString();
+            }   
+        }
         #endregion
 
-
+        #region BOTONES ACCION
+        /// <summary>
+        /// Metodo para ver las hojas del usuario logeado.
+        /// </summary>
         private void btnVerMisHojas_Click(object sender, EventArgs e)
         {
             panelInformeResultColor.BackColor = Color.OliveDrab;
@@ -138,6 +158,9 @@ namespace MisCuentas_desk.Views
             }
         }
 
+        /// <summary>
+        /// Metodo para ver los gastos del usuario logeado.
+        /// </summary>
         private void btnVerMisGastos_Click(object sender, EventArgs e)
         {
             panelInformeResultColor.BackColor = Color.DeepSkyBlue;
@@ -153,6 +176,9 @@ namespace MisCuentas_desk.Views
             }
         }
 
+        /// <summary>
+        /// Metodo para ver los pagos del usuario logeado.
+        /// </summary>
         private void btnVerMisPagos_Click(object sender, EventArgs e)
         {
             panelInformeResultColor.BackColor = Color.MediumVioletRed;
@@ -167,6 +193,9 @@ namespace MisCuentas_desk.Views
             }
         }
 
+        /// <summary>
+        /// Metodo para ver los balances del usuario logeado.
+        /// </summary>
         private void btnVerMisBalances_Click(object sender, EventArgs e)
         {
             panelInformeResultColor.BackColor = Color.Goldenrod;
@@ -196,5 +225,6 @@ namespace MisCuentas_desk.Views
             dgInformes.DataSource = misBalances;
 
         }
+        #endregion
     }
 }

@@ -1,9 +1,7 @@
 ﻿using MisCuentas_desk.Entities;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace MisCuentas_desk.Services.Participantes
 {
@@ -15,7 +13,6 @@ namespace MisCuentas_desk.Services.Participantes
         {
             try
             {
-                // Aquí puedes agregar validaciones adicionales antes de crear el participante
                 return base.Crear(participante);
             }
             catch (Exception ex)
@@ -29,12 +26,24 @@ namespace MisCuentas_desk.Services.Participantes
         {
             try
             {
-                // Lógica adicional antes de actualizar (si es necesario)
                 return base.Actualizar(participante);
             }
             catch (Exception ex)
             {
                 
+                return false;
+            }
+        }
+
+        public override bool Eliminar(int idParticipante)
+        {
+            try
+            {
+                return base.Eliminar(idParticipante);
+            }
+            catch (Exception ex)
+            {
+
                 return false;
             }
         }

@@ -214,7 +214,7 @@
             this.panelHora.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelHora.Location = new System.Drawing.Point(200, 0);
             this.panelHora.Name = "panelHora";
-            this.panelHora.Size = new System.Drawing.Size(1297, 49);
+            this.panelHora.Size = new System.Drawing.Size(1297, 38);
             this.panelHora.TabIndex = 4;
             // 
             // panel3
@@ -222,19 +222,19 @@
             this.panel3.Controls.Add(this.lblInformacion);
             this.panel3.Location = new System.Drawing.Point(260, 3);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(932, 41);
+            this.panel3.Size = new System.Drawing.Size(936, 32);
             this.panel3.TabIndex = 9;
             // 
             // lblInformacion
             // 
             this.lblInformacion.AutoSize = true;
             this.lblInformacion.Dock = System.Windows.Forms.DockStyle.Right;
-            this.lblInformacion.Font = new System.Drawing.Font("Century Gothic", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInformacion.Font = new System.Drawing.Font("Century Gothic", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblInformacion.ForeColor = System.Drawing.Color.DimGray;
-            this.lblInformacion.Location = new System.Drawing.Point(758, 0);
+            this.lblInformacion.Location = new System.Drawing.Point(800, 0);
             this.lblInformacion.Name = "lblInformacion";
             this.lblInformacion.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblInformacion.Size = new System.Drawing.Size(174, 33);
+            this.lblInformacion.Size = new System.Drawing.Size(136, 25);
             this.lblInformacion.TabIndex = 8;
             this.lblInformacion.Text = "Inicia sesion";
             this.lblInformacion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -245,9 +245,9 @@
             this.pbxUsuarioLoginOK.BackColor = System.Drawing.Color.Silver;
             this.pbxUsuarioLoginOK.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbxUsuarioLoginOK.Image = ((System.Drawing.Image)(resources.GetObject("pbxUsuarioLoginOK.Image")));
-            this.pbxUsuarioLoginOK.Location = new System.Drawing.Point(1198, 0);
+            this.pbxUsuarioLoginOK.Location = new System.Drawing.Point(1202, 0);
             this.pbxUsuarioLoginOK.Name = "pbxUsuarioLoginOK";
-            this.pbxUsuarioLoginOK.Size = new System.Drawing.Size(46, 49);
+            this.pbxUsuarioLoginOK.Size = new System.Drawing.Size(40, 35);
             this.pbxUsuarioLoginOK.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbxUsuarioLoginOK.TabIndex = 4;
             this.pbxUsuarioLoginOK.TabStop = false;
@@ -260,9 +260,9 @@
             // 
             this.pbxConectaOK.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.pbxConectaOK.Image = ((System.Drawing.Image)(resources.GetObject("pbxConectaOK.Image")));
-            this.pbxConectaOK.Location = new System.Drawing.Point(1250, 0);
+            this.pbxConectaOK.Location = new System.Drawing.Point(1254, 0);
             this.pbxConectaOK.Name = "pbxConectaOK";
-            this.pbxConectaOK.Size = new System.Drawing.Size(46, 49);
+            this.pbxConectaOK.Size = new System.Drawing.Size(40, 35);
             this.pbxConectaOK.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbxConectaOK.TabIndex = 3;
             this.pbxConectaOK.TabStop = false;
@@ -272,9 +272,9 @@
             // 
             this.pbxConectaNOK.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.pbxConectaNOK.Image = ((System.Drawing.Image)(resources.GetObject("pbxConectaNOK.Image")));
-            this.pbxConectaNOK.Location = new System.Drawing.Point(1250, 0);
+            this.pbxConectaNOK.Location = new System.Drawing.Point(1254, 0);
             this.pbxConectaNOK.Name = "pbxConectaNOK";
-            this.pbxConectaNOK.Size = new System.Drawing.Size(46, 49);
+            this.pbxConectaNOK.Size = new System.Drawing.Size(40, 35);
             this.pbxConectaNOK.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbxConectaNOK.TabIndex = 2;
             this.pbxConectaNOK.TabStop = false;
@@ -284,9 +284,9 @@
             this.pbxUsuarioLoginNOK.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.pbxUsuarioLoginNOK.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbxUsuarioLoginNOK.Image = ((System.Drawing.Image)(resources.GetObject("pbxUsuarioLoginNOK.Image")));
-            this.pbxUsuarioLoginNOK.Location = new System.Drawing.Point(1198, 0);
+            this.pbxUsuarioLoginNOK.Location = new System.Drawing.Point(1202, 0);
             this.pbxUsuarioLoginNOK.Name = "pbxUsuarioLoginNOK";
-            this.pbxUsuarioLoginNOK.Size = new System.Drawing.Size(46, 49);
+            this.pbxUsuarioLoginNOK.Size = new System.Drawing.Size(40, 35);
             this.pbxUsuarioLoginNOK.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbxUsuarioLoginNOK.TabIndex = 1;
             this.pbxUsuarioLoginNOK.TabStop = false;
@@ -298,11 +298,11 @@
             // 
             this.lblHora.AutoSize = true;
             this.lblHora.Dock = System.Windows.Forms.DockStyle.Left;
-            this.lblHora.Font = new System.Drawing.Font("Century Gothic", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHora.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHora.ForeColor = System.Drawing.Color.White;
             this.lblHora.Location = new System.Drawing.Point(46, 0);
             this.lblHora.Name = "lblHora";
-            this.lblHora.Size = new System.Drawing.Size(101, 44);
+            this.lblHora.Size = new System.Drawing.Size(79, 36);
             this.lblHora.TabIndex = 7;
             this.lblHora.Text = "hora";
             // 
@@ -313,7 +313,7 @@
             this.pbxHome.Image = ((System.Drawing.Image)(resources.GetObject("pbxHome.Image")));
             this.pbxHome.Location = new System.Drawing.Point(0, 0);
             this.pbxHome.Name = "pbxHome";
-            this.pbxHome.Size = new System.Drawing.Size(46, 49);
+            this.pbxHome.Size = new System.Drawing.Size(46, 38);
             this.pbxHome.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbxHome.TabIndex = 0;
             this.pbxHome.TabStop = false;

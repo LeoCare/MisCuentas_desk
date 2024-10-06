@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
+﻿using System.Text.RegularExpressions;
+
 
 namespace MisCuentas_desk.Utils
 {
@@ -62,6 +58,30 @@ namespace MisCuentas_desk.Utils
             {
                 return false;
             }
+        }
+
+        /// <summary>
+        /// Metodo que valida el importe introducido con dos decimales maximo.
+        /// </summary>
+        /// <param name="texto">Importe introducido</param>
+        /// <returns>true si es correcto o false en caso contrario</returns>
+        public static bool EsNumeroConDosDecimales(string texto)
+        {
+            // Intentar convertir el texto a un número decimal
+            decimal numero;
+            if (decimal.TryParse(texto, out numero))
+            {
+                // Obtener la parte decimal del número
+                int[] bits = decimal.GetBits(numero);
+                int exponent = (bits[3] >> 16) & 31;
+
+                // Verificar si el número de decimales es menor o igual a 2
+                if (exponent <= 2)
+                {
+                    return true; 
+                }
+            }
+            return false; 
         }
     }
 }

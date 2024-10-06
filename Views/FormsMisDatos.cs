@@ -16,7 +16,7 @@ using System.Windows.Forms;
 
 namespace MisCuentas_desk.Views
 {
-    public partial class MisDatos : Form
+    public partial class FormsMisDatos : Form
     {
         #region ATRIBUTOS
         private Usuario _usuario;
@@ -25,13 +25,10 @@ namespace MisCuentas_desk.Views
         private PersonalDataServices _personalDataServices;
         private FormMisCuentas _formMisCuentas;
         private Navigation _nav;
-        private bool _stateModificar = false;
-        private bool _stateCambioPass = false;
         #endregion
 
-
         #region CONSTRUCTOR
-        public MisDatos(Usuario usuario, FormMisCuentas formMisCuentas)
+        public FormsMisDatos(Usuario usuario, FormMisCuentas formMisCuentas)
         {
             InitializeComponent();
             string cadenaConexion = _conn.Conexion();
@@ -89,7 +86,6 @@ namespace MisCuentas_desk.Views
         }
         #endregion
 
-
         #region MODIFICAR DATOS
         /// <summary>
         /// Metodo modifica el panel para poder introducir los datos
@@ -134,13 +130,12 @@ namespace MisCuentas_desk.Views
                 tbxMDTelefono.Text = _usuario.Personal_Data.Telefono.ToString();
             }
 
-            CargarPaises(modificar);
-            _stateModificar = modificar;
+            CargarPaises(modificar);          
         }
 
 
         /// <summary>
-        /// Metodo que instnacia, realiza un Update de los datos y actualiza el objeto.
+        /// Metodo que instancia, realiza un Update de los datos y actualiza el objeto.
         /// </summary>
         private void btnMDGuardar_Click(object sender, EventArgs e)
         {
@@ -188,8 +183,6 @@ namespace MisCuentas_desk.Views
             ModoModificarDatos(false);        
         }
         #endregion
-
-
 
         #region CAMBIO CONTRASEÑA
         /// <summary>
@@ -250,7 +243,6 @@ namespace MisCuentas_desk.Views
         /// </summary>
         private void ModoCambioPass(bool mostrar)
         {         
-            _stateCambioPass = mostrar;
             panelCambioPass.Visible = mostrar;
             tbxCanbioPass.Text = mostrar ? "" : null;
             tbxCanbioPass2.Text = mostrar ? "" : null;
@@ -305,7 +297,6 @@ namespace MisCuentas_desk.Views
 
         #endregion
 
-
         #region ELIMINAR CUENTA
         /// <summary>
         /// Metodo para eliminar la cuenta del usuario. CUIDADO CON ESTO! ELIMINA TODA LA INFO DEL USUAIRO DEL SISTEMA!
@@ -320,7 +311,7 @@ namespace MisCuentas_desk.Views
                 {
                     this.Close();
                     _formMisCuentas.RetornoLogin();
-                    _nav.AbrirFormEnPanel(new Login(_formMisCuentas));
+                    _nav.AbrirFormEnPanel(new FormsLogin(_formMisCuentas));
                     MessageBox.Show("La cuenta se ha eliminado correctamente!.",
                                "EXITO!",
                                MessageBoxButtons.OK,
@@ -378,7 +369,6 @@ namespace MisCuentas_desk.Views
             }
         }
         #endregion
-
-        
+ 
     }
 }

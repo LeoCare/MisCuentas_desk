@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace MisCuentas_desk.Views
 {
-    public partial class Inicio : Form
+    public partial class FormsInicio : Form
     {
-        public Inicio()
+        public FormsInicio()
         {
             InitializeComponent();
         }

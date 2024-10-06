@@ -1,6 +1,6 @@
 ﻿namespace MisCuentas_desk
 {
-    partial class Login
+    partial class FormsLogin
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormsLogin));
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panelInicoPrincipal = new System.Windows.Forms.Panel();
             this.btnLogin = new System.Windows.Forms.Button();

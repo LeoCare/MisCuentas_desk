@@ -1,9 +1,6 @@
 ﻿using MisCuentas_desk.Entities;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace MisCuentas_desk.Services.Hojas
 {
@@ -11,7 +8,7 @@ namespace MisCuentas_desk.Services.Hojas
     {
         public HojaServices(string cadenaConexion) : base(cadenaConexion) { }
 
-        public override bool Crear(Hoja hoja)
+        public override int Crear(Hoja hoja)
         {
             try
             {               
@@ -19,7 +16,7 @@ namespace MisCuentas_desk.Services.Hojas
             }
             catch (Exception ex)
             {   
-                return false;
+                return 0;
             }
         }
 
@@ -28,6 +25,18 @@ namespace MisCuentas_desk.Services.Hojas
             try
             {
                 return base.Actualizar(hoja);
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+
+        public override bool Eliminar(int idHoja)
+        {
+            try
+            {
+                return base.Eliminar(idHoja);
             }
             catch (Exception ex)
             {

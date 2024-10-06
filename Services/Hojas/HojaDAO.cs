@@ -5,9 +5,7 @@ using MySqlConnector;
 using NLog;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace MisCuentas_desk.Services.Hojas
 {
@@ -22,16 +20,16 @@ namespace MisCuentas_desk.Services.Hojas
             _cadenaConexion = cadenaConexion;
         }
 
-        public virtual bool Crear(Hoja hoja)
+        public virtual int Crear(Hoja hoja)
         {
             try
             {
                 using (var conexion = new MySqlConnection(_cadenaConexion))
                 {
                     var sql = @"INSERT INTO HOJAS (titulo, fecha_creacion, fecha_cierre, limite_gastos, status, id_usuario)
-                            VALUES (@Titulo, @Fecha_Creacion, @Fecha_Cierre, @Limite_Gastos, @Status, @Id_Usuario)";
-                    conexion.Execute(sql, hoja);
-                    return true;
+                            VALUES (@Titulo, @Fecha_Creacion, @Fecha_Cierre, @Limite_Gastos, @Status, @Id_Usuario);
+                                SELECT LAST_INSERT_ID();";
+                    return conexion.QuerySingle<int>(sql, hoja); // Devuelve el ID
                 }
             }
             catch (MySqlException ex)

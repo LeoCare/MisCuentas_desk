@@ -18,11 +18,7 @@ C:\Users\leon1\Documents\Repo_Github\MisCuentas_desk\obj\Debug\MisCuentas_desk.c
 C:\Users\leon1\Documents\Repo_Github\MisCuentas_desk\obj\Debug\MisCuentas_desk.csproj.CoreCompileInputs.cache
 C:\Users\leon1\Documents\Repo_Github\MisCuentas_desk\obj\Debug\MisCuentas_desk.exe
 C:\Users\leon1\Documents\Repo_Github\MisCuentas_desk\obj\Debug\MisCuentas_desk.pdb
-C:\Users\leon1\Documents\Repo_Github\MisCuentas_desk\obj\Debug\MisCuentas_desk.Login.resources
 C:\Users\m1439\Desktop\CICLO_DAM\WorkSpace\MisCuentas_desk\obj\Debug\MisCuentas_desk.Login.resources
-C:\Users\leon1\Documents\Repo_Github\MisCuentas_desk\obj\Debug\MisCuentas_desk.Views.Inicio.resources
-C:\Users\leon1\Documents\Repo_Github\MisCuentas_desk\obj\Debug\MisCuentas_desk.Views.MisDatos.resources
-C:\Users\leon1\Documents\Repo_Github\MisCuentas_desk\obj\Debug\MisCuentas_desk.Views.Informes.resources
 C:\Users\leon1\Documents\Repo_Github\MisCuentas_desk\obj\Debug\MisCuentas_desk.Views.Avanzado.resources
 C:\Users\leon1\Documents\Repo_Github\MisCuentas_desk_copia\bin\Debug\MisCuentas_desk.exe.config
 C:\Users\leon1\Documents\Repo_Github\MisCuentas_desk_copia\bin\Debug\MisCuentas_desk.exe
@@ -95,3 +91,8 @@ C:\Users\leon1\Documents\Repo_Github\MisCuentas_desk_copia\bin\Debug\Microsoft.B
 C:\Users\leon1\Documents\Repo_Github\MisCuentas_desk_copia\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
 C:\Users\leon1\Documents\Repo_Github\MisCuentas_desk\bin\Debug\NLog.dll
 C:\Users\leon1\Documents\Repo_Github\MisCuentas_desk\bin\Debug\NLog.xml
+C:\Users\leon1\Documents\Repo_Github\MisCuentas_desk\obj\Debug\MisCuentas_desk.Views.FormsParticipantes.resources
+C:\Users\leon1\Documents\Repo_Github\MisCuentas_desk\obj\Debug\MisCuentas_desk.Views.FormsInformes.resources
+C:\Users\leon1\Documents\Repo_Github\MisCuentas_desk\obj\Debug\MisCuentas_desk.FormsLogin.resources
+C:\Users\leon1\Documents\Repo_Github\MisCuentas_desk\obj\Debug\MisCuentas_desk.Views.FormsInicio.resources
+C:\Users\leon1\Documents\Repo_Github\MisCuentas_desk\obj\Debug\MisCuentas_desk.Views.FormsMisDatos.resources

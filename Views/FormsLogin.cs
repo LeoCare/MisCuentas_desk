@@ -16,48 +16,38 @@ using System.Windows.Forms;
 
 namespace MisCuentas_desk
 {
-    public partial class Login : Form
+    public partial class FormsLogin : Form
     {
         #region ATRIBUTOS
         private Usuario _usuario;
-        private MisCuentasConnect conn = new MisCuentasConnect();
-        private UsuarioServices usuarioServices;
-        private PersonalDataServices personalDataServices;
-        private HojaServices _hojaServices;
-        private PagoServices _pagoServices;
-        private ParticipanteServices _participanteServices;
-        private GastoServices _gastoServices;
-        private BalanceServices _balanceServices;
-        private FormMisCuentas formMisCuentas;
-        private Navigation nav;
-        private bool controlTimer = false;
+        private MisCuentasConnect _conn = new MisCuentasConnect();
+        private UsuarioServices _usuarioServices;
+        private FormMisCuentas _formMisCuentas;
+        private Navigation _nav;
+        private bool _controlTimer = false;
+        private UpdateDataUsuario _updateUsuario;
         #endregion
 
         #region CONSTRUCTOR
-        public Login(FormMisCuentas formMisCuentas)
+        public FormsLogin(FormMisCuentas formMisCuentas)
         {
             InitializeComponent();
-            string cadenaConexion = conn.Conexion();
-            usuarioServices = new UsuarioServices(cadenaConexion);
-            personalDataServices = new PersonalDataServices(cadenaConexion);
-            _hojaServices = new HojaServices(cadenaConexion);
-            _pagoServices = new PagoServices(cadenaConexion);
-            _participanteServices = new ParticipanteServices(cadenaConexion);
-            _gastoServices = new GastoServices(cadenaConexion);
-            _balanceServices = new BalanceServices(cadenaConexion);
+            string cadenaConexion = _conn.Conexion();
+            _usuarioServices = new UsuarioServices(cadenaConexion);
             _usuario = new Usuario();
-            this.formMisCuentas = formMisCuentas;
-            this.nav = new Navigation(formMisCuentas);
+            _updateUsuario = new UpdateDataUsuario();
+            _formMisCuentas = formMisCuentas;
+            _nav = new Navigation(formMisCuentas);
         }
         #endregion
 
-       
+        #region EVENTOS
         /// <summary>
         /// Metodo que controla el desplazamiento de la ventana de LOGIN
         /// </summary>
         private void timer1_Tick(object sender, EventArgs e)
         {
-            if(!controlTimer)
+            if(!_controlTimer)
             {
                 panelContenedorLogin.Left += 10;
                 panelRegistrar.BringToFront();
@@ -65,7 +55,7 @@ namespace MisCuentas_desk
                 if(panelContenedorLogin.Left == 720)
                 {
                     timer1.Stop();
-                    controlTimer = true;
+                    _controlTimer = true;
                 }
             }
             else
@@ -76,10 +66,11 @@ namespace MisCuentas_desk
                 if(panelContenedorLogin.Left == 310)
                 {
                     timer1.Stop ();
-                    controlTimer = false;
+                    _controlTimer = false;
                 }
             }
         }
+        #endregion
 
         #region LOGEO
         /// <summary>
@@ -113,7 +104,7 @@ namespace MisCuentas_desk
         /// <param name="contrasenna">Contraseña del logeado</param>
         private void ObtenerUsuarioLogin(string correo, String contrasenna)
         {
-            Usuario usuario = usuarioServices.ObtenerUsuarioPorCorreo(correo, contrasenna);
+            Usuario usuario =  _usuarioServices.ObtenerUsuarioVerificadoPorCorreo(correo, contrasenna);
             if(usuario != null)
             {
                 //Instanciar usuario y sus datos
@@ -129,154 +120,17 @@ namespace MisCuentas_desk
         /// </summary>
         private void CargarInfoUsuario()
         {
-            ObtenerDatosPersonales(_usuario.Id_Usuario);
-
-            //Cargar hojas, gastos, pagos y balances
-            List<Hoja> listHojas = ObtenerHojas(_usuario.Id_Usuario);
+            _usuario.Personal_Data = _updateUsuario.ObtenerDatosPersonales(_usuario.Id_Usuario);
+            List<Hoja> listHojas = _updateUsuario.ObtenerHojas(_usuario.Id_Usuario);
             if (listHojas != null || listHojas.Count > 0)
             {
-                ObtenerYCargarHojaPart(listHojas);
-                CargarGastos(listHojas);
-                CargarBalances(listHojas);
-                CargarPagos(listHojas);
+                _usuario.Hojas = _updateUsuario.CargarHojaConPart(listHojas);
+                _usuario.Gastos = _updateUsuario.CargarGastos(listHojas, _usuario.Id_Usuario);
+                _usuario.Hojas = _updateUsuario.CargarBalances(listHojas);
+                _usuario.Pagos = _updateUsuario.CargarPagos(listHojas, _usuario.Id_Usuario);
             }
 
             UsuarioLogeadoOK(_usuario);
-        }
-
-
-        /// <summary>
-        /// Metodo que obtiene, o instancia si aun no estan creados, los datos personales.
-        /// </summary>
-        /// <param name="idUsuario">Id del usuario creado</param>    
-        private void ObtenerDatosPersonales(int idUsuario)
-        {
-            //Obtener Personal_Data
-            Personal_Data datos = personalDataServices.ObtenerPorId(idUsuario);
-
-            if (datos == null)
-            {
-                datos = new Personal_Data(idUsuario, null, null, null, null, null);
-                //Insert Personal_Data
-                bool actualizado = personalDataServices.Crear(datos);
-                if (actualizado) _usuario.Personal_Data = datos;
-            }
-            else _usuario.Personal_Data = datos;
-        }
-
-
-        /// <summary>
-        /// Metodo que carga las hojas del usuario
-        /// </summary>
-        /// <returns>Lista de hojas</returns>
-        private List<Hoja> ObtenerHojas(int id_usuario)
-        {
-
-            return (List<Hoja>)_hojaServices.ObtenerPorIdUsuario(id_usuario);
-
-        }
-
-
-        /// <summary>
-        /// Metodo que carga los participantes de cada hoja
-        /// </summary>
-        private void ObtenerYCargarHojaPart(List<Hoja> listHojas)
-        {
-            List<Participante> listParticipantes = new List<Participante>();
-
-            //Cargar participantes por Hoja:
-            listHojas.ForEach(hoja =>
-            {
-                listParticipantes = ((List<Participante>)_participanteServices.ObtenerParticipantesPorHoja(hoja.Id_Hoja));
-
-                if (listParticipantes != null && listParticipantes.Count > 0)
-                {
-                    hoja.Participantes = listParticipantes;
-                    _usuario.Hojas.Add(hoja);
-                }
-            });
-
-        }
-
-
-        /// <summary>
-        /// Metodo que carga los gastos solo donde el usuario logeado participe
-        /// </summary>
-        private void CargarGastos(List<Hoja> listHojas)
-        {
-            List<Gasto> listGastos = new List<Gasto>();
-
-            //Buscarme como participante:
-            listHojas.ForEach(hoja =>
-            {
-                hoja.Participantes.ForEach(participante =>
-                {
-                    if (participante.Id_Usuario.Equals(_usuario.Id_Usuario))
-                    {
-                        //Cargar mis gastos:
-                        listGastos = ((List<Gasto>)_gastoServices.ObtenerPorIdParticipante(participante.Id_Participante));
-
-                        if (listGastos != null && listGastos.Count > 0)
-                        {
-                            _usuario.Gastos.AddRange(listGastos);
-                        }
-                    }
-                });
-            });
-        }
-
-
-        /// <summary>
-        /// Metodo que carga los balances del usuario
-        /// </summary>
-        private void CargarBalances(List<Hoja> listHojas)
-        {
-            List<Balance> listBalances = new List<Balance>();
-
-            //Buscarme como participante:
-            listHojas.ForEach(hoja =>
-            {
-                hoja.Participantes.ForEach(participante =>
-                {
-                   // if (participante.Id_Usuario.Equals(_usuario.Id_Usuario))
-                   // {
-                        //Cargar mis balances:
-                        listBalances = ((List<Balance>)_balanceServices.ObtenerPorIdParticipante(participante.Id_Participante));
-
-                        if (listBalances != null && listBalances.Count > 0)
-                        {
-                            participante.Balances = listBalances;
-                        }
-                   // }
-                });
-            });
-        }
-
-        /// <summary>
-        /// Metodo que carga los pagos del usuario logeado 
-        /// </summary>
-        private void CargarPagos(List<Hoja> listHojas)
-        {
-            List<Pago> misPagos = new List<Pago>();
-
-            //Buscarme como participante:
-            listHojas.ForEach(hoja =>
-            {
-                hoja.Participantes.ForEach(participante =>
-                {
-                    if (participante.Id_Usuario.Equals(_usuario.Id_Usuario))
-                    {
-                        participante.Balances.ForEach(balance =>
-                        {
-                            misPagos = (List<Pago>)_pagoServices.ObtenerPorIdBalance(balance.Id_Balance);
-                            if (misPagos != null && misPagos.Count > 0)
-                            {
-                                _usuario.Pagos.AddRange(misPagos);
-                            }
-                        }) ;
-                    }
-                });
-            });
         }
 
 
@@ -298,8 +152,6 @@ namespace MisCuentas_desk
             return true;
         }
         #endregion
-
-
 
         #region REGISTRO
         /// <summary>
@@ -324,16 +176,16 @@ namespace MisCuentas_desk
             Usuario usuarioACrear = UsuarioACrear();
             if (usuarioACrear != null)
             {
-                existe = usuarioServices.CorreoExiste(usuarioACrear.Correo);
+                existe = _usuarioServices.CorreoExiste(usuarioACrear.Correo);
 
                 if (existe) MessageBox.Show("Ese correo ya esta registrado!", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 else
                 {
-                    idUsuario = usuarioServices.Crear(usuarioACrear);
+                    idUsuario = _usuarioServices.Crear(usuarioACrear);
                 }
                 if (idUsuario != 0)
                 {
-                    Usuario usuario = usuarioServices.ObtenerUsuarioPorId(idUsuario);
+                    Usuario usuario = _usuarioServices.ObtenerUsuarioPorId(idUsuario);
                     if (usuario != null)
                     {
                         //Instanciar usuario y sus datos
@@ -406,9 +258,6 @@ namespace MisCuentas_desk
         }
         #endregion
 
-
-
-
         #region METODOS 
         /// <summary>
         /// Metodo para instanciar el usuario creado como Singleton
@@ -425,11 +274,11 @@ namespace MisCuentas_desk
         private void UsuarioLogeadoOK(Usuario usuario)
         {
             this.Close();
-            formMisCuentas.pbxUsuarioLoginOK.Visible = true;
-            formMisCuentas.pbxUsuarioLoginNOK.Visible = false;
-            formMisCuentas.MostrarMensaje($"Bienvenido/a {usuario.Nombre}");
-            formMisCuentas.InstanciaUsuario(usuario);
-            nav.AbrirFormEnPanel(new MisDatos(usuario, formMisCuentas));
+            _formMisCuentas.pbxUsuarioLoginOK.Visible = true;
+            _formMisCuentas.pbxUsuarioLoginNOK.Visible = false;
+            _formMisCuentas.MostrarMensaje($"Bienvenido/a {usuario.Nombre}");
+            _formMisCuentas.InstanciaUsuario(usuario);
+            _nav.AbrirFormEnPanel(new FormsMisDatos(usuario, _formMisCuentas));
         }
 
         /// <summary>

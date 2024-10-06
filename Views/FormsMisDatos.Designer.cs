@@ -1,6 +1,6 @@
 ﻿namespace MisCuentas_desk.Views
 {
-    partial class MisDatos
+    partial class FormsMisDatos
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MisDatos));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormsMisDatos));
             this.panelMD1inf = new System.Windows.Forms.Panel();
             this.panelCambioPass = new System.Windows.Forms.Panel();
             this.btnCancelarCambioPass = new System.Windows.Forms.Button();

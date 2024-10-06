@@ -22,11 +22,16 @@ namespace MisCuentas_desk.Configurations
         #region CONTRUCTOR
         public String Conexion()
         {
-            return this._strConn = "Server=192.168.7.3;Port=3306;Database=DBMisCuentas;Uid=leo;Pwd=111nonamaEM";
-           // return this._strConn = "Server=bbdd.leondev.es;Database=DBMisCuentas;Uid=leo;Pwd=111nonamaEM";
+              return this._strConn = "Server=192.168.7.3;Port=3306;Database=DBMisCuentas;Uid=leo;Pwd=111nonamaEM";       
         }
         #endregion
 
+
+        #region METODOS
+        /// <summary>
+        /// Metodo que realiza la conexion con la BBDD.
+        /// </summary>
+        /// <returns>True si logra conectarse, o mensaje de aviso si falla.</returns>
         public Boolean PruebaConexion()
         {
             try
@@ -52,6 +57,6 @@ namespace MisCuentas_desk.Configurations
                 return false;
             }
         }
-
+        #endregion
     }
 }

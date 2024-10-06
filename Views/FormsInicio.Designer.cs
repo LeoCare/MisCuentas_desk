@@ -1,6 +1,6 @@
 ﻿namespace MisCuentas_desk.Views
 {
-    partial class Inicio
+    partial class FormsInicio
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Inicio));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormsInicio));
             this.pbxInicio = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbxInicio)).BeginInit();
             this.SuspendLayout();

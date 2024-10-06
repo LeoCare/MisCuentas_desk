@@ -12,6 +12,21 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -127,6 +142,7 @@
     <Compile Include="Services\Usuarios\UsuarioDAO.cs" />
     <Compile Include="Services\Usuarios\UsuarioServices.cs" />
     <Compile Include="Utils\ErrorManager.cs" />
+    <Compile Include="Utils\UpdateDataUsuario.cs" />
     <Compile Include="Utils\Validaciones.cs" />
     <Compile Include="Views\Avanzado.cs">
       <SubType>Form</SubType>
@@ -140,33 +156,39 @@
     <Compile Include="Views\FormMisCuentas.Designer.cs">
       <DependentUpon>FormMisCuentas.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\Informes.cs">
+    <Compile Include="Views\FormsInformes.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\Informes.Designer.cs">
-      <DependentUpon>Informes.cs</DependentUpon>
+      <DependentUpon>FormsInformes.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\Login.cs">
+    <Compile Include="Views\FormsLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\Login.Designer.cs">
-      <DependentUpon>Login.cs</DependentUpon>
+    <Compile Include="Views\FormsLogin.Designer.cs">
+      <DependentUpon>FormsLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Views\Inicio.cs">
+    <Compile Include="Views\FormsInicio.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\Inicio.Designer.cs">
-      <DependentUpon>Inicio.cs</DependentUpon>
+    <Compile Include="Views\FormsInicio.Designer.cs">
+      <DependentUpon>FormsInicio.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\MisDatos.cs">
+    <Compile Include="Views\FormsMisDatos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\MisDatos.Designer.cs">
-      <DependentUpon>MisDatos.cs</DependentUpon>
+    <Compile Include="Views\FormsMisDatos.Designer.cs">
+      <DependentUpon>FormsMisDatos.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Navigation.cs" />
+    <Compile Include="Views\FormsParticipantes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FormsParticipantes.Designer.cs">
+      <DependentUpon>FormsParticipantes.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Views\Avanzado.resx">
       <DependentUpon>Avanzado.cs</DependentUpon>
     </EmbeddedResource>
@@ -174,10 +196,10 @@
       <DependentUpon>FormMisCuentas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Informes.resx">
-      <DependentUpon>Informes.cs</DependentUpon>
+      <DependentUpon>FormsInformes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Login.resx">
-      <DependentUpon>Login.cs</DependentUpon>
+    <EmbeddedResource Include="Views\FormsLogin.resx">
+      <DependentUpon>FormsLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -188,11 +210,14 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Views\Inicio.resx">
-      <DependentUpon>Inicio.cs</DependentUpon>
+    <EmbeddedResource Include="Views\FormsInicio.resx">
+      <DependentUpon>FormsInicio.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\MisDatos.resx">
-      <DependentUpon>MisDatos.cs</DependentUpon>
+    <EmbeddedResource Include="Views\FormsMisDatos.resx">
+      <DependentUpon>FormsMisDatos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FormsParticipantes.resx">
+      <DependentUpon>FormsParticipantes.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="NLog.config" />
     <None Include="packages.config" />
@@ -212,6 +237,17 @@
   <ItemGroup>
     <Content Include="Resources\logo.ico" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 y x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

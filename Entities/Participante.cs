@@ -12,14 +12,14 @@ namespace MisCuentas_desk.Entities
         public int Id_Participante { get; set; }
         public string Nombre { get; set; }
         public string Correo { get; set; }
-        public int Id_Usuario { get; set; }
+        public int? Id_Usuario { get; set; }
         public int Id_Hoja { get; set; }
         public List<Gasto> Gastos { get; set; } = new List<Gasto>();
         public List<Balance> Balances { get; set; } = new List<Balance>();
 
         public Participante() { }
 
-        public Participante(int id_Participante, string nombre, string correo, int id_Usuario, int id_Hoja)
+        public Participante(int id_Participante, string nombre, string correo, int? id_Usuario, int id_Hoja)
         {
             Id_Participante = id_Participante;
             Nombre = nombre;
