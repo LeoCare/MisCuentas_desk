@@ -151,7 +151,7 @@ namespace MisCuentas_desk
         /// </summary>
         private void btnAvanzado_Click(object sender, EventArgs e)
         {
-            if (_usuario != null) _nav.AbrirFormEnPanel(new Avanzado(_usuario, this));
+            if (_usuario != null) _nav.AbrirFormEnPanel(new FormsAvanzado(_usuario, this));
         }
 
         /// <summary>

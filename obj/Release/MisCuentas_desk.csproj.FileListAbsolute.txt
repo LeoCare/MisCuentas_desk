@@ -30,7 +30,6 @@ C:\Users\leon1\Documents\Repo_Github\MisCuentas_desk\bin\Release\System.Numerics
 C:\Users\leon1\Documents\Repo_Github\MisCuentas_desk\bin\Release\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\leon1\Documents\Repo_Github\MisCuentas_desk\bin\Release\System.Threading.Tasks.Extensions.xml
 C:\Users\leon1\Documents\Repo_Github\MisCuentas_desk\obj\Release\MisCuentas_desk.csproj.AssemblyReference.cache
-C:\Users\leon1\Documents\Repo_Github\MisCuentas_desk\obj\Release\MisCuentas_desk.Views.Avanzado.resources
 C:\Users\leon1\Documents\Repo_Github\MisCuentas_desk\obj\Release\MisCuentas_desk.FormMisCuentas.resources
 C:\Users\leon1\Documents\Repo_Github\MisCuentas_desk\obj\Release\MisCuentas_desk.Views.FormsInformes.resources
 C:\Users\leon1\Documents\Repo_Github\MisCuentas_desk\obj\Release\MisCuentas_desk.FormsLogin.resources
@@ -43,3 +42,8 @@ C:\Users\leon1\Documents\Repo_Github\MisCuentas_desk\obj\Release\MisCuentas_desk
 C:\Users\leon1\Documents\Repo_Github\MisCuentas_desk\obj\Release\MisCuentas_desk.csproj.CopyComplete
 C:\Users\leon1\Documents\Repo_Github\MisCuentas_desk\obj\Release\MisCuentas_desk.exe
 C:\Users\leon1\Documents\Repo_Github\MisCuentas_desk\obj\Release\MisCuentas_desk.pdb
+C:\Users\leon1\Documents\Repo_Github\MisCuentas_desk\bin\Release\MisCuentas_desk.exe.manifest
+C:\Users\leon1\Documents\Repo_Github\MisCuentas_desk\bin\Release\MisCuentas_desk.application
+C:\Users\leon1\Documents\Repo_Github\MisCuentas_desk\obj\Release\MisCuentas_desk.exe.manifest
+C:\Users\leon1\Documents\Repo_Github\MisCuentas_desk\obj\Release\MisCuentas_desk.application
+C:\Users\leon1\Documents\Repo_Github\MisCuentas_desk\obj\Release\MisCuentas_desk.Views.FormsAvanzado.resources

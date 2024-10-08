@@ -53,7 +53,7 @@ namespace MisCuentas_desk.Views
                     formMisCuentas.btnAvanzado.BackColor = Color.MediumTurquoise;
                     break;
                 case
-                    Avanzado _:
+                    FormsAvanzado _:
                     formMisCuentas.btnMisDatos.BackColor = Color.MediumTurquoise;
                     formMisCuentas.btnInformes.BackColor = Color.MediumTurquoise;
                     formMisCuentas.btnAvanzado.BackColor = Color.DarkGray;

@@ -22,7 +22,7 @@ using System.Windows.Forms.VisualStyles;
 
 namespace MisCuentas_desk.Views
 {
-    public partial class Avanzado : Form
+    public partial class FormsAvanzado : Form
     {
         #region ATRIBUTOS
         private Usuario _usuario;
@@ -40,7 +40,7 @@ namespace MisCuentas_desk.Views
         #endregion
 
         #region CONSTRUCTOR
-        public Avanzado(Usuario usuario, FormMisCuentas formMisCuentas)
+        public FormsAvanzado(Usuario usuario, FormMisCuentas formMisCuentas)
         {
             InitializeComponent();
             InstanciaTimer();

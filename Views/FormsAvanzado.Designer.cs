@@ -1,6 +1,6 @@
 ﻿namespace MisCuentas_desk.Views
 {
-    partial class Avanzado
+    partial class FormsAvanzado
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Avanzado));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormsAvanzado));
             this.panelAvanzadoTipos = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnAvanzadoParticipantes = new System.Windows.Forms.Button();
@@ -82,6 +82,8 @@
             this.lblCorreoParti = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.tbxNombreParti = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.panelAvanzadoTipos.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -98,11 +100,12 @@
             // 
             this.panelAvanzadoTipos.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panelAvanzadoTipos.BackColor = System.Drawing.Color.DimGray;
+            this.panelAvanzadoTipos.Controls.Add(this.label3);
             this.panelAvanzadoTipos.Controls.Add(this.panel1);
             this.panelAvanzadoTipos.Controls.Add(this.panel2);
-            this.panelAvanzadoTipos.Location = new System.Drawing.Point(89, 101);
+            this.panelAvanzadoTipos.Location = new System.Drawing.Point(89, 75);
             this.panelAvanzadoTipos.Name = "panelAvanzadoTipos";
-            this.panelAvanzadoTipos.Size = new System.Drawing.Size(297, 143);
+            this.panelAvanzadoTipos.Size = new System.Drawing.Size(297, 169);
             this.panelAvanzadoTipos.TabIndex = 0;
             // 
             // panel1
@@ -110,7 +113,7 @@
             this.panel1.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.panel1.Controls.Add(this.btnAvanzadoParticipantes);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(152, 4);
+            this.panel1.Location = new System.Drawing.Point(152, 38);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(142, 128);
             this.panel1.TabIndex = 4;
@@ -148,7 +151,7 @@
             this.panel2.BackColor = System.Drawing.Color.Orange;
             this.panel2.Controls.Add(this.btnAvanzadoHojas);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Location = new System.Drawing.Point(3, 4);
+            this.panel2.Location = new System.Drawing.Point(3, 38);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(146, 128);
             this.panel2.TabIndex = 2;
@@ -265,7 +268,7 @@
             this.btnEliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.Font = new System.Drawing.Font("Century Gothic", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.Location = new System.Drawing.Point(535, 4);
+            this.btnEliminar.Location = new System.Drawing.Point(533, 38);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(272, 128);
             this.btnEliminar.TabIndex = 2;
@@ -280,7 +283,7 @@
             this.btnModificar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
             this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnModificar.Font = new System.Drawing.Font("Century Gothic", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificar.Location = new System.Drawing.Point(265, 4);
+            this.btnModificar.Location = new System.Drawing.Point(263, 38);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(264, 128);
             this.btnModificar.TabIndex = 1;
@@ -295,7 +298,7 @@
             this.btnAgregar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
             this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregar.Font = new System.Drawing.Font("Century Gothic", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregar.Location = new System.Drawing.Point(5, 3);
+            this.btnAgregar.Location = new System.Drawing.Point(3, 37);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(254, 129);
             this.btnAgregar.TabIndex = 0;
@@ -307,12 +310,13 @@
             // 
             this.panelAvanzadoBuscar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panelAvanzadoBuscar.BackColor = System.Drawing.Color.DimGray;
+            this.panelAvanzadoBuscar.Controls.Add(this.label4);
             this.panelAvanzadoBuscar.Controls.Add(this.btnEliminar);
             this.panelAvanzadoBuscar.Controls.Add(this.btnModificar);
             this.panelAvanzadoBuscar.Controls.Add(this.btnAgregar);
-            this.panelAvanzadoBuscar.Location = new System.Drawing.Point(395, 101);
+            this.panelAvanzadoBuscar.Location = new System.Drawing.Point(395, 75);
             this.panelAvanzadoBuscar.Name = "panelAvanzadoBuscar";
-            this.panelAvanzadoBuscar.Size = new System.Drawing.Size(813, 143);
+            this.panelAvanzadoBuscar.Size = new System.Drawing.Size(813, 169);
             this.panelAvanzadoBuscar.TabIndex = 3;
             // 
             // pictureBox1
@@ -718,7 +722,29 @@
             this.tbxNombreParti.Size = new System.Drawing.Size(309, 33);
             this.tbxNombreParti.TabIndex = 0;
             // 
-            // Avanzado
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(3, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(124, 25);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Entidades:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(3, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(115, 25);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Acciones:";
+            // 
+            // FormsAvanzado
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSize = true;
@@ -728,9 +754,10 @@
             this.Controls.Add(this.panelAvanzadoAcciones);
             this.Controls.Add(this.panelAvanzadoFiltro);
             this.Controls.Add(this.panelAvanzadoTipos);
-            this.Name = "Avanzado";
+            this.Name = "FormsAvanzado";
             this.Text = "Avanzado";
             this.panelAvanzadoTipos.ResumeLayout(false);
+            this.panelAvanzadoTipos.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -739,6 +766,7 @@
             this.panelAvanzadoFiltro.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgListaFiltrada)).EndInit();
             this.panelAvanzadoBuscar.ResumeLayout(false);
+            this.panelAvanzadoBuscar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelAvanzadoHojas.ResumeLayout(false);
             this.panelAvanzadoHojas.PerformLayout();
@@ -804,5 +832,7 @@
         private System.Windows.Forms.Label lblCorreoParti;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.TextBox tbxNombreParti;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
     }
 }
