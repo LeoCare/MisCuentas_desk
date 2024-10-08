@@ -1,4 +1,4 @@
-# **PROYECTO MISCUENTAS VERSION ESCRITORIO**
+# **PROYECTO MISCUENTAS -version Desktop-**
 
 ## **Tabla de Contenido**
 
