@@ -1,4 +1,4 @@
-# **README del Proyecto: Aplicación de Gestión de Hojas y Participantes**
+# **PROYECTO MISCUENTAS VERSION ESCRITORIO**
 
 ## **Tabla de Contenido**
 
@@ -34,21 +34,26 @@
 
 ## **Descripción del Proyecto**
 
-Esta es una aplicación de **Windows Forms** desarrollada en **C#** que permite gestionar **Hojas** y **Participantes**. Proporciona funcionalidades para:
+Esta es una aplicación de **Windows Forms** desarrollada en **C#** que permite gestionar los datos personales, las **Hojas** y los **Participantes** de aquellos datos creados a travez de la aplicacion movil **MISCUENTAS**. Proporciona funcionalidades para:
 
 - Validar entradas de datos.
+- Gestion de los datos personales.
+- Gestion de credenciales.
 - Listar y filtrar atributos de clases.
-- Mostrar información en controles como `ComboBox` y `DataGridView`.
 - Crear instaladores utilizando **Visual Studio Installer Projects**.
 
 ---
 
 ## **Características Principales**
 
-- **Validación de Datos**: Verifica que las entradas del usuario sean correctas, como números con hasta dos decimales o fechas válidas.
-- **Listar Atributos**: Utiliza **reflexión** para obtener y listar los atributos de las clases `Hoja` y `Participante` en un `ComboBox`.
+- **Inicio de sesion (Logeo)**: Permite el inico de sesion de aquellos usuarios con perfiles de Administrador.
+- **Registro**: Registro de nuevos usuarios de la aplicacion de escritorio.
+- **Modificacion de datos**: Creacion y modificacion de datos personales.
+- **Validación de Datos**: Verifica que las entradas del usuario sean correctas, tanto importes como correos o validacion de contraseñas.
+- **Listar Atributos**: Utiliza **reflexión** para obtener y listar los atributos de las clases `Hoja` y `Participante`.
+- **Modificacion de entidades**: Permite Agregar, Modificar o Eliminar tanto 'Hojas' como 'Participantes'.
 - **Filtrado Dinámico**: Permite filtrar listas de objetos basándose en el atributo y valor seleccionado por el usuario.
-- **Visualización en `DataGridView`**: Muestra datos filtrados y permite seleccionar elementos para ver detalles en otros controles.
+- **Visualización de datos**: Muestra datos filtrados y permite seleccionar elementos para ver detalles en otros controles.
 - **Creación de Instalador**: Incluye pasos para generar un instalador `.msi` utilizando **Visual Studio Installer Projects**.
 - **Manejo de Excepciones**: Implementa manejo de errores comunes, como `NullReferenceException`.
 
