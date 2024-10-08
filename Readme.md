@@ -75,7 +75,7 @@ Esta es una aplicación de **Windows Forms** desarrollada en **C#** que permite 
 Clona el repositorio del proyecto a tu máquina local:
 
 ```bash
-git clone https://github.com/tu_usuario/tu_repositorio.git
+git clone git@github.com:LeoCare/MisCuentas_desk.git
 ```
 
 ### **2. Abrir el Proyecto en Visual Studio**
@@ -113,6 +113,7 @@ La aplicación incluye validaciones para asegurar que los datos ingresados por e
 
 - **Números con Dos Decimales**: Los `TextBox` que requieren números con hasta dos decimales validan la entrada y muestran mensajes de error si es inválida.
 - **Fechas Válidas**: Al hacer clic en un `TextBox` destinado a fechas, se muestra un calendario para asegurar la selección correcta.
+- **Correos validos**: La sintaxis de los correos se valida en todos los apartados requeridos.
 
 ### **Listar Atributos en ComboBox**
 
@@ -225,4 +226,17 @@ Si encuentras una excepción `NullReferenceException`:
 
 ¡Las contribuciones son bienvenidas! Si deseas contribuir al proyecto:
 
-1
+1. Haz un **fork** del repositorio.
+2. Crea una rama para tu función (`git checkout -b feature/nueva-funcion`).
+3. Realiza tus cambios y haz commit (`git commit -am 'Agrega nueva función').
+4. Haz push a la rama ('git push origin feature/nueva-funcion').
+5. Abre un Pull Request.
+
+## **Licencia**
+Este proyecto está bajo la Licencia MIT. Consulta el archivo LICENSE para más detalles.
+
+
+## **Contacto**
+- Desarrollador: Leonardo David Care Prado
+- Correo Electrónico: leonardo.care@ciclosmontecastelo.com
+- GitHub: [https://github.com/tu_usuario](https://github.com/LeoCare/)
