@@ -19,7 +19,6 @@ C:\Users\leon1\Documents\Repo_Github\MisCuentas_desk\obj\Debug\MisCuentas_desk.c
 C:\Users\leon1\Documents\Repo_Github\MisCuentas_desk\obj\Debug\MisCuentas_desk.exe
 C:\Users\leon1\Documents\Repo_Github\MisCuentas_desk\obj\Debug\MisCuentas_desk.pdb
 C:\Users\m1439\Desktop\CICLO_DAM\WorkSpace\MisCuentas_desk\obj\Debug\MisCuentas_desk.Login.resources
-C:\Users\leon1\Documents\Repo_Github\MisCuentas_desk\obj\Debug\MisCuentas_desk.Views.Avanzado.resources
 C:\Users\leon1\Documents\Repo_Github\MisCuentas_desk_copia\bin\Debug\MisCuentas_desk.exe.config
 C:\Users\leon1\Documents\Repo_Github\MisCuentas_desk_copia\bin\Debug\MisCuentas_desk.exe
 C:\Users\leon1\Documents\Repo_Github\MisCuentas_desk_copia\bin\Debug\MisCuentas_desk.pdb
@@ -96,3 +95,8 @@ C:\Users\leon1\Documents\Repo_Github\MisCuentas_desk\obj\Debug\MisCuentas_desk.V
 C:\Users\leon1\Documents\Repo_Github\MisCuentas_desk\obj\Debug\MisCuentas_desk.FormsLogin.resources
 C:\Users\leon1\Documents\Repo_Github\MisCuentas_desk\obj\Debug\MisCuentas_desk.Views.FormsInicio.resources
 C:\Users\leon1\Documents\Repo_Github\MisCuentas_desk\obj\Debug\MisCuentas_desk.Views.FormsMisDatos.resources
+C:\Users\leon1\Documents\Repo_Github\MisCuentas_desk\bin\Debug\MisCuentas_desk.exe.manifest
+C:\Users\leon1\Documents\Repo_Github\MisCuentas_desk\bin\Debug\MisCuentas_desk.application
+C:\Users\leon1\Documents\Repo_Github\MisCuentas_desk\obj\Debug\MisCuentas_desk.Views.FormsAvanzado.resources
+C:\Users\leon1\Documents\Repo_Github\MisCuentas_desk\obj\Debug\MisCuentas_desk.exe.manifest
+C:\Users\leon1\Documents\Repo_Github\MisCuentas_desk\obj\Debug\MisCuentas_desk.application
