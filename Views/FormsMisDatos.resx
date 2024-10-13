@@ -778,7 +778,7 @@
   <data name="btnMDGuardar.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vwAADr8BOAVTJAAAHVNJREFUeF7t2kGuXtmRnVGVLNs9o+ZiNw245fnDI7KfxF1UlbUlJZMveE68sz5g
+        vgAADr4B6kKxwAAAHVNJREFUeF7t2kGuXtmRnVGVLNs9o+ZiNw245fnDI7KfxF1UlbUlJZMveE68sz5g
         9VKZjPjjXtwq8A8/23/7P//7//Ljsr5VtTngVjnbVbU5NsgfX6/UjoDfLmtcVZsDbpWzXVWbY5uMoq9Y
         +8H5cVnnqtoccKuc7araHFtlJH2F2g/M75e1rqrNAbfK2a6qzbFZxtLm2g/Lz8lqV9XmgFvlbFfV5vgK
         Mp6W9af2Y/Lzst9VtTngVjnbVbU5voqMqCX9a/sR+RzZ8araHHCrnO2q2hxfScbU5fm//Idlz6tqc8Ct
@@ -909,7 +909,7 @@
   <data name="pbxMDEliminarCuenta.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vQAADr0BR/uQrQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAEXkSURBVHhe7Z0H
+        vAAADrwBlbxySQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAEXkSURBVHhe7Z0H
         eB1XmbAV0oCQQAi9syQ0EVlzjhyh2JqZa4fwBwgLBNP+pUOoP53QWfpSlqUty3oXFgg9lKW3EHpZQoCl
         mAAJcWxpZmQ7Ti+OHVv/d+QvsTI61i26kubMvO/zvI8S657ROXO+c+bce2fONwAA1Wdjmt40i1feNU+j
         kSyNTigSuy5PzDOLxLxcfr41S8wH88R+XP77DPGb4pni2eJvxL/d2Gi7/LzY40bxhtfJsX8nP88pYvO9
@@ -1214,7 +1214,7 @@
   <data name="pbxMDCompletarDatos.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vgAADr4B6kKxwAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAABtOSURBVHhe7d17
+        vQAADr0BR/uQrQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAABtOSURBVHhe7d17
         rHZpWdhhZgYBHYS2FgGnKuBIFeQ41KhJiyIttOmoNSXRakqM1raBeELEpLYBT4WIEVDGFg9pSNPqHx4q
         qWPxQCxkrDUiQkzVSsVxEFAZRmFmGOfQ3o/DW77Zc3/fPt1rredZz/VLroT4R/t+93pn32s9e+93P0CS
         JD3ginBN+IbwH8IN4T3hlvB/w+3h5vBb4afDy8O14a8GSZI0WH87/Lvw/tAW/WndHX4pfE14eJAkSZ12
@@ -1337,7 +1337,7 @@
   <data name="pbxMDCambioPass.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vgAADr4B6kKxwAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAETlSURBVHhe7d0J
+        vQAADr0BR/uQrQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAETlSURBVHhe7d0J
         3K/lvO/xpblI86ySQipSbRShSERlKJVQhnYdEaXIFk1IKBRxyk5kTp0djRrQJmmeBxpo0CSVZpV9zver
         1mnJbz3rGf7XeH8+r9f7dc5xWGv97/t+7v/13MN1TSNqtGfLJ+QYuUwekDvlBrlIvipvlUWEiIiIGs9f
         6ufK/x2nh+TbspIQERFRY60ip0v0JT8eD8sBMr8QERFRA20tvsQffbFP1E2ypRAREVHF7SD/I9GX+VSc

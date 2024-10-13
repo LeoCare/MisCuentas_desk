@@ -67,8 +67,8 @@ namespace MisCuentas_desk.Views
             lblMDApellidos.Text = _usuario.Personal_Data.Apellidos ?? "sin completar";
             lblMDDireccion.Text = _usuario.Personal_Data.Direccion ?? "sin completar";
             lblMDPais.Text = _usuario.Personal_Data.Pais ?? "sin completar";
-            if (_usuario.Personal_Data.Telefono == null) lblMDTelefono.Text = "sin completar";
-            else lblMDTelefono.Text = _usuario.Personal_Data.Telefono.ToString();
+            lblMDTelefono.Text = _usuario.Personal_Data.Telefono ?? "sin completar";
+           
         }
 
 
@@ -127,7 +127,7 @@ namespace MisCuentas_desk.Views
                 tbxMDApellidos.Text = _usuario.Personal_Data.Apellidos;
                 tbxMDDireccion.Text = _usuario.Personal_Data.Direccion;
                 cbxMDPais.Text = _usuario.Personal_Data.Pais;
-                tbxMDTelefono.Text = _usuario.Personal_Data.Telefono.ToString();
+                tbxMDTelefono.Text = _usuario.Personal_Data.Telefono;
             }
 
             CargarPaises(modificar);          
@@ -151,7 +151,7 @@ namespace MisCuentas_desk.Views
                 _usuario.Personal_Data = datos;
                 Usuario usuarioUpdate = Usuario.ObtenerInstancia(_usuario);
                 CargarDatosGenerales();
-                //usuario = usuarioUpdate;
+                
             }
 
             //Adaptar pantalla
@@ -169,8 +169,7 @@ namespace MisCuentas_desk.Views
             string apellidos = String.IsNullOrEmpty(tbxMDApellidos.Text) ? null : tbxMDApellidos.Text;
             string direccion = String.IsNullOrEmpty(tbxMDDireccion.Text) ? null : tbxMDDireccion.Text;
             string pais = String.IsNullOrEmpty(cbxMDPais.Text) ? null : cbxMDPais.Text; ;
-            int? telefono = null;
-            if (!String.IsNullOrEmpty(tbxMDTelefono.Text)) telefono = int.Parse(tbxMDTelefono.Text);
+            string telefono = String.IsNullOrEmpty(tbxMDTelefono.Text) ? null : tbxMDTelefono.Text;
 
             return new Personal_Data(id_usuario, nombre, apellidos, direccion, pais, telefono);
         }
@@ -181,6 +180,18 @@ namespace MisCuentas_desk.Views
         private void btnCancelarModificacion_Click(object sender, EventArgs e)
         {
             ModoModificarDatos(false);        
+        }
+
+        /// <summary>
+        /// Metodo que controlo que los datos sean numericos.
+        /// </summary>
+        private void tbxOnlyNumber_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Permitir solo dígitos y la tecla de retroceso
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back)
+            {
+                e.Handled = true; // Cancela el evento si no es un dígito o Backspace
+            }
         }
         #endregion
 

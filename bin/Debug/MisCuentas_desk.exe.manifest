@@ -114,14 +114,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MisCuentas_desk.exe" size="940480">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MisCuentas_desk.exe" size="1009600">
       <assemblyIdentity name="MisCuentas_desk" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>UUZHrKjdzewCIQNLORyOlgdTm5tW8K/44U5iNSBY/0Y=</dsig:DigestValue>
+        <dsig:DigestValue>kav6IS5LLEL3/YqDYX6l75nGB8L6kBeQ6Y7XPN7TStQ=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -134,6 +134,18 @@
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
         <dsig:DigestValue>CD4kQSlZX3kqhymy1Nypqt91QSwf487exFlwmY0qnRg=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Newtonsoft.Json.dll" size="711952">
+      <assemblyIdentity name="Newtonsoft.Json" version="13.0.0.0" publicKeyToken="30AD4FE6B2A6AEED" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>4eJ697B+7t9c5xqSVfBCKBam/FhJpIPGcU4bRyBE+p0=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -237,6 +249,24 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
       <dsig:DigestValue>RfUCmVLFLISnmRp6tb0GOKvxxca5NP3B/Es7d0PHI4A=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Resources\nok1.png" size="4748">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>nIEL8jUKI8tZhw5hPSDy9fiX3jehQiBGHsgIqH+5AJw=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Resources\oki1.png" size="4314">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>HoMCsrsRsZPszKfNX47syABf7TrrgcwQCUSq0XLVRfg=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>

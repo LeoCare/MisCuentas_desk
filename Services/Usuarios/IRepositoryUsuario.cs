@@ -16,6 +16,4 @@ namespace MisCuentas_desk.Services.Usuarios
         bool Eliminar(int id);
     }
 
-
-
 }

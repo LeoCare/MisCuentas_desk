@@ -18,16 +18,17 @@ namespace MisCuentas_desk.Configurations
         private string _strConn;
         #endregion
 
-
-        #region CONTRUCTOR
+        #region METODOS
+        /// <summary>
+        /// Metodo que entrega la cadena de conexion.
+        /// </summary>
+        /// <returns>Cadena de conexion a la BBDD</returns>
         public String Conexion()
         {
-              return this._strConn = "Server=192.168.7.3;Port=3306;Database=DBMisCuentas;Uid=leo;Pwd=111nonamaEM";       
+            return this._strConn = "Server=192.168.7.3;Port=3306;Database=DBMisCuentas;Uid=leo;Pwd=111nonamaEM";
         }
-        #endregion
 
 
-        #region METODOS
         /// <summary>
         /// Metodo que realiza la conexion con la BBDD.
         /// </summary>

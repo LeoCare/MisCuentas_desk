@@ -169,6 +169,7 @@ namespace MisCuentas_desk.Views
                     btnModificar.BackColor = Color.WhiteSmoke;
                     btnEliminar.BackColor = Color.WhiteSmoke;
                     btnAvanzadoAccion.BackColor = _color;
+                    btnAccionParticipantes.BackColor = _color;
                     btnAvanzadoAccion.Text = "Agregar";
                     break;
                 case 1: //btnModificar
@@ -176,6 +177,7 @@ namespace MisCuentas_desk.Views
                     btnModificar.BackColor = _color;
                     btnEliminar.BackColor = Color.WhiteSmoke;
                     btnAvanzadoAccion.BackColor = _color;
+                    btnAccionParticipantes.BackColor = _color;
                     btnAvanzadoAccion.Text = "Modificar";
                     break;
                 case 2: //btnEliminar
@@ -184,12 +186,14 @@ namespace MisCuentas_desk.Views
                     btnEliminar.BackColor = _color;
                     btnAvanzadoAccion.Text = "Eliminar";
                     btnAvanzadoAccion.BackColor = _color;
+                    btnAccionParticipantes.BackColor = _color;
                     break;               
                 default: //ninguno Clickado
                     btnAgregar.BackColor = Color.WhiteSmoke;
                     btnModificar.BackColor = Color.WhiteSmoke;
                     btnEliminar.BackColor = Color.WhiteSmoke;
                     btnAvanzadoAccion.BackColor = Color.WhiteSmoke;
+                    btnAccionParticipantes.BackColor = Color.WhiteSmoke;
                     btnAvanzadoAccion.Text = "Listo!";
                     break;
                

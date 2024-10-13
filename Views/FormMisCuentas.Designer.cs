@@ -50,6 +50,8 @@
             this.pbxUsuarioLoginNOK = new System.Windows.Forms.PictureBox();
             this.lblHora = new System.Windows.Forms.Label();
             this.pbxHome = new System.Windows.Forms.PictureBox();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.btnSolicitudes = new System.Windows.Forms.Button();
             this.menuVertical.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnInicio)).BeginInit();
             this.panelHora.SuspendLayout();
@@ -64,6 +66,8 @@
             // menuVertical
             // 
             this.menuVertical.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.menuVertical.Controls.Add(this.panel5);
+            this.menuVertical.Controls.Add(this.btnSolicitudes);
             this.menuVertical.Controls.Add(this.btnCerrar);
             this.menuVertical.Controls.Add(this.panel4);
             this.menuVertical.Controls.Add(this.btnAvanzado);
@@ -100,7 +104,7 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.DarkGray;
-            this.panel4.Location = new System.Drawing.Point(0, 461);
+            this.panel4.Location = new System.Drawing.Point(0, 548);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(11, 50);
             this.panel4.TabIndex = 8;
@@ -115,7 +119,7 @@
             this.btnAvanzado.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnAvanzado.Image = ((System.Drawing.Image)(resources.GetObject("btnAvanzado.Image")));
             this.btnAvanzado.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAvanzado.Location = new System.Drawing.Point(8, 461);
+            this.btnAvanzado.Location = new System.Drawing.Point(8, 548);
             this.btnAvanzado.Name = "btnAvanzado";
             this.btnAvanzado.Size = new System.Drawing.Size(192, 50);
             this.btnAvanzado.TabIndex = 7;
@@ -126,7 +130,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.DarkGray;
-            this.panel2.Location = new System.Drawing.Point(0, 352);
+            this.panel2.Location = new System.Drawing.Point(0, 326);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(11, 50);
             this.panel2.TabIndex = 9;
@@ -141,7 +145,7 @@
             this.btnInformes.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnInformes.Image = ((System.Drawing.Image)(resources.GetObject("btnInformes.Image")));
             this.btnInformes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnInformes.Location = new System.Drawing.Point(8, 352);
+            this.btnInformes.Location = new System.Drawing.Point(8, 326);
             this.btnInformes.Name = "btnInformes";
             this.btnInformes.Size = new System.Drawing.Size(192, 50);
             this.btnInformes.TabIndex = 8;
@@ -152,7 +156,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.DarkGray;
-            this.panel1.Location = new System.Drawing.Point(0, 244);
+            this.panel1.Location = new System.Drawing.Point(0, 218);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(11, 50);
             this.panel1.TabIndex = 2;
@@ -167,7 +171,7 @@
             this.btnMisDatos.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnMisDatos.Image = ((System.Drawing.Image)(resources.GetObject("btnMisDatos.Image")));
             this.btnMisDatos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMisDatos.Location = new System.Drawing.Point(8, 244);
+            this.btnMisDatos.Location = new System.Drawing.Point(8, 218);
             this.btnMisDatos.Name = "btnMisDatos";
             this.btnMisDatos.Size = new System.Drawing.Size(192, 50);
             this.btnMisDatos.TabIndex = 1;
@@ -321,6 +325,32 @@
             this.pbxHome.MouseLeave += new System.EventHandler(this.MouseLeave_Home);
             this.pbxHome.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MouseMove_Home);
             // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.DarkGray;
+            this.panel5.Location = new System.Drawing.Point(0, 437);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(11, 50);
+            this.panel5.TabIndex = 12;
+            // 
+            // btnSolicitudes
+            // 
+            this.btnSolicitudes.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnSolicitudes.FlatAppearance.BorderSize = 0;
+            this.btnSolicitudes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
+            this.btnSolicitudes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSolicitudes.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSolicitudes.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnSolicitudes.Image = ((System.Drawing.Image)(resources.GetObject("btnSolicitudes.Image")));
+            this.btnSolicitudes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSolicitudes.Location = new System.Drawing.Point(8, 437);
+            this.btnSolicitudes.Name = "btnSolicitudes";
+            this.btnSolicitudes.Size = new System.Drawing.Size(192, 50);
+            this.btnSolicitudes.TabIndex = 11;
+            this.btnSolicitudes.Text = "   Solicitudes";
+            this.btnSolicitudes.UseVisualStyleBackColor = false;
+            this.btnSolicitudes.Click += new System.EventHandler(this.btnSolicitudes_Click);
+            // 
             // FormMisCuentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
@@ -373,5 +403,7 @@
         public System.Windows.Forms.PictureBox pbxUsuarioLoginOK;
         public System.Windows.Forms.PictureBox pbxUsuarioLoginNOK;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel5;
+        public System.Windows.Forms.Button btnSolicitudes;
     }
 }

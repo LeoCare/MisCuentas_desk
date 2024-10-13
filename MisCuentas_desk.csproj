@@ -82,6 +82,9 @@
     <Reference Include="MySqlConnector, Version=2.0.0.0, Culture=neutral, PublicKeyToken=d33d3e53aa5f8c92, processorArchitecture=MSIL">
       <HintPath>packages\MySqlConnector.2.3.7\lib\net471\MySqlConnector.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
       <HintPath>packages\NLog.5.3.4\lib\net46\NLog.dll</HintPath>
     </Reference>
@@ -122,6 +125,7 @@
   <ItemGroup>
     <Compile Include="Configurations\MisCuentasConnect.cs" />
     <Compile Include="Entities\Balance.cs" />
+    <Compile Include="Entities\EmailRequest.cs" />
     <Compile Include="Entities\Gasto.cs" />
     <Compile Include="Entities\Hoja.cs" />
     <Compile Include="Entities\Pago.cs" />
@@ -133,6 +137,9 @@
     <Compile Include="Services\Balances\BalanceDAO.cs" />
     <Compile Include="Services\Balances\BalanceServices.cs" />
     <Compile Include="Services\Balances\IRepositoryBalance.cs" />
+    <Compile Include="Services\Emails\EmailDAO.cs" />
+    <Compile Include="Services\Emails\EmailServices.cs" />
+    <Compile Include="Services\Emails\IRepositoryEmail.cs" />
     <Compile Include="Services\Gastos\GastoDAO.cs" />
     <Compile Include="Services\Gastos\GastoServices.cs" />
     <Compile Include="Services\Gastos\IRepositoryGasto.cs" />
@@ -154,6 +161,7 @@
     <Compile Include="Services\Usuarios\IRepositoryUsuario.cs" />
     <Compile Include="Services\Usuarios\UsuarioDAO.cs" />
     <Compile Include="Services\Usuarios\UsuarioServices.cs" />
+    <Compile Include="Socket\SocketConnect.cs" />
     <Compile Include="Utils\ErrorManager.cs" />
     <Compile Include="Utils\UpdateDataUsuario.cs" />
     <Compile Include="Utils\Validaciones.cs" />
@@ -171,6 +179,12 @@
     </Compile>
     <Compile Include="Views\FormsInformes.cs">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FormsSolicitudes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FormsSolicitudes.Designer.cs">
+      <DependentUpon>FormsSolicitudes.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Informes.Designer.cs">
       <DependentUpon>FormsInformes.cs</DependentUpon>
@@ -208,6 +222,9 @@
     <EmbeddedResource Include="Views\FormMisCuentas.resx">
       <DependentUpon>FormMisCuentas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\FormsSolicitudes.resx">
+      <DependentUpon>FormsSolicitudes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Informes.resx">
       <DependentUpon>FormsInformes.cs</DependentUpon>
     </EmbeddedResource>
@@ -222,6 +239,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Views\FormsInicio.resx">
       <DependentUpon>FormsInicio.cs</DependentUpon>
@@ -250,6 +268,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\logo.ico" />
+    <Content Include="Resources\oki1.png" />
+    <Content Include="Resources\nok1.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
@@ -263,5 +283,6 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -44,14 +44,14 @@
             this.pbxInicio.TabIndex = 1;
             this.pbxInicio.TabStop = false;
             // 
-            // Inicio
+            // FormsInicio
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(1347, 749);
             this.Controls.Add(this.pbxInicio);
-            this.Name = "Inicio";
+            this.Name = "FormsInicio";
             this.Text = "Inicio";
             ((System.ComponentModel.ISupportInitialize)(this.pbxInicio)).EndInit();
             this.ResumeLayout(false);

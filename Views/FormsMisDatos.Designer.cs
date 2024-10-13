@@ -55,6 +55,7 @@
             this.btnMDGuardar = new System.Windows.Forms.Button();
             this.lblDatosGeneral = new System.Windows.Forms.Label();
             this.panelMD2inf = new System.Windows.Forms.Panel();
+            this.btnCancelarModificacion = new System.Windows.Forms.Button();
             this.panel12 = new System.Windows.Forms.Panel();
             this.tbxMDTelefono = new System.Windows.Forms.TextBox();
             this.lblMDTelefono = new System.Windows.Forms.Label();
@@ -82,7 +83,6 @@
             this.pbxMDCompletarDatos = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
             this.pbxMDCambioPass = new System.Windows.Forms.PictureBox();
-            this.btnCancelarModificacion = new System.Windows.Forms.Button();
             this.panelMD1inf.SuspendLayout();
             this.panelCambioPass.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnNoVerCambioPass)).BeginInit();
@@ -422,6 +422,24 @@
             this.panelMD2inf.Size = new System.Drawing.Size(724, 363);
             this.panelMD2inf.TabIndex = 3;
             // 
+            // btnCancelarModificacion
+            // 
+            this.btnCancelarModificacion.BackColor = System.Drawing.Color.Black;
+            this.btnCancelarModificacion.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnCancelarModificacion.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gainsboro;
+            this.btnCancelarModificacion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
+            this.btnCancelarModificacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelarModificacion.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelarModificacion.ForeColor = System.Drawing.Color.White;
+            this.btnCancelarModificacion.Location = new System.Drawing.Point(640, 336);
+            this.btnCancelarModificacion.Name = "btnCancelarModificacion";
+            this.btnCancelarModificacion.Size = new System.Drawing.Size(81, 24);
+            this.btnCancelarModificacion.TabIndex = 26;
+            this.btnCancelarModificacion.Text = "Cancelar";
+            this.btnCancelarModificacion.UseVisualStyleBackColor = false;
+            this.btnCancelarModificacion.Visible = false;
+            this.btnCancelarModificacion.Click += new System.EventHandler(this.btnCancelarModificacion_Click);
+            // 
             // panel12
             // 
             this.panel12.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -442,6 +460,7 @@
             this.tbxMDTelefono.Size = new System.Drawing.Size(182, 26);
             this.tbxMDTelefono.TabIndex = 14;
             this.tbxMDTelefono.Visible = false;
+            this.tbxMDTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxOnlyNumber_KeyPress);
             // 
             // lblMDTelefono
             // 
@@ -722,25 +741,7 @@
             this.pbxMDCambioPass.TabStop = false;
             this.pbxMDCambioPass.Click += new System.EventHandler(this.pbxMDCambioPass_Click);
             // 
-            // btnCancelarModificacion
-            // 
-            this.btnCancelarModificacion.BackColor = System.Drawing.Color.Black;
-            this.btnCancelarModificacion.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnCancelarModificacion.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gainsboro;
-            this.btnCancelarModificacion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
-            this.btnCancelarModificacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelarModificacion.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelarModificacion.ForeColor = System.Drawing.Color.White;
-            this.btnCancelarModificacion.Location = new System.Drawing.Point(640, 336);
-            this.btnCancelarModificacion.Name = "btnCancelarModificacion";
-            this.btnCancelarModificacion.Size = new System.Drawing.Size(81, 24);
-            this.btnCancelarModificacion.TabIndex = 26;
-            this.btnCancelarModificacion.Text = "Cancelar";
-            this.btnCancelarModificacion.UseVisualStyleBackColor = false;
-            this.btnCancelarModificacion.Visible = false;
-            this.btnCancelarModificacion.Click += new System.EventHandler(this.btnCancelarModificacion_Click);
-            // 
-            // MisDatos
+            // FormsMisDatos
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSize = true;
@@ -751,7 +752,7 @@
             this.Controls.Add(this.panelMD1sup);
             this.Controls.Add(this.panelMD2inf);
             this.Controls.Add(this.panelMD1inf);
-            this.Name = "MisDatos";
+            this.Name = "FormsMisDatos";
             this.Text = "MisDatos";
             this.panelMD1inf.ResumeLayout(false);
             this.panelCambioPass.ResumeLayout(false);

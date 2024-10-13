@@ -146,6 +146,15 @@ namespace MisCuentas_desk
         }
 
         /// <summary>
+        /// Metodo para navegar al formulario Solicitudes.
+        /// Boton panel lateral izquierdo.
+        /// </summary>
+        private void btnSolicitudes_Click(object sender, EventArgs e)
+        {
+            if (_usuario != null) _nav.AbrirFormEnPanel(new FormsSolicitudes(_usuario, this));
+        }
+
+        /// <summary>
         /// Metodo para navegar al formulario Avanzado.
         /// Boton panel lateral izquierdo.
         /// </summary>
@@ -198,5 +207,6 @@ namespace MisCuentas_desk
         }
         #endregion
 
+       
     }
 }
