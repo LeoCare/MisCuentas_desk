@@ -125,7 +125,6 @@ namespace MisCuentas_desk
             _nav.AbrirFormEnPanel(new FormsLogin(this));
         }
 
-       
 
         /// <summary>
         /// Metodo para navegar al formulario MisDatos.

@@ -24,24 +24,61 @@ namespace MisCuentas_desk.Services.Emails
         }
 
 
-        public virtual IEnumerable<EmailRequest> ObtenerTodosByHojaTipo(int idHoja, string tipo)
+        public virtual IEnumerable<EmailRequest> ObtenerTodosAcreedorByHoja(int idHoja)
         {
             try
             {
                 using (var conexion = new MySqlConnection(_cadenaConexion))
                 {
-                    var sql = @"SELECT el.id_email, p.nombre, h.titulo, h.fecha_creacion, b.monto, p.correo,  te.asunto, te.contenido 
-                                FROM PARTICIPANTES p, TIPO_EMAIL te, BALANCES b, HOJAS h, EMAIL_LOG el
-                                WHERE h.id_hoja = @IdHoja
-                                and h.id_hoja = p.id_hoja
-                                and h.id_hoja = b.id_hoja
-                                and p.id_participante = b.id_participante
-                                AND p.id_hoja = b.id_hoja
-                                AND el.id_balance = b.id_balance
-                                AND el.tipo = te.tipo
-                                AND b.tipo = @Tipo
-                                AND p.correo IS NOT NULL;";
-                    return conexion.Query<EmailRequest>(sql, new { IdHoja = idHoja, Tipo = tipo});
+                    var sqlAcreedor = "SELECT el.id_email, h.titulo, h.fecha_creacion, pg.monto, p.correo, p.nombre, te.asunto, te.contenido " +
+                                           "FROM PARTICIPANTES p, TIPO_EMAIL te, BALANCES b, HOJAS h, EMAIL_LOG el, PAGOS pg " +
+                                           "WHERE el.status = 'P' " +
+                                           "AND el.fecha_envio IS NULL " +
+                                           "AND el.id_balance = b.id_balance " +
+                                           "AND el.tipo = te.tipo " +
+                                           "AND b.id_participante = p.id_participante " +
+                                          "AND b.id_hoja = p.id_hoja " +
+                                           "AND b.id_balance = pg.id_balance_pagado " +
+                                           "AND h.id_hoja = p.id_hoja " +
+                                           "AND te.tipo = 'S' " +
+                                           "AND p.correo IS NOT NULL ";                  
+
+                    return conexion.Query<EmailRequest>(sqlAcreedor, new { IdHoja = idHoja});
+                }
+            }
+            catch (MySqlException ex)
+            {
+                // Manejo específico para errores de MySQL
+                _logger.Error(ex, "Error de MySQL al obtener todos deudores. Código de error: {0}", ex.Number);
+                throw _errorManager.ManejarExcepcionMySql(ex);
+            }
+            catch (Exception ex)
+            {
+                _logger.Error(ex, "Error general al obtener todos los deudores.");
+                throw;
+            }
+        }
+
+
+        public virtual IEnumerable<EmailRequest> ObtenerTodosDeudorByHoja(int idHoja)
+        {
+            try
+            {
+                using (var conexion = new MySqlConnection(_cadenaConexion))
+                {
+                    var sqlDeudor = "SELECT el.id_email, h.titulo, h.fecha_creacion, b.monto, p.correo, p.nombre, te.asunto, te.contenido " +
+                                           "FROM PARTICIPANTES p, TIPO_EMAIL te, BALANCES b, HOJAS h, EMAIL_LOG el, PAGOS pg " +
+                                            "WHERE el.status = 'P' " +
+                                            "AND el.fecha_envio IS NULL " +
+                                            "AND el.id_balance = b.id_balance " +
+                                            "AND el.tipo = te.tipo " +
+                                            "AND b.id_participante = p.id_participante " +
+                                            "AND b.id_hoja = p.id_hoja " +
+                                            "AND h.id_hoja = p.id_hoja " +
+                                            "AND te.tipo = 'E' " +
+                                            "AND p.correo IS NOT NULL;";
+
+                    return conexion.Query<EmailRequest>(sqlDeudor, new { IdHoja = idHoja });
                 }
             }
             catch (MySqlException ex)

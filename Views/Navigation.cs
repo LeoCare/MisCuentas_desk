@@ -45,23 +45,34 @@ namespace MisCuentas_desk.Views
                 case FormsMisDatos _:
                     formMisCuentas.btnMisDatos.BackColor = Color.DarkGray;                   
                     formMisCuentas.btnInformes.BackColor = Color.MediumTurquoise;
+                    formMisCuentas.btnSolicitudes.BackColor = Color.MediumTurquoise;
                     formMisCuentas.btnAvanzado.BackColor = Color.MediumTurquoise;
                     break;
                 case FormsInformes _:
                     formMisCuentas.btnMisDatos.BackColor = Color.MediumTurquoise;
                     formMisCuentas.btnInformes.BackColor = Color.DarkGray;
+                    formMisCuentas.btnSolicitudes.BackColor = Color.MediumTurquoise;
+                    formMisCuentas.btnAvanzado.BackColor = Color.MediumTurquoise;
+                    break;
+                case
+                    FormsSolicitudes _:
+                    formMisCuentas.btnMisDatos.BackColor = Color.MediumTurquoise;
+                    formMisCuentas.btnInformes.BackColor = Color.MediumTurquoise;
+                    formMisCuentas.btnSolicitudes.BackColor = Color.DarkGray;
                     formMisCuentas.btnAvanzado.BackColor = Color.MediumTurquoise;
                     break;
                 case
                     FormsAvanzado _:
                     formMisCuentas.btnMisDatos.BackColor = Color.MediumTurquoise;
                     formMisCuentas.btnInformes.BackColor = Color.MediumTurquoise;
+                    formMisCuentas.btnSolicitudes.BackColor = Color.MediumTurquoise;
                     formMisCuentas.btnAvanzado.BackColor = Color.DarkGray;
                     break;
                 default:
                     formMisCuentas.btnMisDatos.BackColor = Color.MediumTurquoise;
                     formMisCuentas.btnInformes.BackColor = Color.MediumTurquoise;
                     formMisCuentas.btnAvanzado.BackColor = Color.MediumTurquoise;
+                    formMisCuentas.btnSolicitudes.BackColor = Color.MediumTurquoise;
                     break;
             }
         }

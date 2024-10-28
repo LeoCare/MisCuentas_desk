@@ -114,14 +114,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MisCuentas_desk.exe" size="1009600">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MisCuentas_desk.exe" size="1010112">
       <assemblyIdentity name="MisCuentas_desk" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>kav6IS5LLEL3/YqDYX6l75nGB8L6kBeQ6Y7XPN7TStQ=</dsig:DigestValue>
+        <dsig:DigestValue>L8hKW6ljV828iZcEIAt/sZGtMWZdfD4HtUeyWKIcXd0=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

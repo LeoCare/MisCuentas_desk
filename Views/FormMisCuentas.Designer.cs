@@ -31,6 +31,8 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMisCuentas));
             this.menuVertical = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.btnSolicitudes = new System.Windows.Forms.Button();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnAvanzado = new System.Windows.Forms.Button();
@@ -50,8 +52,6 @@
             this.pbxUsuarioLoginNOK = new System.Windows.Forms.PictureBox();
             this.lblHora = new System.Windows.Forms.Label();
             this.pbxHome = new System.Windows.Forms.PictureBox();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.btnSolicitudes = new System.Windows.Forms.Button();
             this.menuVertical.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnInicio)).BeginInit();
             this.panelHora.SuspendLayout();
@@ -81,6 +81,32 @@
             this.menuVertical.Name = "menuVertical";
             this.menuVertical.Size = new System.Drawing.Size(200, 788);
             this.menuVertical.TabIndex = 2;
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.DarkGray;
+            this.panel5.Location = new System.Drawing.Point(0, 437);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(11, 50);
+            this.panel5.TabIndex = 12;
+            // 
+            // btnSolicitudes
+            // 
+            this.btnSolicitudes.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnSolicitudes.FlatAppearance.BorderSize = 0;
+            this.btnSolicitudes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
+            this.btnSolicitudes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSolicitudes.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSolicitudes.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnSolicitudes.Image = ((System.Drawing.Image)(resources.GetObject("btnSolicitudes.Image")));
+            this.btnSolicitudes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSolicitudes.Location = new System.Drawing.Point(8, 437);
+            this.btnSolicitudes.Name = "btnSolicitudes";
+            this.btnSolicitudes.Size = new System.Drawing.Size(192, 50);
+            this.btnSolicitudes.TabIndex = 11;
+            this.btnSolicitudes.Text = "   Solicitudes";
+            this.btnSolicitudes.UseVisualStyleBackColor = false;
+            this.btnSolicitudes.Click += new System.EventHandler(this.btnSolicitudes_Click);
             // 
             // btnCerrar
             // 
@@ -324,32 +350,6 @@
             this.pbxHome.Click += new System.EventHandler(this.pbxHome_Click);
             this.pbxHome.MouseLeave += new System.EventHandler(this.MouseLeave_Home);
             this.pbxHome.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MouseMove_Home);
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.DarkGray;
-            this.panel5.Location = new System.Drawing.Point(0, 437);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(11, 50);
-            this.panel5.TabIndex = 12;
-            // 
-            // btnSolicitudes
-            // 
-            this.btnSolicitudes.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.btnSolicitudes.FlatAppearance.BorderSize = 0;
-            this.btnSolicitudes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
-            this.btnSolicitudes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSolicitudes.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSolicitudes.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnSolicitudes.Image = ((System.Drawing.Image)(resources.GetObject("btnSolicitudes.Image")));
-            this.btnSolicitudes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSolicitudes.Location = new System.Drawing.Point(8, 437);
-            this.btnSolicitudes.Name = "btnSolicitudes";
-            this.btnSolicitudes.Size = new System.Drawing.Size(192, 50);
-            this.btnSolicitudes.TabIndex = 11;
-            this.btnSolicitudes.Text = "   Solicitudes";
-            this.btnSolicitudes.UseVisualStyleBackColor = false;
-            this.btnSolicitudes.Click += new System.EventHandler(this.btnSolicitudes_Click);
             // 
             // FormMisCuentas
             // 

@@ -276,7 +276,7 @@ namespace MisCuentas_desk
             this.Close();
             _formMisCuentas.pbxUsuarioLoginOK.Visible = true;
             _formMisCuentas.pbxUsuarioLoginNOK.Visible = false;
-            _formMisCuentas.MostrarMensaje($"Bienvenido/a {usuario.Nombre}");
+            _formMisCuentas.MostrarMensaje($"Bienvenido/a    {usuario.Nombre}");
             _formMisCuentas.InstanciaUsuario(usuario);
             _nav.AbrirFormEnPanel(new FormsMisDatos(usuario, _formMisCuentas));
         }

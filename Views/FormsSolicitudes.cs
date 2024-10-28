@@ -67,8 +67,8 @@ namespace MisCuentas_desk.Views
             {
                 _usuario.Hojas.ForEach(h =>
                 {
-                    _enviosDeudores.AddRange(_emailServices.ObtenerTodosByHojaTipo(h.Id_Hoja, "D"));
-                    _enviosAcreedores.AddRange(_emailServices.ObtenerTodosByHojaTipo(h.Id_Hoja, "A"));
+                    _enviosDeudores.AddRange(_emailServices.ObtenerTodosDeudorByHoja(h.Id_Hoja));
+                    _enviosAcreedores.AddRange(_emailServices.ObtenerTodosAcreedorByHoja(h.Id_Hoja));
                 });
             }
         }
