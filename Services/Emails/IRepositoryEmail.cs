@@ -8,7 +8,7 @@ namespace MisCuentas_desk.Services.Emails
 {
     public interface IRepositoryEmail<T>
     {
-        IEnumerable<T> ObtenerTodosAcreedorByHoja(int idHoja);
-        IEnumerable<T> ObtenerTodosDeudorByHoja(int idHoja);
+        IEnumerable<T> ObtenerTodosAcreedorByHoja(int idUsuario);
+        IEnumerable<T> ObtenerTodosDeudorByHoja(int idUsuario);
     }
 }

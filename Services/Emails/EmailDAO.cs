@@ -24,26 +24,24 @@ namespace MisCuentas_desk.Services.Emails
         }
 
 
-        public virtual IEnumerable<EmailRequest> ObtenerTodosAcreedorByHoja(int idHoja)
+        public virtual IEnumerable<EmailRequest> ObtenerTodosAcreedorByHoja(int idUsuario)
         {
             try
             {
                 using (var conexion = new MySqlConnection(_cadenaConexion))
                 {
-                    var sqlAcreedor = "SELECT el.id_email, h.titulo, h.fecha_creacion, pg.monto, p.correo, p.nombre, te.asunto, te.contenido " +
-                                           "FROM PARTICIPANTES p, TIPO_EMAIL te, BALANCES b, HOJAS h, EMAIL_LOG el, PAGOS pg " +
-                                           "WHERE el.status = 'P' " +
-                                           "AND el.fecha_envio IS NULL " +
-                                           "AND el.id_balance = b.id_balance " +
-                                           "AND el.tipo = te.tipo " +
+                    var sqlAcreedor = "SELECT  h.titulo, h.fecha_creacion, b.monto, p.correo, p.nombre, te.asunto, te.contenido " +
+                                           "FROM PARTICIPANTES p, TIPO_EMAIL te, BALANCES b, HOJAS h " +
+                                           "WHERE h.id_hoja in (select id_hoja from HOJAS where id_usuario = @idUsuario) " +
                                            "AND b.id_participante = p.id_participante " +
-                                          "AND b.id_hoja = p.id_hoja " +
-                                           "AND b.id_balance = pg.id_balance_pagado " +
+                                           "AND b.monto > 0 " +
+                                           "AND b.id_hoja = p.id_hoja " +                                       
                                            "AND h.id_hoja = p.id_hoja " +
                                            "AND te.tipo = 'S' " +
-                                           "AND p.correo IS NOT NULL ";                  
+                                           "AND (p.id_usuario != @idUsuario or p.id_usuario is null) " +
+                                           "AND p.correo IS NOT NULL;";                  
 
-                    return conexion.Query<EmailRequest>(sqlAcreedor, new { IdHoja = idHoja});
+                    return conexion.Query<EmailRequest>(sqlAcreedor, new { IdUsuario = idUsuario });
                 }
             }
             catch (MySqlException ex)
@@ -60,25 +58,24 @@ namespace MisCuentas_desk.Services.Emails
         }
 
 
-        public virtual IEnumerable<EmailRequest> ObtenerTodosDeudorByHoja(int idHoja)
+        public virtual IEnumerable<EmailRequest> ObtenerTodosDeudorByHoja(int idUsuario)
         {
             try
             {
                 using (var conexion = new MySqlConnection(_cadenaConexion))
                 {
-                    var sqlDeudor = "SELECT el.id_email, h.titulo, h.fecha_creacion, b.monto, p.correo, p.nombre, te.asunto, te.contenido " +
-                                           "FROM PARTICIPANTES p, TIPO_EMAIL te, BALANCES b, HOJAS h, EMAIL_LOG el, PAGOS pg " +
-                                            "WHERE el.status = 'P' " +
-                                            "AND el.fecha_envio IS NULL " +
-                                            "AND el.id_balance = b.id_balance " +
-                                            "AND el.tipo = te.tipo " +
+                    var sqlDeudor = "SELECT h.titulo, h.fecha_creacion, b.monto, p.correo, p.nombre, te.asunto, te.contenido " +
+                                           "FROM PARTICIPANTES p, TIPO_EMAIL te, BALANCES b, HOJAS h " +
+                                            "WHERE  h.id_hoja in (select id_hoja from HOJAS where id_usuario = @idUsuario) " +             
                                             "AND b.id_participante = p.id_participante " +
+                                            "AND b.monto < 0 " +
                                             "AND b.id_hoja = p.id_hoja " +
                                             "AND h.id_hoja = p.id_hoja " +
-                                            "AND te.tipo = 'E' " +
+                                            "AND te.tipo = 'S' " +
+                                            "AND (p.id_usuario != @idUsuario or p.id_usuario is null) " +
                                             "AND p.correo IS NOT NULL;";
 
-                    return conexion.Query<EmailRequest>(sqlDeudor, new { IdHoja = idHoja });
+                    return conexion.Query<EmailRequest>(sqlDeudor, new { IdUsuario = idUsuario });
                 }
             }
             catch (MySqlException ex)

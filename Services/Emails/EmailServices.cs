@@ -16,14 +16,13 @@ namespace MisCuentas_desk.Services.Emails
         /// <summary>
         /// Metodo para obtener los posibles mensajes de envio deudores por hoja.
         /// </summary>
-        /// <param name="idHoja">identificador de la hoja</param>
-        /// <param name="tipo">A -> acreedor o D -> deudor</param>
+        /// <param name="idUsuario">identificador del usuario</param>
         /// <returns>Instancia de EmailRequest a enviar en el Socket</returns>
-        public override IEnumerable<EmailRequest> ObtenerTodosDeudorByHoja(int idHoja)
+        public override IEnumerable<EmailRequest> ObtenerTodosDeudorByHoja(int idUsuario)
         {
             try
             {
-                return base.ObtenerTodosDeudorByHoja(idHoja);
+                return base.ObtenerTodosDeudorByHoja(idUsuario);
             }
             catch (Exception e)
             {
@@ -35,14 +34,13 @@ namespace MisCuentas_desk.Services.Emails
         /// <summary>
         /// Metodo para obtener lso posibles mensajes de envio acreedores por hoja.
         /// </summary>
-        /// <param name="idHoja">identificador de la hoja</param>
-        /// <param name="tipo">A -> acreedor o D -> deudor</param>
+        /// <param name="idUsuario">identificador del usuario</param>
         /// <returns>Instancia de EmailRequest a enviar en el Socket</returns>
-        public override IEnumerable<EmailRequest> ObtenerTodosAcreedorByHoja(int idHoja)
+        public override IEnumerable<EmailRequest> ObtenerTodosAcreedorByHoja(int idUsuario)
         {
             try
             {
-                return base.ObtenerTodosAcreedorByHoja(idHoja);
+                return base.ObtenerTodosAcreedorByHoja(idUsuario);
             }
             catch (Exception e)
             {

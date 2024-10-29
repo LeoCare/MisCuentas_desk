@@ -5,6 +5,7 @@ using MisCuentas_desk.Socket;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace MisCuentas_desk.Views
@@ -64,12 +65,9 @@ namespace MisCuentas_desk.Views
             _enviosAcreedores.Clear();
 
             if (_usuario.Hojas.Count > 0)
-            {
-                _usuario.Hojas.ForEach(h =>
-                {
-                    _enviosDeudores.AddRange(_emailServices.ObtenerTodosDeudorByHoja(h.Id_Hoja));
-                    _enviosAcreedores.AddRange(_emailServices.ObtenerTodosAcreedorByHoja(h.Id_Hoja));
-                });
+            { 
+                 _enviosDeudores.AddRange(_emailServices.ObtenerTodosDeudorByHoja(_usuario.Id_Usuario));    
+                 _enviosAcreedores.AddRange(_emailServices.ObtenerTodosAcreedorByHoja(_usuario.Id_Usuario));
             }
         }
 
@@ -111,12 +109,6 @@ namespace MisCuentas_desk.Views
         /// </summary>
         private void ConfigurarDataGridView()
         {
-            // Crear una nueva columna de botones
-            DataGridViewButtonColumn botonEnviarAcreedores = new DataGridViewButtonColumn();
-            botonEnviarAcreedores.Name = "Enviar";
-            botonEnviarAcreedores.HeaderText = "Enviar";
-            botonEnviarAcreedores.Text = "Enviar";
-            botonEnviarAcreedores.UseColumnTextForButtonValue = true;
 
             // Crear una nueva columna de botones
             DataGridViewButtonColumn botonEnviarDeudores = new DataGridViewButtonColumn();
@@ -126,18 +118,15 @@ namespace MisCuentas_desk.Views
             botonEnviarDeudores.UseColumnTextForButtonValue = true;            
 
             // Añadir la columna de botón al DataGridView
-            dgAcreedores.Columns.Add(botonEnviarAcreedores);
             dgDeudores.Columns.Add(botonEnviarDeudores);
 
-            botonEnviarAcreedores.Width = 40; 
             botonEnviarDeudores.Width = 40;
-            dgAcreedores.Columns["Monto"].Width = 40;
             dgDeudores.Columns["Monto"].Width = 40;
 
             // Quitar columnas innecesarias
             dgAcreedores.Columns["Id_Email"].Visible = false;
             dgAcreedores.Columns["Contenido"].Visible = false;
-            dgAcreedores.Columns["Asunto"].Visible = false;
+            dgAcreedores.Columns["Asunto"].Visible = false;           
             dgDeudores.Columns["Id_Email"].Visible = false;
             dgDeudores.Columns["Contenido"].Visible = false;
             dgDeudores.Columns["Asunto"].Visible = false;
@@ -210,38 +199,7 @@ namespace MisCuentas_desk.Views
             }
         }
 
-        /// <summary>
-        /// Metodo que recoge los datos de la celda clickada del datagrid para su posterior envio con el boton de Enviar.
-        /// </summary>
-        private void dgAcreedores_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.ColumnIndex == dgAcreedores.Columns["Enviar"].Index && e.RowIndex >= 0)
-            {
-                // Obtener la fila seleccionada
-                DataGridViewRow filaSeleccionada = dgAcreedores.Rows[e.RowIndex];
-
-                // Extraer los valores de cada columna
-                string titulo = filaSeleccionada.Cells["Titulo"].Value?.ToString();
-                DateTime? fecha_Creacion = null;
-                if (filaSeleccionada.Cells["Fecha_Creacion"].Value != null)
-                {
-                    fecha_Creacion = Convert.ToDateTime(filaSeleccionada.Cells["Fecha_Creacion"].Value);
-                }
-                double? monto = null;
-                if (filaSeleccionada.Cells["Monto"].Value != null)
-                {
-                    monto = Convert.ToDouble(filaSeleccionada.Cells["Monto"].Value);
-                }
-                string correo = filaSeleccionada.Cells["Correo"].Value?.ToString();
-                string nombre = filaSeleccionada.Cells["Nombre"].Value?.ToString();
-                string asunto = filaSeleccionada.Cells["Asunto"].Value?.ToString();
-                string contenido = filaSeleccionada.Cells["Contenido"].Value?.ToString();
-
-                // Llamar al método para enviar el correo
-                _exitoEnvioEmail = sck.EnviarCorreoDesdeCliente(titulo, fecha_Creacion, monto, correo, nombre, asunto, contenido);
-                MostrarImagenConEfecto();
-            }
-        }
+ 
 
         /// <summary>
         /// Método para mostrar la imagen con efecto
